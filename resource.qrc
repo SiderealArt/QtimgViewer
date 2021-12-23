@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/main">
+        <file>resources/icon/hflip.png</file>
+        <file>resources/icon/openfile.png</file>
+        <file>resources/icon/pen.png</file>
+        <file>resources/icon/vflip.png</file>
+        <file>resources/icon/zoomin.png</file>
+        <file>resources/icon/zoomout.png</file>
+        <file>resources/theme/style.qss</file>
+        <file>resources/icon/app.png</file>
+    </qresource>
+</RCC>

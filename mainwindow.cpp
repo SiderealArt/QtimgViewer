@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     setWindowTitle("Image Editor");
+    setWindowIcon(QIcon(":/main/resources/icon/app.png"));
     center = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     imgWin = new QLabel();
@@ -28,11 +29,11 @@ MainWindow::~MainWindow()
 }
 void MainWindow::createActions(){
     Pen = new QAction("Pen");
-    Pen->setIcon(QIcon("C:/Users/user/Desktop/ImageEditor/pen.png"));
+    Pen->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pen.png")));
     openFileAction = new QAction("&Open File",this);
     openFileAction->setShortcut(tr("Ctrl+O"));
     openFileAction->setStatusTip("Open Image File");
-    openFileAction->setIcon(QIcon("C:/Users/user/Desktop/ImageEditor/openfile.png"));
+    openFileAction->setIcon(QIcon(":/main/resources/icon/openfile.png"));
     connect(openFileAction,SIGNAL(triggered()),this,SLOT(showOpenFile()));
     exitAction = new QAction("&Quit",this);
     exitAction->setShortcut(tr("Ctrl+Q"));
@@ -40,11 +41,11 @@ void MainWindow::createActions(){
     connect(exitAction,SIGNAL(triggered()),this,SLOT(close()));
     zoomInAction = new QAction("Zoom &In",this);
     zoomInAction->setShortcut(tr("Ctrl+I"));
-    zoomInAction->setIcon(QIcon("C:/Users/user/Desktop/ImageEditor/zoomin.png"));
+    zoomInAction->setIcon(QIcon(":/main/resources/icon/zoomin.png"));
      connect(zoomInAction,SIGNAL(triggered()),this,SLOT(zoomIn()));
     zoomOutAction = new QAction("Zoom O&ut",this);
     zoomOutAction->setShortcut(tr("Ctrl+U"));
-    zoomOutAction->setIcon(QIcon("C:/Users/user/Desktop/ImageEditor/zoomout.png"));
+    zoomOutAction->setIcon(QIcon(":/main/resources/icon/zoomout.png"));
      connect(zoomOutAction,SIGNAL(triggered()),this,SLOT(zoomOut()));
      connect(exitAction,SIGNAL(triggered()),imgWin,SLOT(close()));
     geometryAction = new QAction("Geometry Transform",this);

@@ -24,3 +24,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     pen.png
+
+RESOURCES += \
+    resource.qrc
