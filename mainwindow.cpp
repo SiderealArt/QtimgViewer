@@ -17,7 +17,11 @@ MainWindow::MainWindow(QWidget *parent)
     imgWin->resize(300,200);
     imgWin->setScaledContents(true);
     imgWin->setPixmap(*initPixmap);
-    mainLayout->addWidget(imgWin);
+    QScrollArea *imageScrollArea = new QScrollArea();
+       imageScrollArea->setAlignment(Qt::AlignCenter);
+       imageScrollArea->setFrameShape(QFrame::NoFrame);
+       imageScrollArea->setWidget(imgWin);
+    mainLayout->addWidget(imageScrollArea);
     setCentralWidget(center);
     createActions();
     createMenus();
@@ -28,8 +32,12 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
-    Pen = new QAction("Pen");
-    Pen->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pen.png")));
+    penAction = new QAction("Pen");
+    penAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pen.png")));
+    hFlipAction = new QAction("Horizontal Flip");
+    hFlipAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/hflip.png")));
+    vFlipAction = new QAction("Vertical Flip");
+    vFlipAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/vflip.png")));
     openFileAction = new QAction("&Open File",this);
     openFileAction->setShortcut(tr("Ctrl+O"));
     openFileAction->setStatusTip("Open Image File");
@@ -70,41 +78,26 @@ void MainWindow::createToolbars(){
     fileTool->addAction(zoomInAction);
     fileTool->addAction(zoomOutAction);
     ImageTool = addToolBar("Image");
-    ImageTool->addAction(Pen);
+    ImageTool->addAction(penAction);
+    ImageTool->addAction(vFlipAction);
+    ImageTool->addAction(hFlipAction);
 }
 void MainWindow::loadFile(QString filename){
-    QByteArray b = filename.toLatin1();
     img.load(filename);
     imgWin->setPixmap(QPixmap::fromImage(img));
+    imgWin->resize(QPixmap::fromImage(img).size());
 }
 void MainWindow::showOpenFile(){
-    filename = QFileDialog::getOpenFileName(this, "Open Image",".",";;png(*.png)"";;Jpeg(*.jpg");
-    if(!filename.isEmpty()){
-        if(!img.isNull()){
-            loadFile(filename);
-        }else{
-            MainWindow *newIPWin = new MainWindow();
-            newIPWin->show();
-            newIPWin->loadFile(filename);
-        }
-    }
+    filename = QFileDialog::getOpenFileName(this, "Open Image",".",tr("Images (*.jpg *.jpeg *.png *.bmp *.gif)"));
+    loadFile(filename);
 }
 void MainWindow::zoomIn(){
-  MainWindow *newWin = new MainWindow();
-  newWin->imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()*2,img.height()*2)));
-  newWin->imgWin->resize(img.width()*2,img.height()*2);
-  newWin->setWindowTitle("Result");
-  newWin->fileTool->close();
-  newWin->show();
+
+  imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()*2,img.height()*2)));
 }
 
 void MainWindow::zoomOut(){
-MainWindow *newWin = new MainWindow();
-newWin->imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)));
-newWin->imgWin->resize(img.width()/2,img.height()/2);
-newWin->setWindowTitle("Result");
-newWin->fileTool->close();
-newWin->show();
+imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)));
 }
 
 void MainWindow::showGeometryTransform(){

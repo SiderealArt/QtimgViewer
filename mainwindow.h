@@ -8,6 +8,7 @@
 #include <QToolBar>
 #include <QImage>
 #include <QLabel>
+#include <QScrollArea>
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -28,10 +29,9 @@ public:
     Transform *gWin;
     QWidget *center;
     QMenu *fileMenu;
+    QScrollArea *imageScrollArea;
     QToolBar *fileTool;
     QToolBar *ImageTool;
-    QAction *Pen;
-    QAction *Cursor;
     QImage img;
     QString filename;
     QLabel *imgWin;
@@ -40,5 +40,9 @@ public:
     QAction *zoomOutAction;
     QAction *exitAction;
     QAction *geometryAction;
+    QAction *hFlipAction;
+    QAction *vFlipAction;
+    QAction *penAction;
+    QAction *cursorAction;
 };
 #endif // MAINWINDOW_H

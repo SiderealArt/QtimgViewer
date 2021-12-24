@@ -1,4 +1,4 @@
-#include "transform.h"
+﻿#include "transform.h"
 #include <QPixmap>
 Transform::Transform(QWidget *parent)
     : QWidget(parent)
@@ -33,7 +33,6 @@ Transform::Transform(QWidget *parent)
     inWin->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     if(srcImg.isNull()){
         QPixmap *initPixmap = new QPixmap(300,200);
-        initPixmap->fill(QColor(255,255,255));
         inWin->setPixmap(*initPixmap);
     }
     mainLayout->addWidget(inWin);
