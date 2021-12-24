@@ -1,4 +1,4 @@
-#ifndef TRANSFORM_H
+﻿#ifndef TRANSFORM_H
 #define TRANSFORM_H
 
 #include <QWidget>
@@ -23,7 +23,6 @@ public:
     QGroupBox *mirrorGroup;
     QCheckBox *hCheckBox;
     QCheckBox *vCheckBox;
-    QPushButton *mirrorButton;
     QPushButton *saveButton;
     QDial *rotateDial;
     QSpacerItem *vSpacer;

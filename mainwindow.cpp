@@ -32,12 +32,17 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  settingAction = new QAction("Settings");
+  aboutAction = new QAction("About");
+  checkupdateAction = new QAction("Check for Updates");
     penAction = new QAction("Pen");
     penAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pen.png")));
     hFlipAction = new QAction("Horizontal Flip");
     hFlipAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/hflip.png")));
+    connect(hFlipAction,SIGNAL(triggered()),this,SLOT(hflip()));
     vFlipAction = new QAction("Vertical Flip");
     vFlipAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/vflip.png")));
+    connect(vFlipAction,SIGNAL(triggered()),this,SLOT(vflip()));
     openFileAction = new QAction("&Open File",this);
     openFileAction->setShortcut(tr("Ctrl+O"));
     openFileAction->setStatusTip("Open Image File");
@@ -70,6 +75,12 @@ void MainWindow::createActions(){
     fileMenu->addAction(zoomInAction);
     fileMenu->addAction(zoomOutAction);
     fileMenu->addAction(exitAction);
+    helpMenu = menuBar()->addMenu("&Help");
+    helpMenu->addAction(aboutAction);
+    helpMenu->addAction(checkupdateAction);
+    toolsMenu =menuBar()->addMenu("&Tools");
+    viewMenu = menuBar()->addMenu("&View");
+    editMenu = menuBar()->addMenu("&Edit");
 }
 void MainWindow::createToolbars(){
     fileTool = addToolBar("File");
@@ -92,12 +103,13 @@ void MainWindow::showOpenFile(){
     loadFile(filename);
 }
 void MainWindow::zoomIn(){
-
   imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()*2,img.height()*2)));
+  imgWin->resize(QPixmap::fromImage(img.scaled(img.width()*2,img.height()*2)).size());
 }
 
 void MainWindow::zoomOut(){
 imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)));
+imgWin->resize(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)).size());
 }
 
 void MainWindow::showGeometryTransform(){
@@ -105,4 +117,11 @@ void MainWindow::showGeometryTransform(){
         gWin->srcImg = img;
     gWin->inWin->setPixmap(QPixmap::fromImage(gWin->srcImg));
     gWin->show();
+}
+
+void MainWindow::vflip(){
+  imgWin->setPixmap(QPixmap::fromImage(img.mirrored(false,true)));
+}
+void MainWindow::hflip(){
+  imgWin->setPixmap(QPixmap::fromImage(img.mirrored(true,false)));
 }

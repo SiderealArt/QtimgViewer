@@ -9,14 +9,11 @@ Transform::Transform(QWidget *parent)
     groupLayout = new QVBoxLayout(mirrorGroup);
     hCheckBox = new QCheckBox("Horizontal",mirrorGroup);
     vCheckBox = new QCheckBox("Vertical",mirrorGroup);
-    mirrorButton = new QPushButton("Run", mirrorGroup);
     saveButton = new QPushButton("Save");
     hCheckBox->setGeometry(QRect(13,28,87,19));
     vCheckBox->setGeometry(QRect(13,54,87,19));
-    mirrorButton->setGeometry(QRect(13,80,93,28));
     groupLayout->addWidget(hCheckBox);
     groupLayout->addWidget(vCheckBox);
-    groupLayout->addWidget(mirrorButton);
     leftLayout->addWidget(mirrorGroup);
     leftLayout->addWidget(saveButton);
     rotateDial = new QDial(this);
@@ -36,7 +33,8 @@ Transform::Transform(QWidget *parent)
         inWin->setPixmap(*initPixmap);
     }
     mainLayout->addWidget(inWin);
-    connect(mirrorButton,SIGNAL(clicked()),this,SLOT(mirrorImage()));
+    connect(hCheckBox,SIGNAL(clicked()),this,SLOT(mirrorImage()));
+    connect(vCheckBox,SIGNAL(clicked()),this,SLOT(mirrorImage()));
     connect(rotateDial,SIGNAL(valueChanged(int)),this,SLOT(rotateImage()));
 }
 

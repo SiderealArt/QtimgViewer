@@ -25,10 +25,16 @@ public:
     void zoomIn();
     void zoomOut();
     void showGeometryTransform();
+    void hflip();
+    void vflip();
  private:
     Transform *gWin;
     QWidget *center;
     QMenu *fileMenu;
+    QMenu *helpMenu;
+    QMenu *viewMenu;
+    QMenu *editMenu;
+    QMenu *toolsMenu;
     QScrollArea *imageScrollArea;
     QToolBar *fileTool;
     QToolBar *ImageTool;
@@ -36,6 +42,8 @@ public:
     QString filename;
     QLabel *imgWin;
     QAction *openFileAction;
+    QAction *saveAction;
+    QAction *saveAsAction;
     QAction *zoomInAction;
     QAction *zoomOutAction;
     QAction *exitAction;
@@ -44,5 +52,8 @@ public:
     QAction *vFlipAction;
     QAction *penAction;
     QAction *cursorAction;
+    QAction *aboutAction;
+    QAction *settingAction;
+    QAction *checkupdateAction;
 };
 #endif // MAINWINDOW_H
