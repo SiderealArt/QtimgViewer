@@ -34,7 +34,10 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  saveAction = new QAction("Save");
+  saveAsAction = new QAction("Save as...");
   settingAction = new QAction("Settings");
+  fullscreenAction=new QAction("Fullscreen");
   aboutAction = new QAction("About");
  connect(aboutAction,SIGNAL(triggered()),this,SLOT(aboutMenu()));
   checkupdateAction = new QAction("Check for Updates");
@@ -56,11 +59,11 @@ void MainWindow::createActions(){
     exitAction->setStatusTip("Quit Application");
     connect(exitAction,SIGNAL(triggered()),this,SLOT(close()));
     zoomInAction = new QAction("Zoom &In",this);
-    zoomInAction->setShortcut(tr("Ctrl+I"));
+    zoomInAction->setShortcut(tr("Ctrl++"));
     zoomInAction->setIcon(QIcon(":/main/resources/icon/zoomin.png"));
      connect(zoomInAction,SIGNAL(triggered()),this,SLOT(zoomIn()));
     zoomOutAction = new QAction("Zoom O&ut",this);
-    zoomOutAction->setShortcut(tr("Ctrl+U"));
+    zoomOutAction->setShortcut(tr("Ctrl+-"));
     zoomOutAction->setIcon(QIcon(":/main/resources/icon/zoomout.png"));
      connect(zoomOutAction,SIGNAL(triggered()),this,SLOT(zoomOut()));
      connect(exitAction,SIGNAL(triggered()),imgWin,SLOT(close()));
@@ -74,6 +77,8 @@ void MainWindow::createActions(){
  void MainWindow::createMenus(){
     fileMenu = menuBar()->addMenu("&File");
     fileMenu->addAction(openFileAction);
+    fileMenu->addAction(saveAction);
+    fileMenu->addAction(saveAsAction);
     fileMenu->addAction(exitAction);
     editMenu = menuBar()->addMenu("&Edit");
     viewMenu = menuBar()->addMenu("&View");
@@ -81,6 +86,7 @@ void MainWindow::createActions(){
     viewMenu->addAction(vFlipAction);
     viewMenu->addAction(zoomInAction);
     viewMenu->addAction(zoomOutAction);
+    viewMenu->addAction(fullscreenAction);
     toolsMenu =menuBar()->addMenu("&Tools");
     toolsMenu->addAction(geometryAction);
     helpMenu = menuBar()->addMenu("&Help");

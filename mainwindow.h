@@ -48,6 +48,7 @@ public:
     QAction *saveAsAction;
     QAction *zoomInAction;
     QAction *zoomOutAction;
+    QAction *fullscreenAction;
     QAction *exitAction;
     QAction *geometryAction;
     QAction *hFlipAction;
