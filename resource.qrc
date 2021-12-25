@@ -8,5 +8,16 @@
         <file>resources/icon/zoomout.png</file>
         <file>resources/theme/style.qss</file>
         <file>resources/icon/app.png</file>
+        <file>resources/icon/about.png</file>
+        <file>resources/icon/clipboard.png</file>
+        <file>resources/icon/cursor.png</file>
+        <file>resources/icon/delete.png</file>
+        <file>resources/icon/fullscreen.png</file>
+        <file>resources/icon/info.png</file>
+        <file>resources/icon/rotate.png</file>
+        <file>resources/icon/save.png</file>
+        <file>resources/icon/saveas.png</file>
+        <file>resources/icon/settings.png</file>
+        <file>resources/icon/share.png</file>
     </qresource>
 </RCC>

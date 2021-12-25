@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     imgWin = new QLabel();
     QPixmap *initPixmap = new QPixmap(300,200);
+    QClipboard *clipboard;
     gWin = new Transform();
     aWin = new About();
     initPixmap->fill(QColor(255,255,255));
@@ -34,10 +35,21 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  clipboardAction = new QAction("Copy to Clipboard");
+  clipboardAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/clipboard.png")));
+  connect(clipboardAction,SIGNAL(triggered()),this,SLOT(copytoclipboard()));
   saveAction = new QAction("Save");
+  saveAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/save.png")));
   saveAsAction = new QAction("Save as...");
+  saveAsAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/saveas.png")));
+  connect(saveAsAction,SIGNAL(triggered()),this,SLOT(saveAs()));
   settingAction = new QAction("Settings");
+  settingAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/setting.png")));
+  rotateAction = new QAction("Rotate");
+  rotateAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/rotate.png")));
+  connect(rotateAction,SIGNAL(triggered()),this,SLOT(rotate()));
   fullscreenAction=new QAction("Fullscreen");
+  connect(fullscreenAction,SIGNAL(triggered()),this,SLOT(fullscreen()));
   aboutAction = new QAction("About");
  connect(aboutAction,SIGNAL(triggered()),this,SLOT(aboutMenu()));
   checkupdateAction = new QAction("Check for Updates");
@@ -99,10 +111,12 @@ void MainWindow::createToolbars(){
      fileTool->addAction(geometryAction);
     fileTool->addAction(zoomInAction);
     fileTool->addAction(zoomOutAction);
+    fileTool->addAction(clipboardAction);
     ImageTool = addToolBar("Image");
     ImageTool->addAction(penAction);
     ImageTool->addAction(vFlipAction);
     ImageTool->addAction(hFlipAction);
+    ImageTool->addAction(rotateAction);
 }
 void MainWindow::loadFile(QString filename){
     img.load(filename);
@@ -137,4 +151,23 @@ void MainWindow::vflip(){
 }
 void MainWindow::hflip(){
   imgWin->setPixmap(QPixmap::fromImage(img.mirrored(true,false)));
+}
+
+void MainWindow::fullscreen(){
+  isFullScreen() ? showNormal() : showFullScreen();
+}
+
+void MainWindow::saveAs(){
+
+}
+
+void MainWindow::rotate(){
+  QPixmap pixmap(imgWin->pixmap());
+      QTransform tr;
+      tr.rotate(90);
+      pixmap = pixmap.transformed(tr);
+      imgWin->setPixmap(pixmap);
+}
+void MainWindow::copytoclipboard(){
+  clipboard->setPixmap(QPixmap::fromImage(img));
 }

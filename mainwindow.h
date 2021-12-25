@@ -9,6 +9,7 @@
 #include <QImage>
 #include <QLabel>
 #include <QScrollArea>
+#include <QClipboard>
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -27,8 +28,13 @@ public:
     void showGeometryTransform();
     void hflip();
     void vflip();
+    void rotate();
     void aboutMenu();
+    void fullscreen();
+    void saveAs();
+    void copytoclipboard();
  private:
+    QClipboard *clipboard;
     Transform *gWin;
     About *aWin;
     QWidget *center;
@@ -49,10 +55,12 @@ public:
     QAction *zoomInAction;
     QAction *zoomOutAction;
     QAction *fullscreenAction;
+    QAction *clipboardAction;
     QAction *exitAction;
     QAction *geometryAction;
     QAction *hFlipAction;
     QAction *vFlipAction;
+    QAction *rotateAction;
     QAction *penAction;
     QAction *cursorAction;
     QAction *aboutAction;
