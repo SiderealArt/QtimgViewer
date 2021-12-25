@@ -1,6 +1,5 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "transform.h"
 #include "about.h"
 #include <QMainWindow>
 #include <QAction>
@@ -25,7 +24,6 @@ public:
     void showOpenFile();
     void zoomIn();
     void zoomOut();
-    void showGeometryTransform();
     void hflip();
     void vflip();
     void rotate();
@@ -35,7 +33,6 @@ public:
     void copytoclipboard();
  private:
     QClipboard *clipboard;
-    Transform *gWin;
     About *aWin;
     QWidget *center;
     QMenu *fileMenu;
@@ -57,7 +54,6 @@ public:
     QAction *fullscreenAction;
     QAction *clipboardAction;
     QAction *exitAction;
-    QAction *geometryAction;
     QAction *hFlipAction;
     QAction *vFlipAction;
     QAction *rotateAction;

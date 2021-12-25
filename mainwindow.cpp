@@ -1,5 +1,4 @@
 ﻿#include "mainwindow.h"
-#include "transform.h"
 #include "about.h"
 #include <QHBoxLayout>
 #include <QMenuBar>
@@ -13,8 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     imgWin = new QLabel();
     QPixmap *initPixmap = new QPixmap(300,200);
-    QClipboard *clipboard;
-    gWin = new Transform();
     aWin = new About();
     initPixmap->fill(QColor(255,255,255));
     imgWin->resize(300,200);
@@ -79,11 +76,6 @@ void MainWindow::createActions(){
     zoomOutAction->setIcon(QIcon(":/main/resources/icon/zoomout.png"));
      connect(zoomOutAction,SIGNAL(triggered()),this,SLOT(zoomOut()));
      connect(exitAction,SIGNAL(triggered()),imgWin,SLOT(close()));
-    geometryAction = new QAction("Geometry Transform",this);
-    geometryAction->setShortcut(tr("Ctrl+G"));
-    geometryAction->setStatusTip("Image Geometry Transform");
-    connect(geometryAction,SIGNAL(triggered()),this,SLOT(showGeometryTransform()));
-    connect(exitAction,SIGNAL(triggered()),gWin,SLOT(close()));
 }
 
  void MainWindow::createMenus(){
@@ -100,7 +92,6 @@ void MainWindow::createActions(){
     viewMenu->addAction(zoomOutAction);
     viewMenu->addAction(fullscreenAction);
     toolsMenu =menuBar()->addMenu("&Tools");
-    toolsMenu->addAction(geometryAction);
     helpMenu = menuBar()->addMenu("&Help");
     helpMenu->addAction(aboutAction);
     helpMenu->addAction(checkupdateAction);
@@ -108,7 +99,6 @@ void MainWindow::createActions(){
 void MainWindow::createToolbars(){
     fileTool = addToolBar("File");
     fileTool->addAction(openFileAction);
-     fileTool->addAction(geometryAction);
     fileTool->addAction(zoomInAction);
     fileTool->addAction(zoomOutAction);
     fileTool->addAction(clipboardAction);
@@ -137,12 +127,6 @@ imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)));
 imgWin->resize(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)).size());
 }
 
-void MainWindow::showGeometryTransform(){
-    if(!img.isNull())
-        gWin->srcImg = img;
-    gWin->inWin->setPixmap(QPixmap::fromImage(gWin->srcImg));
-    gWin->show();
-}
 void MainWindow::aboutMenu(){
   aWin->show();
 }
@@ -169,5 +153,5 @@ void MainWindow::rotate(){
       imgWin->setPixmap(pixmap);
 }
 void MainWindow::copytoclipboard(){
-  clipboard->setPixmap(QPixmap::fromImage(img));
+  clipboard->setPixmap(imgWin->pixmap());
 }
