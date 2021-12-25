@@ -118,23 +118,21 @@ void MainWindow::showOpenFile(){
     loadFile(filename);
 }
 void MainWindow::zoomIn(){
-  imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()*2,img.height()*2)));
-  imgWin->resize(QPixmap::fromImage(img.scaled(img.width()*2,img.height()*2)).size());
+  imgWin->resize(imgWin->width()*(1.8),imgWin->height()*(1.8));
 }
 
 void MainWindow::zoomOut(){
-imgWin->setPixmap(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)));
-imgWin->resize(QPixmap::fromImage(img.scaled(img.width()/2,img.height()/2)).size());
+imgWin->resize(imgWin->width()*(0.8),imgWin->height()*(0.8));
 }
 
 void MainWindow::aboutMenu(){
   aWin->show();
 }
 void MainWindow::vflip(){
-  imgWin->setPixmap(QPixmap::fromImage(img.mirrored(false,true)));
+  imgWin->setPixmap(imgWin->pixmap().transformed(QTransform().scale(-1, 1)));
 }
 void MainWindow::hflip(){
-  imgWin->setPixmap(QPixmap::fromImage(img.mirrored(true,false)));
+  imgWin->setPixmap(imgWin->pixmap().transformed(QTransform().scale(1, -1)));
 }
 
 void MainWindow::fullscreen(){
@@ -151,6 +149,7 @@ void MainWindow::rotate(){
       tr.rotate(90);
       pixmap = pixmap.transformed(tr);
       imgWin->setPixmap(pixmap);
+      imgWin->resize(pixmap.size());
 }
 void MainWindow::copytoclipboard(){
   clipboard->setPixmap(imgWin->pixmap());
