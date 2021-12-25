@@ -1,7 +1,7 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "transform.h"
-
+#include "about.h"
 #include <QMainWindow>
 #include <QAction>
 #include <QMenu>
@@ -27,8 +27,10 @@ public:
     void showGeometryTransform();
     void hflip();
     void vflip();
+    void aboutMenu();
  private:
     Transform *gWin;
+    About *aWin;
     QWidget *center;
     QMenu *fileMenu;
     QMenu *helpMenu;

@@ -1,5 +1,6 @@
 ﻿#include "mainwindow.h"
 #include "transform.h"
+#include "about.h"
 #include <QHBoxLayout>
 #include <QMenuBar>
 #include <QFileDialog>
@@ -13,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     imgWin = new QLabel();
     QPixmap *initPixmap = new QPixmap(300,200);
     gWin = new Transform();
+    aWin = new About();
     initPixmap->fill(QColor(255,255,255));
     imgWin->resize(300,200);
     imgWin->setScaledContents(true);
@@ -34,6 +36,7 @@ MainWindow::~MainWindow()
 void MainWindow::createActions(){
   settingAction = new QAction("Settings");
   aboutAction = new QAction("About");
+ connect(aboutAction,SIGNAL(triggered()),this,SLOT(aboutMenu()));
   checkupdateAction = new QAction("Check for Updates");
     penAction = new QAction("Pen");
     penAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pen.png")));
@@ -71,16 +74,18 @@ void MainWindow::createActions(){
  void MainWindow::createMenus(){
     fileMenu = menuBar()->addMenu("&File");
     fileMenu->addAction(openFileAction);
-    fileMenu->addAction(geometryAction);
-    fileMenu->addAction(zoomInAction);
-    fileMenu->addAction(zoomOutAction);
     fileMenu->addAction(exitAction);
+    editMenu = menuBar()->addMenu("&Edit");
+    viewMenu = menuBar()->addMenu("&View");
+    viewMenu->addAction(hFlipAction);
+    viewMenu->addAction(vFlipAction);
+    viewMenu->addAction(zoomInAction);
+    viewMenu->addAction(zoomOutAction);
+    toolsMenu =menuBar()->addMenu("&Tools");
+    toolsMenu->addAction(geometryAction);
     helpMenu = menuBar()->addMenu("&Help");
     helpMenu->addAction(aboutAction);
     helpMenu->addAction(checkupdateAction);
-    toolsMenu =menuBar()->addMenu("&Tools");
-    viewMenu = menuBar()->addMenu("&View");
-    editMenu = menuBar()->addMenu("&Edit");
 }
 void MainWindow::createToolbars(){
     fileTool = addToolBar("File");
@@ -118,7 +123,9 @@ void MainWindow::showGeometryTransform(){
     gWin->inWin->setPixmap(QPixmap::fromImage(gWin->srcImg));
     gWin->show();
 }
-
+void MainWindow::aboutMenu(){
+  aWin->show();
+}
 void MainWindow::vflip(){
   imgWin->setPixmap(QPixmap::fromImage(img.mirrored(false,true)));
 }
