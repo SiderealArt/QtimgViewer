@@ -9,6 +9,11 @@
 #include <QLabel>
 #include <QScrollArea>
 #include <QClipboard>
+#include <QPainter>
+#include <QUndoStack>
+#include <QNetworkAccessManager>
+#include <QPrinter>
+#include <QPrintDialog>
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -32,7 +37,16 @@ public:
     void saveAs();
     void save();
     void copytoclipboard();
+    void newWindow();
+    void imgur();
+    void replyFinished();
+    void print();
  private:
+    QPainter *painter;
+    QPrinter printer;
+    QPrintDialog pdialog;
+    QNetworkAccessManager *manager;
+    QUndoStack *undoStack = nullptr;
     QClipboard *clipboard;
     About *aWin;
     QWidget *center;
@@ -49,10 +63,12 @@ public:
     QString filename;
     QLabel *imgWin;
     QAction *openFileAction;
+    QAction *printAction;
     QAction *saveAction;
     QAction *imgurAction;
     QAction *imgbbAction;
     QAction *imageshackAction;
+    QAction *newWindowAction;
     QAction *undoAction;
     QAction *redoAction;
     QAction *saveAsAction;

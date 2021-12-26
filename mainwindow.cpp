@@ -3,6 +3,7 @@
 #include <QHBoxLayout>
 #include <QMenuBar>
 #include <QFileDialog>
+#include <QtNetwork>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -29,10 +30,16 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  printAction = new QAction("Print");
+  connect(printAction,SIGNAL(triggered()),this,SLOT(print()));
+  newWindowAction = new QAction("Open New Window");
+  connect(newWindowAction,SIGNAL(triggered()),this,SLOT(newWindow()));
   redoAction = new QAction("Redo");
   redoAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/redo.png")));
+  redoAction->setDisabled(true);
   undoAction = new QAction("Undo");
   undoAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/undo.png")));
+  undoAction->setDisabled(true);
   imgurAction = new QAction("Upload to Imgur");
   imgbbAction = new QAction("Upload to ImgBB");
   imageshackAction = new QAction("Upload to ImageShack");
@@ -86,8 +93,10 @@ void MainWindow::createActions(){
  void MainWindow::createMenus(){
     fileMenu = menuBar()->addMenu("&File");
     fileMenu->addAction(openFileAction);
+    fileMenu->addAction(newWindowAction);
     fileMenu->addAction(saveAction);
     fileMenu->addAction(saveAsAction);
+    fileMenu->addAction(printAction);
     fileMenu->addAction(exitAction);
     editMenu = menuBar()->addMenu("&Edit");
     editMenu->addAction(undoAction);
@@ -114,6 +123,8 @@ void MainWindow::createToolbars(){
     fileTool->addAction(zoomOutAction);
     fileTool->addAction(clipboardAction);
     ImageTool = addToolBar("Image");
+    ImageTool->addAction(undoAction);
+    ImageTool->addAction(redoAction);
     ImageTool->addAction(penAction);
     ImageTool->addAction(vFlipAction);
     ImageTool->addAction(hFlipAction);
@@ -123,6 +134,8 @@ void MainWindow::loadFile(QString filename){
     img.load(filename);
     imgWin->setPixmap(QPixmap::fromImage(img));
     imgWin->resize(QPixmap::fromImage(img).size());
+    undoAction->setEnabled(true);
+    redoAction->setEnabled(true);
 }
 void MainWindow::showOpenFile(){
     filename = QFileDialog::getOpenFileName(this, "Open Image",".",tr("Images (*.jpg *.jpeg *.png *.bmp *.gif)"));
@@ -172,4 +185,34 @@ void MainWindow::rotate(){
 }
 void MainWindow::copytoclipboard(){
   clipboard->setPixmap(imgWin->pixmap());
+}
+
+void MainWindow::imgur(){
+  connect(manager, &QNetworkAccessManager::finished,
+          this, &MainWindow::replyFinished);
+
+ /* QNetworkReply *reply =*/ manager->get(QNetworkRequest(QUrl("http://qt-project.org")));
+}
+
+void MainWindow::replyFinished(){
+
+}
+
+void MainWindow::newWindow(){
+  MainWindow *n = new MainWindow();
+  n->show();
+}
+
+void MainWindow::print(){
+  QPrintDialog pdialog(&printer, this);
+  if (pdialog.exec()) {
+      QPainter painter(&printer);
+      QPixmap pixmap = imgWin->pixmap(Qt::ReturnByValue);
+      QRect rect = painter.viewport();
+      QSize size = pixmap.size();
+      size.scale(rect.size(), Qt::KeepAspectRatio);
+      painter.setViewport(rect.x(), rect.y(), size.width(), size.height());
+      painter.setWindow(pixmap.rect());
+      painter.drawPixmap(0, 0, pixmap);
+  }
 }
