@@ -30,6 +30,7 @@ public:
     void aboutMenu();
     void fullscreen();
     void saveAs();
+    void save();
     void copytoclipboard();
  private:
     QClipboard *clipboard;

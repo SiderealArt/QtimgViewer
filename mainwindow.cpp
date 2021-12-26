@@ -11,12 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
     center = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     imgWin = new QLabel();
-    QPixmap *initPixmap = new QPixmap(300,200);
     aWin = new About();
-    initPixmap->fill(QColor(255,255,255));
-    imgWin->resize(300,200);
+    imgWin->resize(500,300);
     imgWin->setScaledContents(true);
-    imgWin->setPixmap(*initPixmap);
     QScrollArea *imageScrollArea = new QScrollArea();
        imageScrollArea->setAlignment(Qt::AlignCenter);
        imageScrollArea->setFrameShape(QFrame::NoFrame);
@@ -37,6 +34,7 @@ void MainWindow::createActions(){
   connect(clipboardAction,SIGNAL(triggered()),this,SLOT(copytoclipboard()));
   saveAction = new QAction("Save");
   saveAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/save.png")));
+   connect(saveAction,SIGNAL(triggered()),this,SLOT(save()));
   saveAsAction = new QAction("Save as...");
   saveAsAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/saveas.png")));
   connect(saveAsAction,SIGNAL(triggered()),this,SLOT(saveAs()));
@@ -138,9 +136,17 @@ void MainWindow::hflip(){
 void MainWindow::fullscreen(){
   isFullScreen() ? showNormal() : showFullScreen();
 }
-
+void MainWindow::save(){
+  imgWin->pixmap().save(filename);
+}
 void MainWindow::saveAs(){
-
+  filename = QFileDialog::getSaveFileName(this, tr("Save Image File"),
+                                          QString(),
+                                          tr("Images (*.png)"));
+  if (!filename.isEmpty())
+  {
+    imgWin->pixmap().save(filename);
+  }
 }
 
 void MainWindow::rotate(){
