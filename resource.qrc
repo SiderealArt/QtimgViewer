@@ -19,5 +19,7 @@
         <file>resources/icon/saveas.png</file>
         <file>resources/icon/settings.png</file>
         <file>resources/icon/share.png</file>
+        <file>resources/icon/redo.png</file>
+        <file>resources/icon/undo.png</file>
     </qresource>
 </RCC>

@@ -40,6 +40,7 @@ public:
     QMenu *helpMenu;
     QMenu *viewMenu;
     QMenu *editMenu;
+    QMenu *shareMenu;
     QMenu *toolsMenu;
     QScrollArea *imageScrollArea;
     QToolBar *fileTool;
@@ -49,6 +50,11 @@ public:
     QLabel *imgWin;
     QAction *openFileAction;
     QAction *saveAction;
+    QAction *imgurAction;
+    QAction *imgbbAction;
+    QAction *imageshackAction;
+    QAction *undoAction;
+    QAction *redoAction;
     QAction *saveAsAction;
     QAction *zoomInAction;
     QAction *zoomOutAction;

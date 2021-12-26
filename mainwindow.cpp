@@ -29,6 +29,13 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  redoAction = new QAction("Redo");
+  redoAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/redo.png")));
+  undoAction = new QAction("Undo");
+  undoAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/undo.png")));
+  imgurAction = new QAction("Upload to Imgur");
+  imgbbAction = new QAction("Upload to ImgBB");
+  imageshackAction = new QAction("Upload to ImageShack");
   clipboardAction = new QAction("Copy to Clipboard");
   clipboardAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/clipboard.png")));
   connect(clipboardAction,SIGNAL(triggered()),this,SLOT(copytoclipboard()));
@@ -83,6 +90,8 @@ void MainWindow::createActions(){
     fileMenu->addAction(saveAsAction);
     fileMenu->addAction(exitAction);
     editMenu = menuBar()->addMenu("&Edit");
+    editMenu->addAction(undoAction);
+    editMenu->addAction(redoAction);
     viewMenu = menuBar()->addMenu("&View");
     viewMenu->addAction(hFlipAction);
     viewMenu->addAction(vFlipAction);
@@ -90,6 +99,10 @@ void MainWindow::createActions(){
     viewMenu->addAction(zoomOutAction);
     viewMenu->addAction(fullscreenAction);
     toolsMenu =menuBar()->addMenu("&Tools");
+    shareMenu = toolsMenu->addMenu("Share");
+    shareMenu->addAction(imgurAction);
+    shareMenu->addAction(imgbbAction);
+    shareMenu->addAction(imageshackAction);
     helpMenu = menuBar()->addMenu("&Help");
     helpMenu->addAction(aboutAction);
     helpMenu->addAction(checkupdateAction);
