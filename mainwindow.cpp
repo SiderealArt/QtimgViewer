@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowIcon(QIcon(":/main/resources/icon/app.png"));
     center = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
-    imgWin = new QLabel();
+    imgWin = new Label();
     aWin = new About();
     imgWin->resize(500,300);
     imgWin->setScaledContents(true);
@@ -216,3 +216,5 @@ void MainWindow::print(){
       painter.drawPixmap(0, 0, pixmap);
   }
 }
+
+

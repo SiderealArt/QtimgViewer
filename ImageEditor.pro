@@ -16,6 +16,7 @@ SOURCES += \
 
 HEADERS += \
     about.h \
+    label.h \
     mainwindow.h \
     settings.h
 

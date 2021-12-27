@@ -1,6 +1,7 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "about.h"
+#include "label.h"
 #include <QMainWindow>
 #include <QAction>
 #include <QMenu>
@@ -25,6 +26,7 @@ public:
     void createMenus();
     void createToolbars();
     void loadFile(QString filename);
+
  private slots:
     void showOpenFile();
     void zoomIn();
@@ -61,7 +63,7 @@ public:
     QToolBar *ImageTool;
     QImage img;
     QString filename;
-    QLabel *imgWin;
+    Label *imgWin;
     QAction *openFileAction;
     QAction *printAction;
     QAction *saveAction;
