@@ -1,8 +1,10 @@
 ﻿#include "mainwindow.h"
 #include "about.h"
+#include "threshold.h"
 #include <QHBoxLayout>
 #include <QMenuBar>
 #include <QFileDialog>
+#include <QPainter>
 #include <QtNetwork>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     center = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     imgWin = new Label();
+    histogramWin = new QLabel();
     aWin = new About();
     imgWin->resize(500,300);
     imgWin->setScaledContents(true);
@@ -30,7 +33,12 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  histogramAction = new QAction("Show Histrogram");
+  connect(histogramAction,SIGNAL(triggered()),this,SLOT(histogram()));
+  thresholdAction = new QAction("Threshold...");
+  connect(thresholdAction,SIGNAL(triggered()),this,SLOT(threshold()));
   printAction = new QAction("Print");
+  printAction->setDisabled(true);
   connect(printAction,SIGNAL(triggered()),this,SLOT(print()));
   newWindowAction = new QAction("Open New Window");
   connect(newWindowAction,SIGNAL(triggered()),this,SLOT(newWindow()));
@@ -48,14 +56,17 @@ void MainWindow::createActions(){
   connect(clipboardAction,SIGNAL(triggered()),this,SLOT(copytoclipboard()));
   saveAction = new QAction("Save");
   saveAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/save.png")));
+  saveAction->setDisabled(true);
    connect(saveAction,SIGNAL(triggered()),this,SLOT(save()));
   saveAsAction = new QAction("Save as...");
   saveAsAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/saveas.png")));
+  saveAsAction->setDisabled(true);
   connect(saveAsAction,SIGNAL(triggered()),this,SLOT(saveAs()));
   settingAction = new QAction("Settings");
   settingAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/setting.png")));
   rotateAction = new QAction("Rotate");
   rotateAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/rotate.png")));
+  rotateAction->setDisabled(true);
   connect(rotateAction,SIGNAL(triggered()),this,SLOT(rotate()));
   fullscreenAction=new QAction("Fullscreen");
   connect(fullscreenAction,SIGNAL(triggered()),this,SLOT(fullscreen()));
@@ -66,9 +77,11 @@ void MainWindow::createActions(){
     penAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pen.png")));
     hFlipAction = new QAction("Horizontal Flip");
     hFlipAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/hflip.png")));
+    hFlipAction->setDisabled(true);
     connect(hFlipAction,SIGNAL(triggered()),this,SLOT(hflip()));
     vFlipAction = new QAction("Vertical Flip");
     vFlipAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/vflip.png")));
+    vFlipAction->setDisabled(true);
     connect(vFlipAction,SIGNAL(triggered()),this,SLOT(vflip()));
     openFileAction = new QAction("&Open File",this);
     openFileAction->setShortcut(tr("Ctrl+O"));
@@ -101,7 +114,9 @@ void MainWindow::createActions(){
     editMenu = menuBar()->addMenu("&Edit");
     editMenu->addAction(undoAction);
     editMenu->addAction(redoAction);
+    editMenu->addAction(thresholdAction);
     viewMenu = menuBar()->addMenu("&View");
+    viewMenu->addAction(histogramAction);
     viewMenu->addAction(hFlipAction);
     viewMenu->addAction(vFlipAction);
     viewMenu->addAction(zoomInAction);
@@ -136,6 +151,12 @@ void MainWindow::loadFile(QString filename){
     imgWin->resize(QPixmap::fromImage(img).size());
     undoAction->setEnabled(true);
     redoAction->setEnabled(true);
+    hFlipAction->setEnabled(true);
+    vFlipAction->setEnabled(true);
+    rotateAction->setEnabled(true);
+    printAction->setEnabled(true);
+    saveAction->setEnabled(true);
+    saveAsAction->setEnabled(true);
 }
 void MainWindow::showOpenFile(){
     filename = QFileDialog::getOpenFileName(this, "Open Image",".",tr("Images (*.jpg *.jpeg *.png *.bmp *.gif)"));
@@ -217,4 +238,35 @@ void MainWindow::print(){
   }
 }
 
+void MainWindow::threshold(){
 
+}
+void MainWindow::histogram(){
+  int top,i;
+  unsigned int m =0;
+  memset((void *) mtx,0,sizeof(int)*256);
+  for(int i=0;i<imgWin->pixmap().toImage().height();i++){
+      for(int j=0;j<imgWin->pixmap().toImage().width();j++){
+          mtx[qGray(imgWin->pixmap().toImage().pixel(j,i))]++;
+        }
+    }
+  histogramimg = QImage(QSize(256,256),QImage::Format_RGB32);
+  histogramimg.fill(Qt::white);
+  QPainter painter;
+  for(m=0, i=0;i<256;i++){
+    if(mtx[i]>m){
+      m = mtx[i];
+  }
+    }
+  painter.begin(&histogramimg);
+  painter.setPen(Qt::black);
+  for(int i=0;i<256;i++){
+      top = 256-(mtx[i]*256)/m;
+      painter.drawLine(i, top, i,256);
+    }
+  painter.end();
+  histogramWin->setFixedSize(256,256);
+  histogramWin->setPixmap(QPixmap::fromImage(histogramimg));
+  histogramWin->setWindowTitle("Histogram");
+  histogramWin->show();
+}

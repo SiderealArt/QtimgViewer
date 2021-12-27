@@ -17,21 +17,21 @@ public:
 if (e->button() == Qt::LeftButton) {
             QPoint pos = e->pos();
             // ^^^
-            qDebug()<<pos.x() << " " <<pos.y()<<"\n";
+            qDebug()<<pos.x() << " " <<pos.y();
   }
   }
   void mouseMoveEvent(QMouseEvent *e){
     if (e->button() == Qt::LeftButton) {
                 QPoint pos = e->pos();
                 // ^^^
-                qDebug()<<pos.x() << " " <<pos.y()<<"\n";
+                qDebug()<<pos.x() << " " <<pos.y();
       }
   }
   void mouseReleaseEvent(QMouseEvent *e){
     if (e->button() == Qt::LeftButton) {
                 QPoint pos = e->pos();
                 // ^^^
-                qDebug()<<pos.x() << " " <<pos.y()<<"\n";
+                qDebug()<<pos.x() << " " <<pos.y();
       }
   }
 };

@@ -12,13 +12,15 @@ SOURCES += \
     about.cpp \
     main.cpp \
     mainwindow.cpp \
-    settings.cpp
+    settings.cpp \
+    threshold.cpp
 
 HEADERS += \
     about.h \
     label.h \
     mainwindow.h \
-    settings.h
+    settings.h \
+    threshold.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

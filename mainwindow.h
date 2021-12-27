@@ -43,6 +43,8 @@ public:
     void imgur();
     void replyFinished();
     void print();
+    void threshold();
+    void histogram();
  private:
     QPainter *painter;
     QPrinter printer;
@@ -62,8 +64,12 @@ public:
     QToolBar *fileTool;
     QToolBar *ImageTool;
     QImage img;
+    QImage histogramimg;
     QString filename;
     Label *imgWin;
+    QLabel *histogramWin;
+    QAction *histogramAction;
+    QAction *thresholdAction;
     QAction *openFileAction;
     QAction *printAction;
     QAction *saveAction;
@@ -87,5 +93,6 @@ public:
     QAction *aboutAction;
     QAction *settingAction;
     QAction *checkupdateAction;
+    unsigned int mtx[256];
 };
 #endif // MAINWINDOW_H
