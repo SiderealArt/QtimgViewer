@@ -245,9 +245,9 @@ void MainWindow::print(){
 }
 
 void MainWindow::threshold(){
+  tempWin->setPixmap(imgWin->pixmap());
   Threshold *thresholdWin = new Threshold();
   connect(thresholdWin->slider,SIGNAL(valueChanged(int)), this, SLOT(updateimg(int)));
-  tempWin = imgWin;
   thresholdWin->show();
 }
 void MainWindow::histogram(){
@@ -280,9 +280,9 @@ void MainWindow::histogram(){
   histogramWin->show();
 }
 void MainWindow::updateimg(int a){
-  qDebug() << a;
+  qDebug() << tempWin->pixmap().toImage().width();
   int tmp;
-  clipboard->setPixmap(tempWin->pixmap());
+clipboard->setPixmap(tempWin->pixmap());
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_Mono);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
@@ -291,5 +291,4 @@ void MainWindow::updateimg(int a){
         }
     }
   imgWin->setPixmap(QPixmap::fromImage(result));
-  clipboard->setPixmap(imgWin->pixmap());
 }
