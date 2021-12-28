@@ -14,9 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
     center = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     imgWin = new Label();
+    tempWin = new Label();
     histogramWin = new QLabel();
     aWin = new About();
-    thresholdWin = new Threshold(imgWin);
+    thresholdWin = new Threshold();
     imgWin->resize(500,300);
     imgWin->setScaledContents(true);
     QScrollArea *imageScrollArea = new QScrollArea();
@@ -244,8 +245,9 @@ void MainWindow::print(){
 }
 
 void MainWindow::threshold(){
-  Threshold *thresholdWin = new Threshold(imgWin);
-  connect(thresholdWin->slider,SIGNAL(valueChanged(int)), thresholdWin, SLOT(updateimg(int)));
+  Threshold *thresholdWin = new Threshold();
+  connect(thresholdWin->slider,SIGNAL(valueChanged(int)), this, SLOT(updateimg(int)));
+  tempWin = imgWin;
   thresholdWin->show();
 }
 void MainWindow::histogram(){
@@ -276,4 +278,18 @@ void MainWindow::histogram(){
   histogramWin->setPixmap(QPixmap::fromImage(histogramimg));
   histogramWin->setWindowTitle("Histogram");
   histogramWin->show();
+}
+void MainWindow::updateimg(int a){
+  qDebug() << a;
+  int tmp;
+  clipboard->setPixmap(tempWin->pixmap());
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_Mono);
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          tmp = (qGray(tempWin->pixmap().toImage().pixel(i,j))>a)?1:0;
+          result.setPixel(i,j,tmp);
+        }
+    }
+  imgWin->setPixmap(QPixmap::fromImage(result));
+  clipboard->setPixmap(imgWin->pixmap());
 }

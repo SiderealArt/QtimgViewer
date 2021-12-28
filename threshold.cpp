@@ -1,8 +1,6 @@
 ﻿#include "threshold.h"
-Threshold::Threshold(Label *mainWindowImage)
+Threshold::Threshold()
 {
-  img = new QImage(mainWindowImage->pixmap().toImage());
-  result = new QImage();
   okButton = new QPushButton("Ok");
   cancelButton = new QPushButton("Cancel");
   slider = new QSlider(Qt::Horizontal);
@@ -24,16 +22,4 @@ void Threshold::ok(){
 }
 void Threshold::cancel(){
 
-}
-
-void Threshold::updateimg(int a){
-  int tmp;
-  *result = QImage(QSize(img->width(),img->height()),QImage::Format_Mono);
-  for(int j=0;j<img->height();j++){
-      for(int i=0;i<img->width();i++){
-          tmp = (qGray(img->pixel(i,j))>a)?1:0;
-          result->setPixel(i,j,tmp);
-        }
-    }
-  clipboard->setImage(*result);
 }

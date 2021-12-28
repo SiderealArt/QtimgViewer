@@ -47,6 +47,7 @@ public:
     void print();
     void threshold();
     void histogram();
+    void updateimg(int);
  private:
     Threshold *thresholdWin;
     QPainter *painter;
@@ -68,8 +69,10 @@ public:
     QToolBar *ImageTool;
     QImage img;
     QImage histogramimg;
+    QImage result;
     QString filename;
     Label *imgWin;
+    Label *tempWin;
     QLabel *histogramWin;
     QAction *histogramAction;
     QAction *thresholdAction;
