@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     imgWin = new Label();
     histogramWin = new QLabel();
     aWin = new About();
-    thresholdWin = new Threshold(img);
+    thresholdWin = new Threshold(imgWin);
     imgWin->resize(500,300);
     imgWin->setScaledContents(true);
     QScrollArea *imageScrollArea = new QScrollArea();
@@ -244,7 +244,7 @@ void MainWindow::print(){
 }
 
 void MainWindow::threshold(){
-  Threshold *thresholdWin = new Threshold(imgWin->pixmap().toImage());
+  Threshold *thresholdWin = new Threshold(imgWin);
   connect(thresholdWin->slider,SIGNAL(valueChanged(int)), thresholdWin, SLOT(updateimg(int)));
   thresholdWin->show();
 }

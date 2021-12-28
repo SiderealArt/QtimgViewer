@@ -1,7 +1,7 @@
 ﻿#include "threshold.h"
-Threshold::Threshold(QImage mainWindowImage)
+Threshold::Threshold(Label *mainWindowImage)
 {
-  img = new QImage(mainWindowImage);
+  img = new QImage(mainWindowImage->pixmap().toImage());
   result = new QImage();
   okButton = new QPushButton("Ok");
   cancelButton = new QPushButton("Cancel");

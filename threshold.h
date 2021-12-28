@@ -7,12 +7,13 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QClipboard>
+
 class Threshold:public QWidget{
   Q_OBJECT
 public:
   void getthreshold();
   int avg;
-  Threshold(QImage mainWindowImage);
+  Threshold(Label *mainWindowImage);
   ~Threshold();
   QImage *img;
   QImage *result;
