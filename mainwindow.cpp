@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     imgWin = new Label();
     histogramWin = new QLabel();
     aWin = new About();
+    thresholdWin = new Threshold(img);
     imgWin->resize(500,300);
     imgWin->setScaledContents(true);
     QScrollArea *imageScrollArea = new QScrollArea();
@@ -95,10 +96,12 @@ void MainWindow::createActions(){
     zoomInAction = new QAction("Zoom &In",this);
     zoomInAction->setShortcut(tr("Ctrl++"));
     zoomInAction->setIcon(QIcon(":/main/resources/icon/zoomin.png"));
+    zoomInAction->setDisabled(true);
      connect(zoomInAction,SIGNAL(triggered()),this,SLOT(zoomIn()));
     zoomOutAction = new QAction("Zoom O&ut",this);
     zoomOutAction->setShortcut(tr("Ctrl+-"));
     zoomOutAction->setIcon(QIcon(":/main/resources/icon/zoomout.png"));
+    zoomOutAction->setDisabled(true);
      connect(zoomOutAction,SIGNAL(triggered()),this,SLOT(zoomOut()));
      connect(exitAction,SIGNAL(triggered()),imgWin,SLOT(close()));
 }
@@ -157,6 +160,8 @@ void MainWindow::loadFile(QString filename){
     printAction->setEnabled(true);
     saveAction->setEnabled(true);
     saveAsAction->setEnabled(true);
+    zoomInAction->setEnabled(true);
+    zoomOutAction->setEnabled(true);
 }
 void MainWindow::showOpenFile(){
     filename = QFileDialog::getOpenFileName(this, "Open Image",".",tr("Images (*.jpg *.jpeg *.png *.bmp *.gif)"));
@@ -239,7 +244,9 @@ void MainWindow::print(){
 }
 
 void MainWindow::threshold(){
-
+  Threshold *thresholdWin = new Threshold(imgWin->pixmap().toImage());
+  connect(thresholdWin->slider,SIGNAL(valueChanged(int)), thresholdWin, SLOT(updateimg(int)));
+  thresholdWin->show();
 }
 void MainWindow::histogram(){
   int top,i;

@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 #include "about.h"
 #include "label.h"
+#include "settings.h"
+#include "threshold.h"
 #include <QMainWindow>
 #include <QAction>
 #include <QMenu>
@@ -46,6 +48,7 @@ public:
     void threshold();
     void histogram();
  private:
+    Threshold *thresholdWin;
     QPainter *painter;
     QPrinter printer;
     QPrintDialog pdialog;
