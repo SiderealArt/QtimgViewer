@@ -48,6 +48,8 @@ public:
     void threshold();
     void histogram();
     void updateimg(int);
+    void ok();
+    void cancel();
  private:
     Threshold *thresholdWin;
     QPainter *painter;

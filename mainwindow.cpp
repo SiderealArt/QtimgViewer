@@ -248,6 +248,10 @@ void MainWindow::threshold(){
   tempWin->setPixmap(imgWin->pixmap());
   Threshold *thresholdWin = new Threshold();
   connect(thresholdWin->slider,SIGNAL(valueChanged(int)), this, SLOT(updateimg(int)));
+  connect(thresholdWin->okButton,SIGNAL(clicked()),this,SLOT(ok()));
+  connect(thresholdWin->cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
+  thresholdWin->setFixedSize(250,100);
+  thresholdWin->setWindowTitle("Adjust Threshold");
   thresholdWin->show();
 }
 void MainWindow::histogram(){
@@ -280,7 +284,7 @@ void MainWindow::histogram(){
   histogramWin->show();
 }
 void MainWindow::updateimg(int a){
-  qDebug() << tempWin->pixmap().toImage().width();
+  qDebug() << a;
   int tmp;
 clipboard->setPixmap(tempWin->pixmap());
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_Mono);
@@ -291,4 +295,13 @@ clipboard->setPixmap(tempWin->pixmap());
         }
     }
   imgWin->setPixmap(QPixmap::fromImage(result));
+}
+
+void MainWindow::ok(){
+  thresholdWin->close();
+}
+
+void MainWindow::cancel(){
+  imgWin->setPixmap(tempWin->pixmap());
+   thresholdWin->close();
 }

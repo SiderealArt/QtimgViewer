@@ -8,8 +8,6 @@ class Label: public QLabel{
 public:
   Label(){
     setMouseTracking(true);
-
-      qDebug() << "Label init";
     }
 
   void mousePressEvent(QMouseEvent *e) {
