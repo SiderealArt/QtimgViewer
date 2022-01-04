@@ -8,12 +8,15 @@
 #include <QAction>
 #include <QMenu>
 #include <QToolBar>
+#include <QSplitter>
 #include <QImage>
 #include <QLabel>
 #include <QScrollArea>
 #include <QClipboard>
 #include <QPainter>
 #include <QUndoStack>
+#include <QTreeView>
+#include <QFileSystemModel>
 #include <QNetworkAccessManager>
 #include <QPrinter>
 #include <QPrintDialog>
@@ -51,6 +54,9 @@ public:
     void ok();
     void cancel();
  private:
+    QSplitter *spliter;
+    QFileSystemModel *model;
+    QTreeView *tree;
     Threshold *thresholdWin;
     QPainter *painter;
     QPrinter printer;

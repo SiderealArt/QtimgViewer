@@ -12,7 +12,16 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Image Editor");
     setWindowIcon(QIcon(":/main/resources/icon/app.png"));
     center = new QWidget();
+    QWidget *imageside = new QWidget;
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
+    QSplitter *splitter = new QSplitter();
+    QFileSystemModel *model = new QFileSystemModel;
+    model->setRootPath("");
+    QTreeView *tree = new QTreeView();
+    tree->setModel(model);
+    tree->setHeaderHidden(true);
+    for (int i = 1; i < model->columnCount(); ++i)
+        tree->hideColumn(i);
     imgWin = new Label();
     tempWin = new Label();
     histogramWin = new QLabel();
@@ -24,7 +33,11 @@ MainWindow::MainWindow(QWidget *parent)
        imageScrollArea->setAlignment(Qt::AlignCenter);
        imageScrollArea->setFrameShape(QFrame::NoFrame);
        imageScrollArea->setWidget(imgWin);
+
     mainLayout->addWidget(imageScrollArea);
+    imageside->setLayout(mainLayout);
+    splitter->addWidget(tree);
+    splitter->addWidget(imageside);
     setCentralWidget(center);
     createActions();
     createMenus();
