@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Image Editor");
     setWindowIcon(QIcon(":/main/resources/icon/app.png"));
     center = new QWidget();
-    QWidget *imageside = new QWidget;
+    QWidget *imageside = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     QSplitter *splitter = new QSplitter();
     QFileSystemModel *model = new QFileSystemModel;
@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     imageside->setLayout(mainLayout);
     splitter->addWidget(tree);
     splitter->addWidget(imageside);
-    setCentralWidget(center);
+    setCentralWidget(splitter);
     createActions();
     createMenus();
     createToolbars();
