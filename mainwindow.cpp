@@ -1,9 +1,14 @@
 ﻿/*TODO: update all the Signal Slot syntax to new ones
 https://wiki.qt.io/New_Signal_Slot_Syntax
+
+Next Previous Image
+
+Hide treeview
 */
 
 #include "mainwindow.h"
 #include "about.h"
+#include "settings.h"
 #include "threshold.h"
 #include <QHBoxLayout>
 #include <QMenuBar>
@@ -25,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     model->setNameFilterDisables(false);
     tree = new QTreeView();
     tree->setModel(model);
+    tree->setUniformRowHeights(true);
     tree->setHeaderHidden(true);
     connect(tree, SIGNAL(clicked(QModelIndex)),
                      this, SLOT(loadfileviatree(QModelIndex)));
@@ -177,7 +183,6 @@ void MainWindow::loadFile(QString filename){
     img.load(filename);
     imgWin->setPixmap(QPixmap::fromImage(img));
     imgWin->resize(QPixmap::fromImage(img).size());
-    qDebug()<<filename;
     tree->setRootIndex(model->index(filename+"/.."));
     undoAction->setEnabled(true);
     redoAction->setEnabled(true);
@@ -310,7 +315,6 @@ void MainWindow::histogram(){
   histogramWin->show();
 }
 void MainWindow::updateimg(int a){
-  qDebug() << a;
   int tmp;
 clipboard->setPixmap(tempWin->pixmap());
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_Mono);

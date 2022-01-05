@@ -1,14 +1,16 @@
-﻿/*#ifndef SETTINGS_H
+﻿#ifndef SETTINGS_H
 #define SETTINGS_H
 #include <QWidget>
-#include <QHBoxLayout>
+#include <QTabWidget>
+#include <QVBoxLayout>
 class Settings:public QWidget{
   Q_OBJECT
 public:
   Settings(QWidget *parent = nullptr);
   ~Settings();
-  QHBoxLayout *mainLayout;
+  QVBoxLayout *mainLayout;
+  QTabWidget *tabWidget;
 private slots:
 
 };
-#endif // SETTINGS_H*/
+#endif
