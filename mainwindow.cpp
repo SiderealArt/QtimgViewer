@@ -1,4 +1,8 @@
-﻿#include "mainwindow.h"
+﻿/*TODO: update all the Signal Slot syntax to new ones
+https://wiki.qt.io/New_Signal_Slot_Syntax
+*/
+
+#include "mainwindow.h"
 #include "about.h"
 #include "threshold.h"
 #include <QHBoxLayout>
@@ -15,11 +19,15 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *imageside = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout(center);
     QSplitter *splitter = new QSplitter();
-    QFileSystemModel *model = new QFileSystemModel;
+    model = new QFileSystemModel();
     model->setRootPath("");
-    QTreeView *tree = new QTreeView();
+    model->setNameFilters(QStringList() << "*.png");
+    model->setNameFilterDisables(false);
+    tree = new QTreeView();
     tree->setModel(model);
     tree->setHeaderHidden(true);
+    connect(tree, SIGNAL(clicked(QModelIndex)),
+                     this, SLOT(loadfileviatree(QModelIndex)));
     for (int i = 1; i < model->columnCount(); ++i)
         tree->hideColumn(i);
     imgWin = new Label();
@@ -33,7 +41,6 @@ MainWindow::MainWindow(QWidget *parent)
        imageScrollArea->setAlignment(Qt::AlignCenter);
        imageScrollArea->setFrameShape(QFrame::NoFrame);
        imageScrollArea->setWidget(imgWin);
-
     mainLayout->addWidget(imageScrollArea);
     imageside->setLayout(mainLayout);
     splitter->addWidget(tree);
@@ -48,6 +55,9 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  alwaysontopAction = new QAction("Always on top");
+  alwaysontopAction->setCheckable(true);
+  connect(alwaysontopAction,SIGNAL(triggered()),this,SLOT(alwaysontop()));
   histogramAction = new QAction("Show Histrogram");
   connect(histogramAction,SIGNAL(triggered()),this,SLOT(histogram()));
   thresholdAction = new QAction("Threshold...");
@@ -139,6 +149,7 @@ void MainWindow::createActions(){
     viewMenu->addAction(zoomInAction);
     viewMenu->addAction(zoomOutAction);
     viewMenu->addAction(fullscreenAction);
+    viewMenu->addAction(alwaysontopAction);
     toolsMenu =menuBar()->addMenu("&Tools");
     shareMenu = toolsMenu->addMenu("Share");
     shareMenu->addAction(imgurAction);
@@ -166,6 +177,8 @@ void MainWindow::loadFile(QString filename){
     img.load(filename);
     imgWin->setPixmap(QPixmap::fromImage(img));
     imgWin->resize(QPixmap::fromImage(img).size());
+    qDebug()<<filename;
+    tree->setRootIndex(model->index(filename+"/.."));
     undoAction->setEnabled(true);
     redoAction->setEnabled(true);
     hFlipAction->setEnabled(true);
@@ -317,4 +330,19 @@ void MainWindow::ok(){
 void MainWindow::cancel(){
   imgWin->setPixmap(tempWin->pixmap());
    thresholdWin->close();
+}
+
+void MainWindow::loadfileviatree(QModelIndex index){
+  loadFile(model->filePath(index));
+}
+
+void MainWindow::alwaysontop(){
+  if(alwaysontopAction->isChecked()){
+              this->setWindowFlags(this->windowFlags() | Qt::WindowStaysOnTopHint);
+      this->show();
+  }
+          else{
+              this->setWindowFlags(this->windowFlags() & ~Qt::WindowStaysOnTopHint);
+      this->show();
+    }
 }

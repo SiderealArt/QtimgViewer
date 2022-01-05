@@ -53,6 +53,8 @@ public:
     void updateimg(int);
     void ok();
     void cancel();
+    void loadfileviatree(QModelIndex);
+    void alwaysontop();
  private:
     QSplitter *spliter;
     QFileSystemModel *model;
@@ -82,6 +84,7 @@ public:
     Label *imgWin;
     Label *tempWin;
     QLabel *histogramWin;
+    QAction *alwaysontopAction;
     QAction *histogramAction;
     QAction *thresholdAction;
     QAction *openFileAction;
