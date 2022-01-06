@@ -2,10 +2,15 @@
 Settings::Settings(QWidget *parent)
 : QWidget(parent)
 {
+  this->setWindowTitle("Settings");
+  this->setFixedSize(QSize(750, 400));
   QTabWidget *tabWidget = new QTabWidget();
   QVBoxLayout *mainLayout = new QVBoxLayout();
-      mainLayout->addWidget(tabWidget);
-      this->show();
+  tabWidget->addTab(new GeneralTab(), tr("General"));
+  tabWidget->addTab(new AppearenceTab(), tr("Appearence"));
+  tabWidget->addTab(new WindowTab(), tr("Window"));
+  mainLayout->addWidget(tabWidget);
+  setLayout(mainLayout);
 //should have language, api keys, theme
 }
 
@@ -13,3 +18,20 @@ Settings::~Settings()
 {
 }
 
+GeneralTab::GeneralTab(QWidget *parent)
+    : QWidget(parent)
+{
+
+}
+
+AppearenceTab::AppearenceTab(QWidget *parent)
+  : QWidget(parent)
+{
+
+}
+
+WindowTab::WindowTab(QWidget *parent)
+  : QWidget(parent)
+{
+
+}

@@ -2,6 +2,7 @@
 #define SETTINGS_H
 #include <QWidget>
 #include <QTabWidget>
+#include <QFileInfo>
 #include <QVBoxLayout>
 class Settings:public QWidget{
   Q_OBJECT
@@ -12,5 +13,34 @@ public:
   QTabWidget *tabWidget;
 private slots:
 
+};
+class GeneralTab : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit GeneralTab(QWidget *parent = nullptr);
+};
+//! [0]
+
+
+//! [1]
+class WindowTab : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit WindowTab(QWidget *parent = nullptr);
+};
+//! [1]
+
+
+//! [2]
+class AppearenceTab : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit AppearenceTab(QWidget *parent = nullptr);
 };
 #endif

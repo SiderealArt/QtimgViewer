@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QFile stylesheet(":/main/resources/theme/style.qss");
     stylesheet.open(QFile::ReadOnly);
     QString style(stylesheet.readAll());
-    a.setStyleSheet(style);
+   /* a.setStyleSheet(style);*/
     MainWindow w;
     w.show();
     return a.exec();

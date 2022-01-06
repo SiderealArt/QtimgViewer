@@ -1,23 +1,27 @@
 ﻿QWidget {
-  background-color: #19232D;
+  background-color: #283542;
   border: 0px solid #455364;
   padding: 0px;
   color: #E0E1E3;
-  selection-background-color: #346792;
-  selection-color: #E0E1E3;
 }
 
-QWidget:disabled {
-  background-color: #19232D;
-  color: #9DA9B5;
-  selection-background-color: #26486B;
-  selection-color: #9DA9B5;
+QTreeView {
+  background-color: #183a5c;
+  border: 0px solid #455364;
+  padding: 0px;
+  color: #E0E1E3;
 }
 
-QWidget::item:selected {
-  background-color: #346792;
+QScrollBar:horizontal {
+  border: 2px solid #455364;
+  background: #283542;
+  height: 10px;
+  margin: 0px 10px 0px 10px;
 }
 
-QWidget::item:hover: !selected {
-  background-color: #1A72BB;
+QScrollBar:vertical {
+  border: 2px solid #455364;
+  background: #283542;
+  width: 10px;
+  margin: 10px 0px 10px 0px;
 }

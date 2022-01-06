@@ -10,6 +10,7 @@
 #include <QToolBar>
 #include <QSplitter>
 #include <QImage>
+#include <QMovie>
 #include <QLabel>
 #include <QScrollArea>
 #include <QClipboard>
@@ -40,6 +41,7 @@ public:
     void vflip();
     void rotate();
     void aboutMenu();
+    void settingsMenu();
     void fullscreen();
     void saveAs();
     void save();
@@ -55,6 +57,8 @@ public:
     void cancel();
     void loadfileviatree(QModelIndex);
     void alwaysontop();
+    void dirup();
+    void dirhome();
  private:
     QSplitter *spliter;
     QFileSystemModel *model;
@@ -67,6 +71,7 @@ public:
     QUndoStack *undoStack = nullptr;
     QClipboard *clipboard;
     About *aWin;
+    Settings *sWin;
     QWidget *center;
     QMenu *fileMenu;
     QMenu *helpMenu;
@@ -77,13 +82,17 @@ public:
     QScrollArea *imageScrollArea;
     QToolBar *fileTool;
     QToolBar *ImageTool;
+    QToolBar *treeviewTool;
     QImage img;
+    QMovie gif;
     QImage histogramimg;
     QImage result;
     QString filename;
     Label *imgWin;
     Label *tempWin;
     QLabel *histogramWin;
+    QAction *dirupAction;
+    QAction *dirhomeAction;
     QAction *alwaysontopAction;
     QAction *histogramAction;
     QAction *thresholdAction;

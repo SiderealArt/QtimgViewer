@@ -21,5 +21,9 @@
         <file>resources/icon/share.png</file>
         <file>resources/icon/redo.png</file>
         <file>resources/icon/undo.png</file>
+        <file>resources/icon/home.png</file>
+        <file>resources/icon/next.png</file>
+        <file>resources/icon/previous.png</file>
+        <file>resources/icon/up.png</file>
     </qresource>
 </RCC>

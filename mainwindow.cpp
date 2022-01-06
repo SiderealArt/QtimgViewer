@@ -11,6 +11,7 @@ Hide treeview
 #include "settings.h"
 #include "threshold.h"
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QMenuBar>
 #include <QFileDialog>
 #include <QPainter>
@@ -18,19 +19,23 @@ Hide treeview
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle("Image Editor");
+    setWindowTitle("Daruma");
     setWindowIcon(QIcon(":/main/resources/icon/app.png"));
-    center = new QWidget();
+    //center = new QWidget();
     QWidget *imageside = new QWidget();
-    QHBoxLayout *mainLayout = new QHBoxLayout(center);
+    QHBoxLayout *mainLayout = new QHBoxLayout();
+    mainLayout->setContentsMargins(0,0,0,0);
+    QWidget *treeside = new QWidget();
+    QVBoxLayout *treeLayout = new QVBoxLayout();
+    treeLayout->setContentsMargins(0,0,0,0);
     QSplitter *splitter = new QSplitter();
     model = new QFileSystemModel();
     model->setRootPath("");
-    model->setNameFilters(QStringList() << "*.png");
+    model->setNameFilters(QStringList() << "*.png" << "*.jpg" << "*.gif" << "*.webp" << "*.jpeg");
     model->setNameFilterDisables(false);
     tree = new QTreeView();
     tree->setModel(model);
-    tree->setUniformRowHeights(true);
+    tree->setUniformRowHeights(true); /*https://stackoverflow.com/questions/29798646/qt5-qtreeview-with-custom-model-and-large-data-very-slow-scrolling*/
     tree->setHeaderHidden(true);
     connect(tree, SIGNAL(clicked(QModelIndex)),
                      this, SLOT(loadfileviatree(QModelIndex)));
@@ -40,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     tempWin = new Label();
     histogramWin = new QLabel();
     aWin = new About();
+    sWin = new Settings();
     thresholdWin = new Threshold();
     imgWin->resize(500,300);
     imgWin->setScaledContents(true);
@@ -49,7 +55,11 @@ MainWindow::MainWindow(QWidget *parent)
        imageScrollArea->setWidget(imgWin);
     mainLayout->addWidget(imageScrollArea);
     imageside->setLayout(mainLayout);
-    splitter->addWidget(tree);
+    treeviewTool = addToolBar("Tree View");
+    treeLayout->addWidget(treeviewTool);
+    treeLayout->addWidget(tree);
+    treeside->setLayout(treeLayout);
+    splitter->addWidget(treeside);
     splitter->addWidget(imageside);
     setCentralWidget(splitter);
     createActions();
@@ -61,6 +71,12 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  dirupAction = new QAction("Up to parent directory");
+  dirupAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/up.png")));
+  connect(dirupAction,SIGNAL(triggered()),this,SLOT(dirup()));
+  dirhomeAction = new QAction("Back to home directory");
+  dirhomeAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/home.png")));
+  connect(dirhomeAction,SIGNAL(triggered()),this,SLOT(dirhome()));
   alwaysontopAction = new QAction("Always on top");
   alwaysontopAction->setCheckable(true);
   connect(alwaysontopAction,SIGNAL(triggered()),this,SLOT(alwaysontop()));
@@ -95,6 +111,7 @@ void MainWindow::createActions(){
   connect(saveAsAction,SIGNAL(triggered()),this,SLOT(saveAs()));
   settingAction = new QAction("Settings");
   settingAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/setting.png")));
+  connect(settingAction,SIGNAL(triggered()),this,SLOT(settingsMenu()));
   rotateAction = new QAction("Rotate");
   rotateAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/rotate.png")));
   rotateAction->setDisabled(true);
@@ -158,6 +175,7 @@ void MainWindow::createActions(){
     viewMenu->addAction(alwaysontopAction);
     toolsMenu =menuBar()->addMenu("&Tools");
     shareMenu = toolsMenu->addMenu("Share");
+    toolsMenu->addAction(settingAction);
     shareMenu->addAction(imgurAction);
     shareMenu->addAction(imgbbAction);
     shareMenu->addAction(imageshackAction);
@@ -167,7 +185,6 @@ void MainWindow::createActions(){
 }
 void MainWindow::createToolbars(){
     fileTool = addToolBar("File");
-    fileTool->addAction(openFileAction);
     fileTool->addAction(zoomInAction);
     fileTool->addAction(zoomOutAction);
     fileTool->addAction(clipboardAction);
@@ -178,10 +195,21 @@ void MainWindow::createToolbars(){
     ImageTool->addAction(vFlipAction);
     ImageTool->addAction(hFlipAction);
     ImageTool->addAction(rotateAction);
+    treeviewTool->addAction(openFileAction);
+    treeviewTool->addAction(dirupAction);
+    treeviewTool->addAction(dirhomeAction);
 }
 void MainWindow::loadFile(QString filename){
-    img.load(filename);
+
+    if(filename.contains(".gif",Qt::CaseInsensitive)){
+       qDebug()<< "gif";
+       QMovie *gif = new QMovie(filename);
+       imgWin->setMovie(gif);
+       gif->start();
+}else{
+       img.load(filename);
     imgWin->setPixmap(QPixmap::fromImage(img));
+};
     imgWin->resize(QPixmap::fromImage(img).size());
     tree->setRootIndex(model->index(filename+"/.."));
     undoAction->setEnabled(true);
@@ -349,4 +377,16 @@ void MainWindow::alwaysontop(){
               this->setWindowFlags(this->windowFlags() & ~Qt::WindowStaysOnTopHint);
       this->show();
     }
+}
+
+void MainWindow::settingsMenu(){
+  sWin->show();
+}
+
+void MainWindow::dirup(){
+  tree->setRootIndex(tree->rootIndex().parent());
+}
+
+void MainWindow::dirhome(){
+  tree->setRootIndex(model->index("/"));
 }
