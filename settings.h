@@ -3,12 +3,14 @@
 #include <QWidget>
 #include <QTabWidget>
 #include <QFileInfo>
+#include <QSettings>
 #include <QVBoxLayout>
 class Settings:public QWidget{
   Q_OBJECT
 public:
   Settings(QWidget *parent = nullptr);
   ~Settings();
+  QSettings *settings;
   QVBoxLayout *mainLayout;
   QTabWidget *tabWidget;
 private slots:

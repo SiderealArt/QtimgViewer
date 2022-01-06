@@ -5,6 +5,8 @@ Settings::Settings(QWidget *parent)
   this->setWindowTitle("Settings");
   this->setFixedSize(QSize(750, 400));
   QTabWidget *tabWidget = new QTabWidget();
+  QSettings settings(QString("config.ini"), QSettings::IniFormat);
+  QString someValue = settings.value("some/config/key", "default value if unset").toString();
   QVBoxLayout *mainLayout = new QVBoxLayout();
   tabWidget->addTab(new GeneralTab(), tr("General"));
   tabWidget->addTab(new AppearenceTab(), tr("Appearence"));

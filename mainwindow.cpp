@@ -207,7 +207,7 @@ void MainWindow::loadFile(QString filename){
        imgWin->setMovie(gif);
        gif->start();
 }else{
-       img.load(filename);
+    qDebug()<< img.load(filename);
     imgWin->setPixmap(QPixmap::fromImage(img));
 };
     imgWin->resize(QPixmap::fromImage(img).size());
