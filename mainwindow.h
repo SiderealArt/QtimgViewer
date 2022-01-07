@@ -35,6 +35,7 @@ public:
 
  private slots:
     void showOpenFile();
+    void colorpicker();
     void zoomIn();
     void zoomOut();
     void hflip();
@@ -115,6 +116,7 @@ public:
     QAction *vFlipAction;
     QAction *rotateAction;
     QAction *penAction;
+    QAction *colorpickerAction;
     QAction *cursorAction;
     QAction *aboutAction;
     QAction *settingAction;

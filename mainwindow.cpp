@@ -5,7 +5,6 @@ Next Previous Image
 
 Hide treeview
 */
-
 #include "mainwindow.h"
 #include "about.h"
 #include "settings.h"
@@ -71,6 +70,9 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+    colorpickerAction = new QAction("Color picker");
+    colorpickerAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/up.png")));
+    connect(colorpickerAction,SIGNAL(triggered()),this,SLOT(colorpicker()));
   dirupAction = new QAction("Up to parent directory");
   dirupAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/up.png")));
   connect(dirupAction,SIGNAL(triggered()),this,SLOT(dirup()));
@@ -192,12 +194,15 @@ void MainWindow::createToolbars(){
     ImageTool->addAction(undoAction);
     ImageTool->addAction(redoAction);
     ImageTool->addAction(penAction);
+    ImageTool->addAction(colorpickerAction);
     ImageTool->addAction(vFlipAction);
     ImageTool->addAction(hFlipAction);
     ImageTool->addAction(rotateAction);
+
     treeviewTool->addAction(openFileAction);
     treeviewTool->addAction(dirupAction);
     treeviewTool->addAction(dirhomeAction);
+
 }
 void MainWindow::loadFile(QString filename){
 
@@ -311,6 +316,7 @@ void MainWindow::threshold(){
   connect(thresholdWin->cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
   thresholdWin->setFixedSize(250,100);
   thresholdWin->setWindowTitle("Adjust Threshold");
+  thresholdWin->setAttribute(Qt::WA_DeleteOnClose);
   thresholdWin->show();
 }
 void MainWindow::histogram(){
@@ -389,4 +395,9 @@ void MainWindow::dirup(){
 
 void MainWindow::dirhome(){
   tree->setRootIndex(model->index("/"));
+}
+
+
+void MainWindow::colorpicker(){
+    clipboard->setText("#-0000");
 }
