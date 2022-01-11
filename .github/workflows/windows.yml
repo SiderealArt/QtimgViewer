@@ -14,11 +14,10 @@ jobs:
       - name: Install Qt
         shell: cmd
         run: |
-          SET var=%cd%
-          ECHO %var%
           pip install aqtinstall
           python -m aqt install-qt windows desktop 6.2.2 win64_msvc2019_64
-          echo "Qt6_DIR=" >> $GITHUB_ENV
+          echo "Qt6_DIR=D:\a\Daruma\Daruma\6.2.2\" >> $GITHUB_ENV
+          echo "D:\a\Daruma\Daruma\6.2.2\bin" >> $GITHUB_PATH
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
@@ -34,3 +33,15 @@ jobs:
           echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
+          mkdir build
+          mv ./release/ImageEditor.exe ./build
+          cd build
+          windeployqt ImageEditor.exe
+          cd ..
+          zip portable.zip ./build/*
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            portable.zip
+            
