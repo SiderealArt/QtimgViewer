@@ -24,6 +24,5 @@ jobs:
         shell: cmd
         env:
           vc_arch: ${{ matrix.msvc_arch }}
-        run: |
+        run:
           nmake
-          make
