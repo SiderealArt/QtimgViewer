@@ -5,6 +5,7 @@
 #include <QFileInfo>
 #include <QSettings>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
 class Settings:public QWidget{
   Q_OBJECT
 public:
@@ -13,6 +14,7 @@ public:
   QSettings *settings;
   QVBoxLayout *mainLayout;
   QTabWidget *tabWidget;
+  QDialogButtonBox *buttonbox;
 private slots:
 
 };

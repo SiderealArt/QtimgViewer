@@ -10,7 +10,10 @@ public:
   About(QWidget *parent = nullptr);
   ~About();
   QLabel *appIcon;
-  QHBoxLayout *mainLayout;
+  QLabel *about;
+  QLabel *website;
+  QLabel *version;
+  QVBoxLayout *mainLayout;
 private slots:
 
 };

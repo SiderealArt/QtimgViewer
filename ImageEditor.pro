@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     about.cpp \
+    fileinfo.cpp \
     main.cpp \
     mainwindow.cpp \
     settings.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     about.h \
+    fileinfo.h \
     label.h \
     mainwindow.h \
     settings.h \

@@ -5,6 +5,7 @@ Settings::Settings(QWidget *parent)
 {
   this->setWindowTitle("Settings");
   this->setFixedSize(QSize(750, 400));
+  QDialogButtonBox *buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Apply);
   QTabWidget *tabWidget = new QTabWidget();
   QSettings settings(QString("config.ini"), QSettings::IniFormat);
   QString someValue = settings.value("some/config/key", "default value if unset").toString();
@@ -13,6 +14,7 @@ Settings::Settings(QWidget *parent)
   tabWidget->addTab(new AppearenceTab(), tr("Appearence"));
   tabWidget->addTab(new WindowTab(), tr("Window"));
   mainLayout->addWidget(tabWidget);
+  mainLayout->addWidget(buttonbox);
   setLayout(mainLayout);
 //should have language, api keys, theme
 }

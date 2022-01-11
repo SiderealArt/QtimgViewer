@@ -1,25 +1,15 @@
 ﻿#include "threshold.h"
 Threshold::Threshold()
 {
-  okButton = new QPushButton("Ok");
-  cancelButton = new QPushButton("Cancel");
   slider = new QSlider(Qt::Horizontal);
   slider->setRange(0, 255);
+  QDialogButtonBox *buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
   mainLayout = new QVBoxLayout(this);
-  buttonGroup = new QHBoxLayout(this);
   mainLayout->addWidget(slider);
-  mainLayout->addLayout(buttonGroup);
-  buttonGroup->addWidget(okButton);
-  buttonGroup->addWidget(cancelButton);
+  mainLayout->addWidget(buttonbox);
 }
 
 Threshold::~Threshold()
 {
 }
 
-void Threshold::ok(){
-
-}
-void Threshold::cancel(){
-
-}

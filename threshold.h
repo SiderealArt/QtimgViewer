@@ -2,8 +2,7 @@
 #define THRESHOLD_H
 #include <QWidget>
 #include <QSlider>
-#include <QPushButton>
-#include <QHBoxLayout>
+#include <QDialogButtonBox>
 #include <QVBoxLayout>
 
 class Threshold:public QWidget{
@@ -15,9 +14,6 @@ public:
   QPushButton *okButton;
   QPushButton *cancelButton;
   QVBoxLayout *mainLayout;
-  QHBoxLayout *buttonGroup;
-private slots:
-  void cancel();
-  void ok();
+  QDialogButtonBox *buttonbox;
 };
 #endif // THRESHOLD_H

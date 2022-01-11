@@ -4,6 +4,8 @@ https://wiki.qt.io/New_Signal_Slot_Syntax
 Next Previous Image
 
 Hide treeview
+switch label to graphicview
+
 */
 #include "mainwindow.h"
 #include "about.h"
@@ -125,6 +127,7 @@ void MainWindow::createActions(){
   checkupdateAction = new QAction("Check for Updates");
     penAction = new QAction("Pen");
     penAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pen.png")));
+    penAction->setCheckable(true);
     hFlipAction = new QAction("Horizontal Flip");
     hFlipAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/hflip.png")));
     hFlipAction->setDisabled(true);
@@ -312,8 +315,6 @@ void MainWindow::threshold(){
   tempWin->setPixmap(imgWin->pixmap());
   Threshold *thresholdWin = new Threshold();
   connect(thresholdWin->slider,SIGNAL(valueChanged(int)), this, SLOT(updateimg(int)));
-  connect(thresholdWin->okButton,SIGNAL(clicked()),this,SLOT(ok()));
-  connect(thresholdWin->cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
   thresholdWin->setFixedSize(250,100);
   thresholdWin->setWindowTitle("Adjust Threshold");
   thresholdWin->setAttribute(Qt::WA_DeleteOnClose);
