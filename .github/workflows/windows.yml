@@ -14,9 +14,10 @@ jobs:
       - name: Install Qt
         shell: cmd
         run: |
-          cd
+          SET var=%cd%
+          ECHO %var%
           pip install aqtinstall
-          python -m aqt install-qt 6.2.2 windows desktop win64_msvc2019_64
+          python -m aqt install-qt windows desktop 6.2.2 win64_msvc2019_64
           echo "Qt6_DIR=" >> $GITHUB_ENV
       - uses: actions/checkout@v2
         with:
