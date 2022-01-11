@@ -17,6 +17,7 @@ jobs:
           pip install aqtinstall
           python -m aqt install-qt windows desktop 6.2.2 win64_msvc2019_64
           echo "Qt6_DIR=D:\a\Daruma\Daruma\6.2.2\" >> $GITHUB_ENV
+          echo "QTDIR=D:\a\Daruma\Daruma\6.2.2\" >> $GITHUB_ENV
           echo "D:\a\Daruma\Daruma\6.2.2\bin" >> $GITHUB_PATH
       - uses: actions/checkout@v2
         with:
@@ -29,16 +30,12 @@ jobs:
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
           qmake
           nmake
-          echo winSdkDir=%WindowsSdkDir% >> %GITHUB_ENV%
-          echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
-          echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
-          echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
           mkdir build
           mv ./release/ImageEditor.exe ./build
           cd build
           windeployqt ImageEditor.exe
           cd ..
-          zip portable.zip ./build/*
+          7z a -tzip portable.zip ./build/*
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
