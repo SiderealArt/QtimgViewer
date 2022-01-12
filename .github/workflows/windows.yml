@@ -16,7 +16,7 @@ jobs:
         run: |
           pip install aqtinstall
           python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.2 win64_mingw
-          python -m aqt install-tool windows desktop tools_mingw qt.tools.win64_mingw810
+          python -m aqt install-tool --outputdir c:\Qt windows desktop tools_mingw qt.tools.win64_mingw810
           Get-ChildItem -Recurse "c:\Qt" | Where { $_.PSIsContainer } | Select Name,FullName
           echo "QTDIR=c:\Qt\6.2.2\mingw_64" | Out-File -FilePath $env:GITHUB_ENV -Append
           echo "Qt6_DIR=c:\Qt\6.2.2\mingw_64" | Out-File -FilePath $env:GITHUB_ENV -Append
