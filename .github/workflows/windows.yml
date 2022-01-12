@@ -15,7 +15,10 @@ jobs:
         shell: cmd
         run: |
           pip install aqtinstall
-          python -m aqt list-qt windows desktop --arch 6.2.2
+          python -m aqt install-qt windows desktop 6.2.2 win64_mingw
+          echo "QTDIR=D:\a\Daruma\Daruma\6.2.2\mingw81_64" >> $GITHUB_ENV
+          echo "D:\a\Daruma\Daruma\6.2.2\bin" >> $GITHUB_PATH
+          echo "D:\a\Daruma\Daruma\Tools\mingw810_64\bin" >> $GITHUB_PATH
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
