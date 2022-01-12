@@ -17,7 +17,7 @@ jobs:
           pip install aqtinstall
           python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.2 win64_mingw
           echo "QTDIR=C:\Qt\6.2.2\mingw_64" >> $GITHUB_ENV
-          echo "C:\Qt\6.2.2\bin" >> $GITHUB_PATH
+          echo "C:\Qt\6.2.2\mingw_64\bin" >> $GITHUB_PATH
           echo "C:\Qt\Tools\mingw810_64\bin" >> $GITHUB_PATH
       - uses: actions/checkout@v2
         with:
