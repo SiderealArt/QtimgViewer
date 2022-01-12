@@ -32,7 +32,7 @@ jobs:
           mingw32-make
           mkdir build
           Get-ChildItem -Recurse "." | Where { $_.PSIsContainer } | Select Name,FullName
-          mv ./release/ImageEditor.exe ./build
+          mv ./debug/ImageEditor.exe ./build
           cd build
           windeployqt ImageEditor.exe
           cd ..
