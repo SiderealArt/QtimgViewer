@@ -20,6 +20,9 @@ jobs:
           echo "Qt6_DIR=c:\Qt\6.2.2\mingw_64" >> $GITHUB_ENV
           echo "c:\Qt\6.2.2\mingw_64\bin" >> $GITHUB_PATH
           echo "c:\Qt\Tools\mingw810_64\bin" >> $GITHUB_PATH
+          echo "$PATH"
+          echo "${{ env.QTDIR }}"
+          echo "${{ env.Qt6_DIR }}"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
