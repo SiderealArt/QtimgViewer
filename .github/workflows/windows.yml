@@ -31,6 +31,7 @@ jobs:
           qmake ImageEditor.pro
           mingw32-make
           mkdir build
+          get-childitem -rec | where {!$_.PSIsContainer} |
           mv ./release/ImageEditor.exe ./build
           cd build
           windeployqt ImageEditor.exe
