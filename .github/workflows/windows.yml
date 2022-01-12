@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Install Qt
-        shell: cmd
+        shell: pwsh
         run: |
           pip install aqtinstall
           python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.2 win64_mingw
@@ -27,7 +27,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: Build
-        shell: cmd
+        shell: pwsh
         env:
           vc_arch: x64
         run: |
