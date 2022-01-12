@@ -16,13 +16,10 @@ jobs:
         run: |
           pip install aqtinstall
           python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.2 win64_mingw
-          echo "QTDIR=c:\Qt\6.2.2\mingw_64" >> $GITHUB_ENV
-          echo "Qt6_DIR=c:\Qt\6.2.2\mingw_64" >> $GITHUB_ENV
-          echo "c:\Qt\6.2.2\mingw_64\bin" >> $GITHUB_PATH
-          echo "c:\Qt\Tools\mingw810_64\bin" >> $GITHUB_PATH
-          echo "$PATH"
-          echo "${{ env.QTDIR }}"
-          echo "${{ env.Qt6_DIR }}"
+          echo "QTDIR=c:\Qt\6.2.2\mingw_64" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "Qt6_DIR=c:\Qt\6.2.2\mingw_64" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "c:\Qt\6.2.2\mingw_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
+          echo "c:\Qt\Tools\mingw810_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
