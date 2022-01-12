@@ -30,7 +30,7 @@ jobs:
           vc_arch: x64
         run: |
           qmake ImageEditor.pro
-          mingw32-make
+          make
           mkdir build
           Get-ChildItem -Recurse "." | Where { $_.PSIsContainer } | Select Name,FullName
           mv ./debug/ImageEditor.exe ./build
