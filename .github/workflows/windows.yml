@@ -15,16 +15,9 @@ jobs:
         shell: pwsh
         run: |
           pip install aqtinstall
-          python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.2 win64_mingw
-          python -m aqt install-tool --outputdir c:\Qt windows desktop tools_mingw qt.tools.win64_mingw810
-          Get-ChildItem -Recurse "c:\Qt" | Where { $_.PSIsContainer } | Select Name,FullName
-          echo "QTDIR=c:\Qt\6.2.2\mingw_64" | Out-File -FilePath $env:GITHUB_ENV -Append
-          echo "c:\Qt\6.2.2\mingw_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
-      - name: Set up GCC
-        uses: egor-tensin/setup-gcc@v1
-        with:
-          version: latest
-          platform: x64
+          python -m aqt install-qt --outputdir c:\Qt windows desktop 6.1.3 win64_mingw81
+          echo "QTDIR=c:\Qt\6.1.3\mingw_64" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "c:\Qt\6.1.3\mingw_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
@@ -33,8 +26,6 @@ jobs:
         env:
           vc_arch: x64
         run: |
-          $env:Path = "c:\Qt\6.2.2\mingw_64\bin;c:\Qt\Tools\mingw810_64\bin;$env:Path"
-          echo $env:GITHUB_PATH
           qmake ImageEditor.pro
           mingw32-make
           mkdir build
