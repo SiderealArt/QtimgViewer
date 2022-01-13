@@ -27,7 +27,7 @@ jobs:
         env:
           vc_arch: x64
         run: |
-          $env:Path = "c:\Qt\6.2.2\mingw_64\bin;$env:Path"
+          $env:Path = "c:\Qt\6.2.2\mingw_64\bin;c:\Qt\Tools\mingw900_64\bin;$env:Path"
           echo $env:GITHUB_PATH
           qmake ImageEditor.pro
           mingw32-make
