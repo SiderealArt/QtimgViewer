@@ -20,31 +20,23 @@ private slots:
 };
 class GeneralTab : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit GeneralTab(QWidget *parent = nullptr);
+  explicit GeneralTab(QWidget *parent = nullptr);
 };
-//! [0]
-
-
-//! [1]
 class WindowTab : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit WindowTab(QWidget *parent = nullptr);
+  explicit WindowTab(QWidget *parent = nullptr);
 };
-//! [1]
-
-
-//! [2]
 class AppearenceTab : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit AppearenceTab(QWidget *parent = nullptr);
+  explicit AppearenceTab(QWidget *parent = nullptr);
 };
 #endif
