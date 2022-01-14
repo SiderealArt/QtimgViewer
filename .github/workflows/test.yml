@@ -1,0 +1,33 @@
+name: Windows
+
+on: push
+    
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - name: Install Qt
+        shell: pwsh
+        run: |
+          pip install aqtinstall
+          python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.1 win64_mingw81
+          echo "QTDIR=c:\Qt\6.2.1\mingw81_64" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "c:\Qt\6.2.1\mingw81_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Build
+        shell: pwsh
+        env:
+          vc_arch: x64
+        run: |
+          qmake ImageEditor.pro
+          mingw32-make
+          mkdir build
+          Get-ChildItem -Recurse "." | Where { $_.PSIsContainer } | Select Name,FullName
+          mv ./release/ImageEditor.exe ./build
+          cd build
+          windeployqt ImageEditor.exe
+          cd ..
+          7z a -tzip portable.zip ./build/*
