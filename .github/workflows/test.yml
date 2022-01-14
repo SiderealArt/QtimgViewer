@@ -1,9 +1,6 @@
 name: Windows
 
-on:
-  push:
-    tags:
-      - "v*.*.*"
+on: push
     
 jobs:
   build:
@@ -34,14 +31,3 @@ jobs:
           windeployqt ImageEditor.exe
           cd ..
           7z a -tzip portable.zip ./build/*
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          draft: false
-          prerelease: false
-          release_name: ${{ steps.version.outputs.version }}
-          tag_name: ${{ github.ref }}
-          files: |
-            portable.zip
-        env:
-            GITHUB_TOKEN: ${{ github.token }}
