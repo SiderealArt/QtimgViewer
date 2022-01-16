@@ -15,6 +15,9 @@
     <a href="https://ci.appveyor.com/project/SiderealArt/qtimgviewer/branch/main">
     <img src="https://ci.appveyor.com/api/projects/status/wp5v34u6jf720649/branch/main?svg=true">
     </a>
+    <a href="https://crowdin.com/project/daruma">
+    <img src="https://badges.crowdin.net/daruma/localized.svg">
+    </a>
     <br />
     ·
     <a href="">View Demo</a>
