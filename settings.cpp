@@ -1,5 +1,7 @@
 ﻿#include "settings.h"
 #include <QtWidgets>
+#include <QCoreApplication>
+#include <QDebug>
 Settings::Settings(QWidget *parent)
   : QWidget(parent)
 {
@@ -31,21 +33,21 @@ GeneralTab::GeneralTab(QWidget *parent)
   QCheckBox *writable = new QCheckBox(tr("Writable"));
   QCheckBox *executable = new QCheckBox(tr("Executable"));
   QGroupBox *ownerGroup = new QGroupBox(tr("Ownership"));
-  QLabel *ownerLabel = new QLabel(tr("Owner"));
-  QLabel *groupLabel = new QLabel(tr("Group"));
+  QComboBox *languagedropdown = new QComboBox();
+  connect(languagedropdown, SIGNAL(currentIndexChanged(int)), this, SLOT(slotLanguageChanged(int)));
   QVBoxLayout *permissionsLayout = new QVBoxLayout;
   permissionsLayout->addWidget(readable);
   permissionsLayout->addWidget(writable);
   permissionsLayout->addWidget(executable);
   permissionsGroup->setLayout(permissionsLayout);
   QVBoxLayout *ownerLayout = new QVBoxLayout;
-  ownerLayout->addWidget(ownerLabel);
-  ownerLayout->addWidget(groupLabel);
+  ownerLayout->addWidget(languagedropdown);
   ownerGroup->setLayout(ownerLayout);
   QVBoxLayout *mainLayout = new QVBoxLayout;
   mainLayout->addWidget(permissionsGroup);
   mainLayout->addWidget(ownerGroup);
   mainLayout->addStretch(1);
+  languagemenu();
   setLayout(mainLayout);
 }
 
@@ -71,4 +73,50 @@ WindowTab::WindowTab(QWidget *parent)
   : QWidget(parent)
 {
 
+}
+
+void GeneralTab::languagemenu(){
+
+   QString defaultLocale = QLocale::system().name();
+   defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
+   m_langPath = QApplication::applicationDirPath();
+   m_langPath.append("/i18n");
+   QDir dir(m_langPath);
+   QStringList fileNames = dir.entryList(QStringList("daruma_*.qm"));
+   qDebug() << "path: " << m_langPath << fileNames.size();
+   for (int i = 0; i < fileNames.size(); ++i) {
+    QString locale;
+    qDebug() << fileNames[i];
+    locale = fileNames[i];
+    locale.truncate(locale.lastIndexOf('.'));
+    locale.remove(0, locale.lastIndexOf('_') + 1);
+    QString lang = QLocale::languageToString(QLocale(locale).language());
+     qDebug() << lang;
+    QIcon ico(QString("%1/%2.png").arg(m_langPath).arg(locale));
+    languagedropdown->addItem(ico,lang);
+   }
+}
+
+void switchTranslator(QTranslator& translator, const QString& filename) {
+ QCoreApplication::removeTranslator(&translator);
+QString path = QApplication::applicationDirPath();
+        path.append("/i18n/");
+ if(translator.load(path + filename))
+  QCoreApplication::installTranslator(&translator);
+}
+
+void GeneralTab::loadLanguage(const QString& rLanguage) {
+ if(m_currLang != rLanguage) {
+  m_currLang = rLanguage;
+  QLocale locale = QLocale(m_currLang);
+  QLocale::setDefault(locale);
+  QString languageName = QLocale::languageToString(locale.language());
+  switchTranslator(m_translator, QString("daruma_%1.qm").arg(rLanguage));
+  switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
+ }
+}
+
+void GeneralTab::slotLanguageChanged(int index)
+{
+  loadLanguage(this->languagedropdown->currentText());
 }

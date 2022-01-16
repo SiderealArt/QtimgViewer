@@ -1,29 +1,30 @@
 ﻿#ifndef SETTINGS_H
 #define SETTINGS_H
 #include <QWidget>
+#include <QLocale>
 #include <QTabWidget>
 #include <QFileInfo>
 #include <QSettings>
+#include <QTranslator>
+#include <QComboBox>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
-class Settings:public QWidget{
-  Q_OBJECT
-public:
-  Settings(QWidget *parent = nullptr);
-  ~Settings();
-  QSettings *settings;
-  QVBoxLayout *mainLayout;
-  QTabWidget *tabWidget;
-  QDialogButtonBox *buttonbox;
-private slots:
-
-};
 class GeneralTab : public QWidget
 {
   Q_OBJECT
 
 public:
   explicit GeneralTab(QWidget *parent = nullptr);
+  QComboBox *languagedropdown;
+  QString m_currLang;
+  QString m_langPath;
+  QTranslator m_translator; // contains the translations for this application
+  QTranslator m_translatorQt; // contains the translations for qt
+private:
+  void languagemenu();
+   void loadLanguage(const QString& rLanguage);
+private slots:
+  void slotLanguageChanged(int);
 };
 class WindowTab : public QWidget
 {
@@ -38,5 +39,18 @@ class AppearenceTab : public QWidget
 
 public:
   explicit AppearenceTab(QWidget *parent = nullptr);
+};
+class Settings:public QWidget{
+  Q_OBJECT
+public:
+  Settings(QWidget *parent = nullptr);
+  ~Settings();
+  QSettings *settings;
+  QVBoxLayout *mainLayout;
+  QTabWidget *tabWidget;
+  QDialogButtonBox *buttonbox;
+private slots:
+
+
 };
 #endif

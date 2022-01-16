@@ -26,4 +26,9 @@
         <file>resources/icon/previous.png</file>
         <file>resources/icon/up.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>i18n/daruma_en.ts</file>
+        <file>i18n/daruma_zh_CN.ts</file>
+        <file>i18n/daruma_zh_TW.ts</file>
+    </qresource>
 </RCC>
