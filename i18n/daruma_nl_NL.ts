@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN" sourcelanguage="en">
+<TS version="2.1" language="nl_NL" sourcelanguage="en">
   <context>
     <name>About</name>
     <message>
       <location filename="../about.cpp" line="15"/>
       <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
-      <translation>使用 Qt 构建 %1 (%2)&lt;br&gt;源代码可在 GPLv3 下在 &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub 上获得&lt;/a&gt;&lt;br&gt;Icon8 提供的图标&lt;br&gt;版权所有 © %3 SiderealArt</translation>
+      <translation>Gebouwd met Qt %1 (%2)&lt;br&gt;Broncode beschikbaar onder GPLv3 op &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Pictogram geleverd door Icon8&lt;br&gt;Copyright © %3 SiderealArt</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="20"/>
       <source>Version 1.34.2</source>
-      <translation>版本 1.34.2</translation>
+      <translation>Versie 1.34.2</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="21"/>
@@ -24,27 +24,27 @@
     <message>
       <location filename="../settings.cpp" line="55"/>
       <source>File Name:</source>
-      <translation>檔案名称: </translation>
+      <translation>Bestandsnaam:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="56"/>
       <source>Path:</source>
-      <translation>路径: </translation>
+      <translation>Pad:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="57"/>
       <source>Size:</source>
-      <translation>大小: </translation>
+      <translation>Maat:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="58"/>
       <source>Last Read:</source>
-      <translation>最后读取: </translation>
+      <translation>Laatst gelezen:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="59"/>
       <source>Last Modified:</source>
-      <translation>最后修改: </translation>
+      <translation>Laatst gewijzigd:</translation>
     </message>
   </context>
   <context>
@@ -52,37 +52,37 @@
     <message>
       <location filename="../settings.cpp" line="29"/>
       <source>Permissions</source>
-      <translation>权限</translation>
+      <translation>Rechten</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="30"/>
       <source>Readable</source>
-      <translation>可读</translation>
+      <translation>Leesbaar</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="31"/>
       <source>Writable</source>
-      <translation>可写</translation>
+      <translation>Beschrijfbaar</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="32"/>
       <source>Executable</source>
-      <translation>可执行文件</translation>
+      <translation>Uitvoerbaar</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="33"/>
       <source>Ownership</source>
-      <translation>所有权</translation>
+      <translation>Eigendom</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="34"/>
       <source>Owner</source>
-      <translation>所有者</translation>
+      <translation>Baasje</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="35"/>
       <source>Group</source>
-      <translation>团体</translation>
+      <translation>Groep</translation>
     </message>
   </context>
   <context>
@@ -90,132 +90,132 @@
     <message>
       <location filename="../mainwindow.cpp" line="59"/>
       <source>Tree View</source>
-      <translation>树状检视</translation>
+      <translation>Boom zicht</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="75"/>
       <source>Color picker</source>
-      <translation>捡色器</translation>
+      <translation>Kleur kiezer</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="78"/>
       <source>Up to parent directory</source>
-      <translation>返回上一层</translation>
+      <translation>Tot bovenliggende directory</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="81"/>
       <source>Back to home directory</source>
-      <translation>返回最上层</translation>
+      <translation>Terug naar homedirectory</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="84"/>
       <source>Always on top</source>
-      <translation>置顶</translation>
+      <translation>Altijd bovenop</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="87"/>
       <source>Show Histrogram</source>
-      <translation>显示长条图</translation>
+      <translation>Histogram tonen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="89"/>
       <source>Threshold...</source>
-      <translation>阀值...</translation>
+      <translation>Drempel...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="91"/>
       <source>Print</source>
-      <translation>列印</translation>
+      <translation>Afdrukken</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="94"/>
       <source>Open New Window</source>
-      <translation>开启新视窗</translation>
+      <translation>Nieuw venster openen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="96"/>
       <source>Redo</source>
-      <translation>重做</translation>
+      <translation>Opnieuw doen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="99"/>
       <source>Undo</source>
-      <translation>取消重做</translation>
+      <translation>ongedaan maken</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="102"/>
       <source>Upload to Imgur</source>
-      <translation>上传至 Imgur</translation>
+      <translation>Uploaden naar Imgur</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="103"/>
       <source>Upload to ImgBB</source>
-      <translation>上传至 ImgBB</translation>
+      <translation>Uploaden naar ImgBB</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="104"/>
       <source>Upload to ImageShack</source>
-      <translation>上传至 ImageShack</translation>
+      <translation>Uploaden naar ImageShack</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="105"/>
       <source>Copy to Clipboard</source>
-      <translation>复制至剪贴簿</translation>
+      <translation>Kopieer naar klembord</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="108"/>
       <source>Save</source>
-      <translation>储存</translation>
+      <translation>Sparen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="112"/>
       <source>Save as...</source>
-      <translation>另存为...</translation>
+      <translation>Opslaan als...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="116"/>
       <source>Settings</source>
-      <translation>选项</translation>
+      <translation>Instellingen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="119"/>
       <source>Rotate</source>
-      <translation>旋转</translation>
+      <translation>Draaien</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="123"/>
       <source>Fullscreen</source>
-      <translation>全荧幕</translation>
+      <translation>Volledig scherm</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="125"/>
       <source>About</source>
-      <translation>关于</translation>
+      <translation>Over</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="127"/>
       <source>Check for Updates</source>
-      <translation>检查更新</translation>
+      <translation>Controleren op updates</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="128"/>
       <source>Pen</source>
-      <translation>笔</translation>
+      <translation>Pen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="131"/>
       <source>Horizontal Flip</source>
-      <translation>水平翻转</translation>
+      <translation>Horizontaal spiegelen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="135"/>
       <source>Vertical Flip</source>
-      <translation>垂直翻转</translation>
+      <translation>Verticaal spiegelen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="139"/>
       <source>&amp;Open File</source>
-      <translation>开启檔案 (&amp;O)</translation>
+      <translation>&amp;Open bestand</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="140"/>
@@ -225,12 +225,12 @@
     <message>
       <location filename="../mainwindow.cpp" line="141"/>
       <source>Open Image File</source>
-      <translation>开启图片</translation>
+      <translation>Afbeeldingsbestand openen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="144"/>
       <source>&amp;Quit</source>
-      <translation>退出 (&amp;Q)</translation>
+      <translation>&amp;Ontslag nemen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="145"/>
@@ -240,12 +240,12 @@
     <message>
       <location filename="../mainwindow.cpp" line="146"/>
       <source>Quit Application</source>
-      <translation>退出应用</translation>
+      <translation>Applicatie afsluiten</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="148"/>
       <source>Zoom &amp;In</source>
-      <translation>放大 (&amp;I)</translation>
+      <translation>In zoomen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="149"/>
@@ -255,7 +255,7 @@
     <message>
       <location filename="../mainwindow.cpp" line="153"/>
       <source>Zoom O&amp;ut</source>
-      <translation>缩小 (&amp;U)</translation>
+      <translation>Uitzoomen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="154"/>
@@ -265,57 +265,57 @@
     <message>
       <location filename="../mainwindow.cpp" line="162"/>
       <source>&amp;File</source>
-      <translation>檔案 (&amp;F)</translation>
+      <translation>&amp;Bestand</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="169"/>
       <source>&amp;Edit</source>
-      <translation>编辑 (&amp;E)</translation>
+      <translation>&amp;Bewerk</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="173"/>
       <source>&amp;View</source>
-      <translation>检视 (&amp;V)</translation>
+      <translation>&amp;Visie</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="181"/>
       <source>&amp;Tools</source>
-      <translation>工具 (&amp;T)</translation>
+      <translation>&amp;Hulpmiddelen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="182"/>
       <source>Share</source>
-      <translation>分享</translation>
+      <translation>Deel</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="187"/>
       <source>&amp;Help</source>
-      <translation>协助 (&amp;H)</translation>
+      <translation>&amp;Helpen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="192"/>
       <source>File</source>
-      <translation>檔案</translation>
+      <translation>Bestand</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="196"/>
       <source>Image</source>
-      <translation>图像</translation>
+      <translation>Afbeelding</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="234"/>
       <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
-      <translation>图像 (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
+      <translation>Afbeeldingen (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="262"/>
       <source>Save Image File</source>
-      <translation>储存图像</translation>
+      <translation>Afbeeldingsbestand opslaan</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="264"/>
       <source>Images (*.png)</source>
-      <translation>图像 (*.png)</translation>
+      <translation>Afbeeldingen (*.png)</translation>
     </message>
   </context>
   <context>
@@ -323,17 +323,17 @@
     <message>
       <location filename="../settings.cpp" line="13"/>
       <source>General</source>
-      <translation>一般</translation>
+      <translation>Algemeen</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="14"/>
       <source>Appearence</source>
-      <translation>外观</translation>
+      <translation>uiterlijk</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="15"/>
       <source>Window</source>
-      <translation>视窗</translation>
+      <translation>Venster</translation>
     </message>
   </context>
 </TS>
