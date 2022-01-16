@@ -30,12 +30,6 @@
         <file>i18n/daruma_en.ts</file>
         <file>i18n/daruma_zh_CN.ts</file>
         <file>i18n/daruma_zh_TW.ts</file>
-        <file>i18n/daruma_de.ts</file>
-        <file>i18n/daruma_es.ts</file>
-        <file>i18n/daruma_fr.ts</file>
-        <file>i18n/daruma_ja.ts</file>
-        <file>i18n/daruma_ko.ts</file>
-        <file>i18n/daruma_ru.ts</file>
         <file>i18n/daruma_af_ZA.ts</file>
         <file>i18n/daruma_ar_SA.ts</file>
         <file>i18n/daruma_ca_ES.ts</file>

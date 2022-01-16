@@ -54,6 +54,7 @@ GeneralTab::GeneralTab(QWidget *parent)
   permissionsGroup->setLayout(permissionsLayout);
   QVBoxLayout *ownerLayout = new QVBoxLayout;
   ownerLayout->addWidget(languagedropdown);
+  ownerLayout->addWidget(stylesheetdropdown);
   ownerGroup->setLayout(ownerLayout);
   QVBoxLayout *mainLayout = new QVBoxLayout;
   mainLayout->addWidget(permissionsGroup);
