@@ -22,27 +22,27 @@
   <context>
     <name>AppearenceTab</name>
     <message>
-      <location filename="../settings.cpp" line="55"/>
+      <location filename="../settings.cpp" line="65"/>
       <source>File Name:</source>
       <translation>Název souboru:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="56"/>
+      <location filename="../settings.cpp" line="66"/>
       <source>Path:</source>
       <translation>Cesta:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="57"/>
+      <location filename="../settings.cpp" line="67"/>
       <source>Size:</source>
       <translation>Velikost:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="58"/>
+      <location filename="../settings.cpp" line="68"/>
       <source>Last Read:</source>
       <translation>Naposledy přečteno:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="59"/>
+      <location filename="../settings.cpp" line="69"/>
       <source>Last Modified:</source>
       <translation>Naposledy změněno:</translation>
     </message>
@@ -50,39 +50,29 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="29"/>
+      <location filename="../settings.cpp" line="31"/>
       <source>Permissions</source>
       <translation>Oprávnění</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="30"/>
+      <location filename="../settings.cpp" line="32"/>
       <source>Readable</source>
       <translation>Čitelný</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="31"/>
+      <location filename="../settings.cpp" line="33"/>
       <source>Writable</source>
       <translation>Zapisovatelný</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="32"/>
+      <location filename="../settings.cpp" line="34"/>
       <source>Executable</source>
       <translation>Spustitelný</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="33"/>
+      <location filename="../settings.cpp" line="35"/>
       <source>Ownership</source>
       <translation>Vlastnictví</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Owner</source>
-      <translation>Majitel</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Group</source>
-      <translation>Skupina</translation>
     </message>
   </context>
   <context>
@@ -321,17 +311,17 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="13"/>
+      <location filename="../settings.cpp" line="15"/>
       <source>General</source>
       <translation>Všeobecné</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="14"/>
+      <location filename="../settings.cpp" line="16"/>
       <source>Appearence</source>
       <translation>Vzhled</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="15"/>
+      <location filename="../settings.cpp" line="17"/>
       <source>Window</source>
       <translation>Okno</translation>
     </message>
