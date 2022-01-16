@@ -6,17 +6,17 @@
     <message>
       <location filename="../about.cpp" line="15"/>
       <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
-      <translation type="unfinished">Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</translation>
+      <translation>Erstellt mit Qt %1 (%2)&lt;br&gt;Quellcode verfügbar unter GPLv3 auf &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Symbol bereitgestellt von Icon8&lt;br&gt;Copyright © %3 SiderealArt</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="20"/>
       <source>Version 1.34.2</source>
-      <translation type="unfinished">Version 1.34.2</translation>
+      <translation>Version 1.34.2</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="21"/>
       <source>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</source>
-      <translation type="unfinished">&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
+      <translation>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
     </message>
   </context>
   <context>
@@ -24,27 +24,27 @@
     <message>
       <location filename="../settings.cpp" line="55"/>
       <source>File Name:</source>
-      <translation type="unfinished">File Name:</translation>
+      <translation>Dateinamen:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="56"/>
       <source>Path:</source>
-      <translation type="unfinished">Path:</translation>
+      <translation>Weg:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="57"/>
       <source>Size:</source>
-      <translation type="unfinished">Size:</translation>
+      <translation>Größe:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="58"/>
       <source>Last Read:</source>
-      <translation type="unfinished">Last Read:</translation>
+      <translation>Zuletzt gelesen:</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="59"/>
       <source>Last Modified:</source>
-      <translation type="unfinished">Last Modified:</translation>
+      <translation>Zuletzt geändert:</translation>
     </message>
   </context>
   <context>
@@ -52,37 +52,37 @@
     <message>
       <location filename="../settings.cpp" line="29"/>
       <source>Permissions</source>
-      <translation type="unfinished">Permissions</translation>
+      <translation>Berechtigungen</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="30"/>
       <source>Readable</source>
-      <translation type="unfinished">Readable</translation>
+      <translation>Lesbar</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="31"/>
       <source>Writable</source>
-      <translation type="unfinished">Writable</translation>
+      <translation>Schreibbar</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="32"/>
       <source>Executable</source>
-      <translation type="unfinished">Executable</translation>
+      <translation>Ausführbar</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="33"/>
       <source>Ownership</source>
-      <translation type="unfinished">Ownership</translation>
+      <translation>Eigentum</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="34"/>
       <source>Owner</source>
-      <translation type="unfinished">Owner</translation>
+      <translation>Eigentümer</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="35"/>
       <source>Group</source>
-      <translation type="unfinished">Group</translation>
+      <translation>Gruppe</translation>
     </message>
   </context>
   <context>
@@ -90,232 +90,232 @@
     <message>
       <location filename="../mainwindow.cpp" line="59"/>
       <source>Tree View</source>
-      <translation type="unfinished">Tree View</translation>
+      <translation>Baumsicht</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="75"/>
       <source>Color picker</source>
-      <translation type="unfinished">Color picker</translation>
+      <translation>Farbwähler</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="78"/>
       <source>Up to parent directory</source>
-      <translation type="unfinished">Up to parent directory</translation>
+      <translation>Bis zum übergeordneten Verzeichnis</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="81"/>
       <source>Back to home directory</source>
-      <translation type="unfinished">Back to home directory</translation>
+      <translation>Zurück zum Home-Verzeichnis</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="84"/>
       <source>Always on top</source>
-      <translation type="unfinished">Always on top</translation>
+      <translation>Immer oben</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="87"/>
       <source>Show Histrogram</source>
-      <translation type="unfinished">Show Histrogram</translation>
+      <translation>Histogramm anzeigen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="89"/>
       <source>Threshold...</source>
-      <translation type="unfinished">Threshold...</translation>
+      <translation>Schwelle...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="91"/>
       <source>Print</source>
-      <translation type="unfinished">Print</translation>
+      <translation>Drucken</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="94"/>
       <source>Open New Window</source>
-      <translation type="unfinished">Open New Window</translation>
+      <translation>Neues Fenster öffnen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="96"/>
       <source>Redo</source>
-      <translation type="unfinished">Redo</translation>
+      <translation>Wiederholen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="99"/>
       <source>Undo</source>
-      <translation type="unfinished">Undo</translation>
+      <translation>Rückgängig machen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="102"/>
       <source>Upload to Imgur</source>
-      <translation type="unfinished">Upload to Imgur</translation>
+      <translation>Auf Imgur hochladen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="103"/>
       <source>Upload to ImgBB</source>
-      <translation type="unfinished">Upload to ImgBB</translation>
+      <translation>Auf ImgBB hochladen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="104"/>
       <source>Upload to ImageShack</source>
-      <translation type="unfinished">Upload to ImageShack</translation>
+      <translation>Auf ImageShack hochladen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="105"/>
       <source>Copy to Clipboard</source>
-      <translation type="unfinished">Copy to Clipboard</translation>
+      <translation>In die Zwischenablage kopieren</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="108"/>
       <source>Save</source>
-      <translation type="unfinished">Save</translation>
+      <translation>Speichern</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="112"/>
       <source>Save as...</source>
-      <translation type="unfinished">Save as...</translation>
+      <translation>Speichern als...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="116"/>
       <source>Settings</source>
-      <translation type="unfinished">Settings</translation>
+      <translation>Einstellungen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="119"/>
       <source>Rotate</source>
-      <translation type="unfinished">Rotate</translation>
+      <translation>Drehen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="123"/>
       <source>Fullscreen</source>
-      <translation type="unfinished">Fullscreen</translation>
+      <translation>Vollbild</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="125"/>
       <source>About</source>
-      <translation type="unfinished">About</translation>
+      <translation>Etwa</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="127"/>
       <source>Check for Updates</source>
-      <translation type="unfinished">Check for Updates</translation>
+      <translation>Auf Updates prüfen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="128"/>
       <source>Pen</source>
-      <translation type="unfinished">Pen</translation>
+      <translation>Kuli</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="131"/>
       <source>Horizontal Flip</source>
-      <translation type="unfinished">Horizontal Flip</translation>
+      <translation>Horizontale Drehung</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="135"/>
       <source>Vertical Flip</source>
-      <translation type="unfinished">Vertical Flip</translation>
+      <translation>Vertikaler Flip</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="139"/>
       <source>&amp;Open File</source>
-      <translation type="unfinished">&amp;Open File</translation>
+      <translation>&amp;Datei öffnen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="140"/>
       <source>Ctrl+O</source>
-      <translation type="unfinished">Ctrl+O</translation>
+      <translation>Strg+O</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="141"/>
       <source>Open Image File</source>
-      <translation type="unfinished">Open Image File</translation>
+      <translation>Bilddatei öffnen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="144"/>
       <source>&amp;Quit</source>
-      <translation type="unfinished">&amp;Quit</translation>
+      <translation>&amp;Aufhören</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="145"/>
       <source>Ctrl+Q</source>
-      <translation type="unfinished">Ctrl+Q</translation>
+      <translation>Strg+Q</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="146"/>
       <source>Quit Application</source>
-      <translation type="unfinished">Quit Application</translation>
+      <translation>Beenden Sie die Anwendung</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="148"/>
       <source>Zoom &amp;In</source>
-      <translation type="unfinished">Zoom &amp;In</translation>
+      <translation>Hineinzoomen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="149"/>
       <source>Ctrl++</source>
-      <translation type="unfinished">Ctrl++</translation>
+      <translation>Strg++</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="153"/>
       <source>Zoom O&amp;ut</source>
-      <translation type="unfinished">Zoom O&amp;ut</translation>
+      <translation>Rauszoomen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="154"/>
       <source>Ctrl+-</source>
-      <translation type="unfinished">Ctrl+-</translation>
+      <translation>Strg+-</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="162"/>
       <source>&amp;File</source>
-      <translation type="unfinished">&amp;File</translation>
+      <translation>&amp;Datei</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="169"/>
       <source>&amp;Edit</source>
-      <translation type="unfinished">&amp;Edit</translation>
+      <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="173"/>
       <source>&amp;View</source>
-      <translation type="unfinished">&amp;View</translation>
+      <translation>&amp;Aussicht</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="181"/>
       <source>&amp;Tools</source>
-      <translation type="unfinished">&amp;Tools</translation>
+      <translation>&amp;Werkzeug</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="182"/>
       <source>Share</source>
-      <translation type="unfinished">Share</translation>
+      <translation>Teilen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="187"/>
       <source>&amp;Help</source>
-      <translation type="unfinished">&amp;Help</translation>
+      <translation>&amp;Hilfe</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="192"/>
       <source>File</source>
-      <translation type="unfinished">File</translation>
+      <translation>Datei</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="196"/>
       <source>Image</source>
-      <translation type="unfinished">Image</translation>
+      <translation>Bild</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="234"/>
       <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
-      <translation type="unfinished">Images (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
+      <translation>Bilder (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="262"/>
       <source>Save Image File</source>
-      <translation type="unfinished">Save Image File</translation>
+      <translation>Bilddatei speichern</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="264"/>
       <source>Images (*.png)</source>
-      <translation type="unfinished">Images (*.png)</translation>
+      <translation>Bilder (*.png)</translation>
     </message>
   </context>
   <context>
@@ -323,17 +323,17 @@
     <message>
       <location filename="../settings.cpp" line="13"/>
       <source>General</source>
-      <translation type="unfinished">General</translation>
+      <translation>Allgemein</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="14"/>
       <source>Appearence</source>
-      <translation type="unfinished">Appearence</translation>
+      <translation>Aussehen</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="15"/>
       <source>Window</source>
-      <translation type="unfinished">Window</translation>
+      <translation>Fenster</translation>
     </message>
   </context>
 </TS>
