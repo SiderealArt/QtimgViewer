@@ -22,27 +22,27 @@
   <context>
     <name>AppearenceTab</name>
     <message>
-      <location filename="../settings.cpp" line="55"/>
+      <location filename="../settings.cpp" line="65"/>
       <source>File Name:</source>
       <translation>Tên tệp:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="56"/>
+      <location filename="../settings.cpp" line="66"/>
       <source>Path:</source>
       <translation>Đường dẫn:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="57"/>
+      <location filename="../settings.cpp" line="67"/>
       <source>Size:</source>
       <translation>Kích cỡ:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="58"/>
+      <location filename="../settings.cpp" line="68"/>
       <source>Last Read:</source>
       <translation>Lần đọc cuối cùng:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="59"/>
+      <location filename="../settings.cpp" line="69"/>
       <source>Last Modified:</source>
       <translation>Sửa đổi lần cuối:</translation>
     </message>
@@ -50,39 +50,29 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="29"/>
+      <location filename="../settings.cpp" line="31"/>
       <source>Permissions</source>
       <translation>Quyền</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="30"/>
+      <location filename="../settings.cpp" line="32"/>
       <source>Readable</source>
       <translation>Có thể đọc được</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="31"/>
+      <location filename="../settings.cpp" line="33"/>
       <source>Writable</source>
       <translation>Ghi</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="32"/>
+      <location filename="../settings.cpp" line="34"/>
       <source>Executable</source>
       <translation>Thực thi được</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="33"/>
+      <location filename="../settings.cpp" line="35"/>
       <source>Ownership</source>
       <translation>Quyền sở hữu</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Owner</source>
-      <translation>Chủ nhân</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Group</source>
-      <translation>Tập đoàn</translation>
     </message>
   </context>
   <context>
@@ -321,17 +311,17 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="13"/>
+      <location filename="../settings.cpp" line="15"/>
       <source>General</source>
       <translation>Tổng quan</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="14"/>
+      <location filename="../settings.cpp" line="16"/>
       <source>Appearence</source>
       <translation>Ngoại hình</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="15"/>
+      <location filename="../settings.cpp" line="17"/>
       <source>Window</source>
       <translation>Cửa sổ</translation>
     </message>
