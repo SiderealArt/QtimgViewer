@@ -1,0 +1,3 @@
+files:
+  - source: /i18n/daruma_en.ts
+    translation: /i18n/daruma_%locale_with_underscore%.ts
