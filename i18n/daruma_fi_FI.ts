@@ -22,27 +22,27 @@
   <context>
     <name>AppearenceTab</name>
     <message>
-      <location filename="../settings.cpp" line="55"/>
+      <location filename="../settings.cpp" line="65"/>
       <source>File Name:</source>
       <translation>Tiedoston nimi:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="56"/>
+      <location filename="../settings.cpp" line="66"/>
       <source>Path:</source>
       <translation>Polku:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="57"/>
+      <location filename="../settings.cpp" line="67"/>
       <source>Size:</source>
       <translation>Koko:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="58"/>
+      <location filename="../settings.cpp" line="68"/>
       <source>Last Read:</source>
       <translation>Viimeksi luettu:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="59"/>
+      <location filename="../settings.cpp" line="69"/>
       <source>Last Modified:</source>
       <translation>Viimeksi muokattu:</translation>
     </message>
@@ -50,39 +50,29 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="29"/>
+      <location filename="../settings.cpp" line="31"/>
       <source>Permissions</source>
       <translation>Käyttöoikeudet</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="30"/>
+      <location filename="../settings.cpp" line="32"/>
       <source>Readable</source>
       <translation>Luettavissa</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="31"/>
+      <location filename="../settings.cpp" line="33"/>
       <source>Writable</source>
       <translation>Kirjoitettava</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="32"/>
+      <location filename="../settings.cpp" line="34"/>
       <source>Executable</source>
       <translation>Suoritettava</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="33"/>
+      <location filename="../settings.cpp" line="35"/>
       <source>Ownership</source>
       <translation>Omistajuus</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Owner</source>
-      <translation>Omistaja</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Group</source>
-      <translation>Ryhmä</translation>
     </message>
   </context>
   <context>
@@ -321,17 +311,17 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="13"/>
+      <location filename="../settings.cpp" line="15"/>
       <source>General</source>
       <translation>Kenraali</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="14"/>
+      <location filename="../settings.cpp" line="16"/>
       <source>Appearence</source>
       <translation>Ulkonäkö</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="15"/>
+      <location filename="../settings.cpp" line="17"/>
       <source>Window</source>
       <translation>Ikkuna</translation>
     </message>
