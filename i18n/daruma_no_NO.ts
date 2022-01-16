@@ -22,27 +22,27 @@
   <context>
     <name>AppearenceTab</name>
     <message>
-      <location filename="../settings.cpp" line="55"/>
+      <location filename="../settings.cpp" line="65"/>
       <source>File Name:</source>
       <translation>Filnavn:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="56"/>
+      <location filename="../settings.cpp" line="66"/>
       <source>Path:</source>
       <translation>Sti:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="57"/>
+      <location filename="../settings.cpp" line="67"/>
       <source>Size:</source>
       <translation>Størrelse:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="58"/>
+      <location filename="../settings.cpp" line="68"/>
       <source>Last Read:</source>
       <translation>Sist lest:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="59"/>
+      <location filename="../settings.cpp" line="69"/>
       <source>Last Modified:</source>
       <translation>Sist endret:</translation>
     </message>
@@ -50,39 +50,29 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="29"/>
+      <location filename="../settings.cpp" line="31"/>
       <source>Permissions</source>
       <translation>Tillatelser</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="30"/>
+      <location filename="../settings.cpp" line="32"/>
       <source>Readable</source>
       <translation>Leselig</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="31"/>
+      <location filename="../settings.cpp" line="33"/>
       <source>Writable</source>
       <translation>Skrivbar</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="32"/>
+      <location filename="../settings.cpp" line="34"/>
       <source>Executable</source>
       <translation>Kjørbar</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="33"/>
+      <location filename="../settings.cpp" line="35"/>
       <source>Ownership</source>
       <translation>Eie</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Owner</source>
-      <translation>Eieren</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Group</source>
-      <translation>Gruppe</translation>
     </message>
   </context>
   <context>
@@ -321,17 +311,17 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="13"/>
+      <location filename="../settings.cpp" line="15"/>
       <source>General</source>
       <translation>Generell</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="14"/>
+      <location filename="../settings.cpp" line="16"/>
       <source>Appearence</source>
       <translation>Utseende</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="15"/>
+      <location filename="../settings.cpp" line="17"/>
       <source>Window</source>
       <translation>Vindu</translation>
     </message>
