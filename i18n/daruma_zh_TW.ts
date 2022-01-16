@@ -22,27 +22,27 @@
 <context>
     <name>AppearenceTab</name>
     <message>
-        <location filename="../settings.cpp" line="55"/>
+        <location filename="../settings.cpp" line="65"/>
         <source>File Name:</source>
         <translation>檔名: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="56"/>
+        <location filename="../settings.cpp" line="66"/>
         <source>Path:</source>
         <translation>路徑: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="57"/>
+        <location filename="../settings.cpp" line="67"/>
         <source>Size:</source>
         <translation>大小: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="58"/>
+        <location filename="../settings.cpp" line="68"/>
         <source>Last Read:</source>
         <translation>最後開啟: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="59"/>
+        <location filename="../settings.cpp" line="69"/>
         <source>Last Modified:</source>
         <translation>最後修改: </translation>
     </message>
@@ -50,38 +50,28 @@
 <context>
     <name>GeneralTab</name>
     <message>
-        <location filename="../settings.cpp" line="29"/>
+        <location filename="../settings.cpp" line="31"/>
         <source>Permissions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="30"/>
+        <location filename="../settings.cpp" line="32"/>
         <source>Readable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="31"/>
+        <location filename="../settings.cpp" line="33"/>
         <source>Writable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="32"/>
+        <location filename="../settings.cpp" line="34"/>
         <source>Executable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="33"/>
-        <source>Ownership</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settings.cpp" line="34"/>
-        <source>Owner</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../settings.cpp" line="35"/>
-        <source>Group</source>
+        <source>Ownership</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -321,17 +311,17 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../settings.cpp" line="13"/>
+        <location filename="../settings.cpp" line="15"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="14"/>
+        <location filename="../settings.cpp" line="16"/>
         <source>Appearence</source>
         <translation>外觀</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="15"/>
+        <location filename="../settings.cpp" line="17"/>
         <source>Window</source>
         <translation>視窗</translation>
     </message>

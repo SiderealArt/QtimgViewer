@@ -9,12 +9,10 @@
 #include <QComboBox>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
-class GeneralTab : public QWidget
-{
+class GeneralTab : public QWidget{
   Q_OBJECT
-
 public:
-  explicit GeneralTab(QWidget *parent = nullptr);
+  GeneralTab(QWidget *parent = nullptr);
   QComboBox *languagedropdown;
   QString m_currLang;
   QString m_langPath;
@@ -22,24 +20,24 @@ public:
   QTranslator m_translatorQt; // contains the translations for qt
 private:
   void languagemenu();
-   void loadLanguage(const QString& rLanguage);
+  void loadLanguage(const QString& rLanguage);
 private slots:
   void slotLanguageChanged(int);
 };
-class WindowTab : public QWidget
-{
+
+class WindowTab : public QWidget{
   Q_OBJECT
 
 public:
-  explicit WindowTab(QWidget *parent = nullptr);
+   WindowTab(QWidget *parent = nullptr);
 };
-class AppearenceTab : public QWidget
-{
+class AppearenceTab : public QWidget{
   Q_OBJECT
 
 public:
-  explicit AppearenceTab(QWidget *parent = nullptr);
+  AppearenceTab(QWidget *parent = nullptr);
 };
+
 class Settings:public QWidget{
   Q_OBJECT
 public:
