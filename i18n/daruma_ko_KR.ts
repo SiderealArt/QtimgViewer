@@ -22,27 +22,27 @@
   <context>
     <name>AppearenceTab</name>
     <message>
-      <location filename="../settings.cpp" line="55"/>
+      <location filename="../settings.cpp" line="65"/>
       <source>File Name:</source>
       <translation>파일 이름:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="56"/>
+      <location filename="../settings.cpp" line="66"/>
       <source>Path:</source>
       <translation>길:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="57"/>
+      <location filename="../settings.cpp" line="67"/>
       <source>Size:</source>
       <translation>크기:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="58"/>
+      <location filename="../settings.cpp" line="68"/>
       <source>Last Read:</source>
       <translation>마지막 읽기:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="59"/>
+      <location filename="../settings.cpp" line="69"/>
       <source>Last Modified:</source>
       <translation>마지막 수정:</translation>
     </message>
@@ -50,39 +50,29 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="29"/>
+      <location filename="../settings.cpp" line="31"/>
       <source>Permissions</source>
       <translation>권한</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="30"/>
+      <location filename="../settings.cpp" line="32"/>
       <source>Readable</source>
       <translation>가독성</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="31"/>
+      <location filename="../settings.cpp" line="33"/>
       <source>Writable</source>
       <translation>쓰기 가능</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="32"/>
+      <location filename="../settings.cpp" line="34"/>
       <source>Executable</source>
       <translation>실행 파일</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="33"/>
+      <location filename="../settings.cpp" line="35"/>
       <source>Ownership</source>
       <translation>소유권</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Owner</source>
-      <translation>소유자</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Group</source>
-      <translation>그룹</translation>
     </message>
   </context>
   <context>
@@ -321,17 +311,17 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="13"/>
+      <location filename="../settings.cpp" line="15"/>
       <source>General</source>
       <translation>일반적인</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="14"/>
+      <location filename="../settings.cpp" line="16"/>
       <source>Appearence</source>
       <translation>외모</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="15"/>
+      <location filename="../settings.cpp" line="17"/>
       <source>Window</source>
       <translation>창문</translation>
     </message>
