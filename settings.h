@@ -14,6 +14,7 @@ class GeneralTab : public QWidget{
 public:
   GeneralTab(QWidget *parent = nullptr);
   QComboBox *languagedropdown;
+  QComboBox *stylesheetdropdown;
   QString m_currLang;
   QString m_langPath;
   QTranslator m_translator; // contains the translations for this application
@@ -23,6 +24,7 @@ private:
   void loadLanguage(const QString& rLanguage);
 private slots:
   void slotLanguageChanged(int);
+  void stylesheetChanged(int);
 };
 
 class WindowTab : public QWidget{

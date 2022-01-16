@@ -10,7 +10,6 @@ Settings::Settings(QWidget *parent)
   QDialogButtonBox *buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Apply);
   QTabWidget *tabWidget = new QTabWidget();
   QSettings settings(QString("config.ini"), QSettings::IniFormat);
-  QString someValue = settings.value("some/config/key", "default value if unset").toString();
   QVBoxLayout *mainLayout = new QVBoxLayout();
   tabWidget->addTab(new GeneralTab(), tr("General"));
   tabWidget->addTab(new AppearenceTab(), tr("Appearence"));
@@ -34,6 +33,10 @@ GeneralTab::GeneralTab(QWidget *parent)
   QCheckBox *executable = new QCheckBox(tr("Executable"));
   QGroupBox *ownerGroup = new QGroupBox(tr("Ownership"));
   languagedropdown = new QComboBox();
+  stylesheetdropdown = new QComboBox();
+  stylesheetdropdown->addItem(tr("White"));
+  stylesheetdropdown->addItem(tr("Black"));
+  connect(stylesheetdropdown,SIGNAL(currentIndexChanged(int)), this, SLOT(stylesheetChanged(int)));
   const auto entries = QDir(":/i18n/").entryList();
   for (auto entry : entries)
     {
@@ -62,18 +65,7 @@ GeneralTab::GeneralTab(QWidget *parent)
 AppearenceTab::AppearenceTab(QWidget *parent)
   : QWidget(parent)
 {
-  QLabel *fileNameLabel = new QLabel(tr("File Name:"));
-  QLabel *pathLabel = new QLabel(tr("Path:"));
-  QLabel *sizeLabel = new QLabel(tr("Size:"));
-  QLabel *lastReadLabel = new QLabel(tr("Last Read:"));
-  QLabel *lastModLabel = new QLabel(tr("Last Modified:"));
   QVBoxLayout *mainLayout = new QVBoxLayout;
-  mainLayout->addWidget(fileNameLabel);
-  mainLayout->addWidget(pathLabel);
-  mainLayout->addWidget(sizeLabel);
-  mainLayout->addWidget(lastReadLabel);
-  mainLayout->addWidget(lastModLabel);
-  mainLayout->addStretch(1);
   setLayout(mainLayout);
 }
 
@@ -91,6 +83,8 @@ void switchTranslator(QTranslator& translator, const QString& filename) {
   if(translator.load(":/i18n/daruma_zh_CN.ts")){
       qDebug() << path + filename;
     QCoreApplication::installTranslator(&translator);
+    }else{
+      qDebug() << "failed";
     }
 }
 
@@ -99,7 +93,6 @@ void GeneralTab::loadLanguage(const QString& rLanguage) {
       m_currLang = rLanguage;
       QLocale locale = QLocale(m_currLang);
       QLocale::setDefault(locale);
-      QString languageName = QLocale::languageToString(locale.language());
       switchTranslator(m_translator, QString("daruma_%1.qm").arg(rLanguage));
       switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
     }
@@ -109,4 +102,8 @@ void GeneralTab::slotLanguageChanged(int index)
 {
   Q_UNUSED(index)
   loadLanguage(languagedropdown->currentData().toString());
+}
+
+void GeneralTab::stylesheetChanged(int index){
+
 }

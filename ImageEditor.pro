@@ -32,15 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     resource.qrc
 
-TRANSLATIONS += \
-    i18n/daruma_en.ts \
-    i18n/daruma_ja.ts \
-    i18n/daruma_ru.ts \
-    i18n/daruma_fr.ts \
-    i18n/daruma_ko.ts \
-    i18n/daruma_de.ts \
-    i18n/daruma_es.ts \
-    i18n/daruma_zh_TW.ts \
-    i18n/daruma_zh_CN.ts \
+TRANSLATIONS += $$files(i18n/daruma_*.ts)
 
 RC_ICONS = favicon.ico
