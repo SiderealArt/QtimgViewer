@@ -1,339 +1,395 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="tr_TR" sourcelanguage="en">
-  <context>
+<context>
     <name>About</name>
     <message>
-      <location filename="../about.cpp" line="15"/>
-      <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
-      <translation>Qt %1 (%2) ile oluşturulmuş&lt;br&gt; &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub'da GPLv3 altında mevcuttur&lt;/a&gt;&lt;br&gt;Simge, Icon8 tarafından sağlanmıştır&lt;br&gt;Telif Hakkı © %3 SiderealArt</translation>
+        <location filename="../about.cpp" line="15"/>
+        <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
+        <translation>Qt %1 (%2) ile oluşturulmuş&lt;br&gt; &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&apos;da GPLv3 altında mevcuttur&lt;/a&gt;&lt;br&gt;Simge, Icon8 tarafından sağlanmıştır&lt;br&gt;Telif Hakkı © %3 SiderealArt</translation>
     </message>
     <message>
-      <location filename="../about.cpp" line="20"/>
-      <source>Version 1.34.2</source>
-      <translation>Sürüm 1.34.2</translation>
+        <location filename="../about.cpp" line="20"/>
+        <source>Version 1.34.2</source>
+        <translation>Sürüm 1.34.2</translation>
     </message>
     <message>
-      <location filename="../about.cpp" line="21"/>
-      <source>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</source>
-      <translation>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
+        <location filename="../about.cpp" line="21"/>
+        <source>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</source>
+        <translation>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>AppearenceTab</name>
     <message>
-      <location filename="../settings.cpp" line="55"/>
-      <source>File Name:</source>
-      <translation>Dosya adı:</translation>
+        <source>File Name:</source>
+        <translation type="vanished">Dosya adı:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="56"/>
-      <source>Path:</source>
-      <translation>Yol:</translation>
+        <source>Path:</source>
+        <translation type="vanished">Yol:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="57"/>
-      <source>Size:</source>
-      <translation>Boyut:</translation>
+        <source>Size:</source>
+        <translation type="vanished">Boyut:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="58"/>
-      <source>Last Read:</source>
-      <translation>Son Okuma:</translation>
+        <source>Last Read:</source>
+        <translation type="vanished">Son Okuma:</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="59"/>
-      <source>Last Modified:</source>
-      <translation>Son düzenleme:</translation>
+        <source>Last Modified:</source>
+        <translation type="vanished">Son düzenleme:</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
+    <name>Fileinfo</name>
+    <message>
+        <location filename="../fileinfo.cpp" line="6"/>
+        <source>File Name:</source>
+        <translation type="unfinished">Dosya adı:</translation>
+    </message>
+    <message>
+        <location filename="../fileinfo.cpp" line="7"/>
+        <source>Path:</source>
+        <translation type="unfinished">Yol:</translation>
+    </message>
+    <message>
+        <location filename="../fileinfo.cpp" line="8"/>
+        <source>Size:</source>
+        <translation type="unfinished">Boyut:</translation>
+    </message>
+    <message>
+        <location filename="../fileinfo.cpp" line="9"/>
+        <source>Last Read:</source>
+        <translation type="unfinished">Son Okuma:</translation>
+    </message>
+    <message>
+        <location filename="../fileinfo.cpp" line="10"/>
+        <source>Last Modified:</source>
+        <translation type="unfinished">Son düzenleme:</translation>
+    </message>
+</context>
+<context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="29"/>
-      <source>Permissions</source>
-      <translation>izinler</translation>
+        <location filename="../settings.cpp" line="30"/>
+        <source>Permissions</source>
+        <translation>izinler</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="30"/>
-      <source>Readable</source>
-      <translation>Okunabilir</translation>
+        <location filename="../settings.cpp" line="31"/>
+        <source>Readable</source>
+        <translation>Okunabilir</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="31"/>
-      <source>Writable</source>
-      <translation>yazılabilir</translation>
+        <location filename="../settings.cpp" line="32"/>
+        <source>Writable</source>
+        <translation>yazılabilir</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="32"/>
-      <source>Executable</source>
-      <translation>yürütülebilir</translation>
+        <location filename="../settings.cpp" line="33"/>
+        <source>Executable</source>
+        <translation>yürütülebilir</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="33"/>
-      <source>Ownership</source>
-      <translation>Mülkiyet</translation>
+        <location filename="../settings.cpp" line="34"/>
+        <source>Ownership</source>
+        <translation>Mülkiyet</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Owner</source>
-      <translation>Sahip</translation>
+        <location filename="../settings.cpp" line="37"/>
+        <source>White</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Group</source>
-      <translation>Grup</translation>
+        <location filename="../settings.cpp" line="38"/>
+        <source>Black</source>
+        <translation type="unfinished"></translation>
     </message>
-  </context>
-  <context>
+    <message>
+        <source>Owner</source>
+        <translation type="vanished">Sahip</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="vanished">Grup</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-      <location filename="../mainwindow.cpp" line="59"/>
-      <source>Tree View</source>
-      <translation>Ağaç görünümü</translation>
+        <location filename="../mainwindow.cpp" line="64"/>
+        <source>Tree View</source>
+        <translation>Ağaç görünümü</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="75"/>
-      <source>Color picker</source>
-      <translation>Renk seçici</translation>
+        <location filename="../mainwindow.cpp" line="80"/>
+        <source>Color picker</source>
+        <translation>Renk seçici</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="78"/>
-      <source>Up to parent directory</source>
-      <translation>Üst dizine kadar</translation>
+        <location filename="../mainwindow.cpp" line="83"/>
+        <source>Up to parent directory</source>
+        <translation>Üst dizine kadar</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="81"/>
-      <source>Back to home directory</source>
-      <translation>Ana dizine geri dön</translation>
+        <location filename="../mainwindow.cpp" line="86"/>
+        <source>Back to home directory</source>
+        <translation>Ana dizine geri dön</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="84"/>
-      <source>Always on top</source>
-      <translation>Her zaman üstte</translation>
+        <location filename="../mainwindow.cpp" line="89"/>
+        <source>Always on top</source>
+        <translation>Her zaman üstte</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="87"/>
-      <source>Show Histrogram</source>
-      <translation>Histrogramı Göster</translation>
+        <location filename="../mainwindow.cpp" line="92"/>
+        <source>Show Histrogram</source>
+        <translation>Histrogramı Göster</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="89"/>
-      <source>Threshold...</source>
-      <translation>Eşik...</translation>
+        <location filename="../mainwindow.cpp" line="94"/>
+        <source>Threshold...</source>
+        <translation>Eşik...</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="91"/>
-      <source>Print</source>
-      <translation>Yazdır</translation>
+        <location filename="../mainwindow.cpp" line="96"/>
+        <source>Print</source>
+        <translation>Yazdır</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="94"/>
-      <source>Open New Window</source>
-      <translation>Yeni Pencere Aç</translation>
+        <location filename="../mainwindow.cpp" line="99"/>
+        <source>Open New Window</source>
+        <translation>Yeni Pencere Aç</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="96"/>
-      <source>Redo</source>
-      <translation>yinele</translation>
+        <location filename="../mainwindow.cpp" line="101"/>
+        <source>Redo</source>
+        <translation>yinele</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="99"/>
-      <source>Undo</source>
-      <translation>Geri alma</translation>
+        <location filename="../mainwindow.cpp" line="104"/>
+        <source>Undo</source>
+        <translation>Geri alma</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="102"/>
-      <source>Upload to Imgur</source>
-      <translation>Imgur'a yükle</translation>
+        <location filename="../mainwindow.cpp" line="107"/>
+        <source>Upload to Imgur</source>
+        <translation>Imgur&apos;a yükle</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="103"/>
-      <source>Upload to ImgBB</source>
-      <translation>ImgBB'ye yükle</translation>
+        <location filename="../mainwindow.cpp" line="109"/>
+        <source>Upload to ImgBB</source>
+        <translation>ImgBB&apos;ye yükle</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="104"/>
-      <source>Upload to ImageShack</source>
-      <translation>ImageShack'e yükle</translation>
+        <location filename="../mainwindow.cpp" line="110"/>
+        <source>Upload to ImageShack</source>
+        <translation>ImageShack&apos;e yükle</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="105"/>
-      <source>Copy to Clipboard</source>
-      <translation>Panoya kopyala</translation>
+        <location filename="../mainwindow.cpp" line="111"/>
+        <source>Copy to Clipboard</source>
+        <translation>Panoya kopyala</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="108"/>
-      <source>Save</source>
-      <translation>Kayıt etmek</translation>
+        <location filename="../mainwindow.cpp" line="114"/>
+        <source>Save</source>
+        <translation>Kayıt etmek</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="112"/>
-      <source>Save as...</source>
-      <translation>Farklı kaydet...</translation>
+        <location filename="../mainwindow.cpp" line="118"/>
+        <source>Save as...</source>
+        <translation>Farklı kaydet...</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="116"/>
-      <source>Settings</source>
-      <translation>Ayarlar</translation>
+        <location filename="../mainwindow.cpp" line="122"/>
+        <source>Settings</source>
+        <translation>Ayarlar</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="119"/>
-      <source>Rotate</source>
-      <translation>Döndür</translation>
+        <location filename="../mainwindow.cpp" line="125"/>
+        <source>Rotate</source>
+        <translation>Döndür</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="123"/>
-      <source>Fullscreen</source>
-      <translation>Tam ekran</translation>
+        <location filename="../mainwindow.cpp" line="129"/>
+        <source>Fullscreen</source>
+        <translation>Tam ekran</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="125"/>
-      <source>About</source>
-      <translation>Hakkında</translation>
+        <location filename="../mainwindow.cpp" line="131"/>
+        <source>About</source>
+        <translation>Hakkında</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="127"/>
-      <source>Check for Updates</source>
-      <translation>Güncellemeleri kontrol et</translation>
+        <location filename="../mainwindow.cpp" line="133"/>
+        <source>Check for Updates</source>
+        <translation>Güncellemeleri kontrol et</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="128"/>
-      <source>Pen</source>
-      <translation>Dolma kalem</translation>
+        <location filename="../mainwindow.cpp" line="134"/>
+        <source>Pen</source>
+        <translation>Dolma kalem</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="131"/>
-      <source>Horizontal Flip</source>
-      <translation>Yatay Çevirme</translation>
+        <location filename="../mainwindow.cpp" line="137"/>
+        <source>Horizontal Flip</source>
+        <translation>Yatay Çevirme</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="135"/>
-      <source>Vertical Flip</source>
-      <translation>Dikey Çevirme</translation>
+        <location filename="../mainwindow.cpp" line="141"/>
+        <source>Vertical Flip</source>
+        <translation>Dikey Çevirme</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="139"/>
-      <source>&amp;Open File</source>
-      <translation>&amp;Açık dosya</translation>
+        <location filename="../mainwindow.cpp" line="145"/>
+        <source>&amp;Open File</source>
+        <translation>&amp;Açık dosya</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="140"/>
-      <source>Ctrl+O</source>
-      <translation>Ctrl+O</translation>
+        <location filename="../mainwindow.cpp" line="146"/>
+        <source>Ctrl+O</source>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="141"/>
-      <source>Open Image File</source>
-      <translation>Görüntü Dosyasını Aç</translation>
+        <location filename="../mainwindow.cpp" line="147"/>
+        <source>Open Image File</source>
+        <translation>Görüntü Dosyasını Aç</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="144"/>
-      <source>&amp;Quit</source>
-      <translation>&amp;Çıkış yapmak</translation>
+        <location filename="../mainwindow.cpp" line="149"/>
+        <source>Open From Url...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="145"/>
-      <source>Ctrl+Q</source>
-      <translation>Ctrl+Q</translation>
+        <location filename="../mainwindow.cpp" line="150"/>
+        <source>Open Image File from Url</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="146"/>
-      <source>Quit Application</source>
-      <translation>Uygulamadan Çık</translation>
+        <location filename="../mainwindow.cpp" line="154"/>
+        <source>&amp;Quit</source>
+        <translation>&amp;Çıkış yapmak</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="148"/>
-      <source>Zoom &amp;In</source>
-      <translation>Yakınlaştır</translation>
+        <location filename="../mainwindow.cpp" line="155"/>
+        <source>Ctrl+Q</source>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="149"/>
-      <source>Ctrl++</source>
-      <translation>Ctrl++</translation>
+        <location filename="../mainwindow.cpp" line="156"/>
+        <source>Quit Application</source>
+        <translation>Uygulamadan Çık</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="153"/>
-      <source>Zoom O&amp;ut</source>
-      <translation>Uzaklaştır</translation>
+        <location filename="../mainwindow.cpp" line="158"/>
+        <source>Zoom &amp;In</source>
+        <translation>Yakınlaştır</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="154"/>
-      <source>Ctrl+-</source>
-      <translation>Ctrl+-</translation>
+        <location filename="../mainwindow.cpp" line="159"/>
+        <source>Ctrl++</source>
+        <translation>Ctrl++</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="162"/>
-      <source>&amp;File</source>
-      <translation>&amp;Dosya</translation>
+        <location filename="../mainwindow.cpp" line="163"/>
+        <source>Zoom O&amp;ut</source>
+        <translation>Uzaklaştır</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="169"/>
-      <source>&amp;Edit</source>
-      <translation>&amp;Düzenlemek</translation>
+        <location filename="../mainwindow.cpp" line="164"/>
+        <source>Ctrl+-</source>
+        <translation>Ctrl+-</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="173"/>
-      <source>&amp;View</source>
-      <translation>&amp;Görüş</translation>
+        <location filename="../mainwindow.cpp" line="172"/>
+        <source>&amp;File</source>
+        <translation>&amp;Dosya</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="181"/>
-      <source>&amp;Tools</source>
-      <translation>&amp;Araçlar</translation>
+        <location filename="../mainwindow.cpp" line="180"/>
+        <source>&amp;Edit</source>
+        <translation>&amp;Düzenlemek</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="182"/>
-      <source>Share</source>
-      <translation>Paylaş</translation>
+        <location filename="../mainwindow.cpp" line="184"/>
+        <source>&amp;View</source>
+        <translation>&amp;Görüş</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="187"/>
-      <source>&amp;Help</source>
-      <translation>&amp;Yardım</translation>
+        <location filename="../mainwindow.cpp" line="192"/>
+        <source>&amp;Tools</source>
+        <translation>&amp;Araçlar</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="192"/>
-      <source>File</source>
-      <translation>Dosya</translation>
+        <location filename="../mainwindow.cpp" line="193"/>
+        <source>Share</source>
+        <translation>Paylaş</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="196"/>
-      <source>Image</source>
-      <translation>resim</translation>
+        <location filename="../mainwindow.cpp" line="198"/>
+        <source>&amp;Help</source>
+        <translation>&amp;Yardım</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="234"/>
-      <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
-      <translation>Resimler (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
+        <location filename="../mainwindow.cpp" line="203"/>
+        <source>File</source>
+        <translation>Dosya</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="262"/>
-      <source>Save Image File</source>
-      <translation>Görüntü Dosyasını Kaydet</translation>
+        <location filename="../mainwindow.cpp" line="207"/>
+        <source>Image</source>
+        <translation>resim</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="264"/>
-      <source>Images (*.png)</source>
-      <translation>Resimler (*.png)</translation>
+        <location filename="../mainwindow.cpp" line="245"/>
+        <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
+        <translation>Resimler (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
     </message>
-  </context>
-  <context>
+    <message>
+        <location filename="../mainwindow.cpp" line="273"/>
+        <source>Save Image File</source>
+        <translation>Görüntü Dosyasını Kaydet</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="275"/>
+        <source>Images (*.png)</source>
+        <translation>Resimler (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="454"/>
+        <source>Open URL...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="455"/>
+        <source>URL of a supported image file:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="476"/>
+        <source>%1. Link copied to the clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="13"/>
-      <source>General</source>
-      <translation>Genel</translation>
+        <location filename="../settings.cpp" line="14"/>
+        <source>General</source>
+        <translation>Genel</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="14"/>
-      <source>Appearence</source>
-      <translation>görünüm</translation>
+        <location filename="../settings.cpp" line="15"/>
+        <source>Appearence</source>
+        <translation>görünüm</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="15"/>
-      <source>Window</source>
-      <translation>pencere</translation>
+        <location filename="../settings.cpp" line="16"/>
+        <source>Window</source>
+        <translation>pencere</translation>
     </message>
-  </context>
+</context>
 </TS>

@@ -11,6 +11,7 @@ CONFIG += c++14
 SOURCES += \
     about.cpp \
     fileinfo.cpp \
+    label.cpp \
     main.cpp \
     mainwindow.cpp \
     settings.cpp \
