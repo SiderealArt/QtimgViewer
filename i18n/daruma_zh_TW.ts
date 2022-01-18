@@ -225,7 +225,7 @@
     <message>
       <location filename="../mainwindow.cpp" line="150"/>
       <source>&amp;Open File</source>
-      <translation>＆打開文件</translation>
+      <translation>開啟檔案 (&amp;O)</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="151"/>
