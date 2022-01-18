@@ -1,8 +1,24 @@
 ﻿QWidget {
   background-color: #283542;
   border: 0px solid #455364;
-  padding: 0px;
   color: #E0E1E3;
+}
+
+QGroupBox{
+ border: 2px solid #455364;
+}
+
+QTabBar::tab {
+    background-color: #183a5c;
+    border: 2px solid #C4C4C3;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background-color: #183a5c;
 }
 
 QTreeView {

@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     myappTranslator.load(l, QLatin1String(":/i18n"));
 
     a.installTranslator(&myappTranslator);
-   //a.setStyleSheet(style);
+   a.setStyleSheet(style);
     MainWindow w;
     w.show();
     return a.exec();

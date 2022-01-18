@@ -42,11 +42,13 @@ GeneralTab::GeneralTab(QWidget *parent)
   const auto entries = QDir(":/i18n/").entryList();
   for (auto entry : entries)
     {
+      if(entry.right(2) == "qm"){
       entry.remove(0, 7);
       entry.remove(entry.length()-3, 3);
       QLocale locale(entry);
       const QString langString = locale.nativeLanguageName() + " (" + entry + ")";
       languagedropdown->addItem(langString,entry);
+        }
     }
   connect(languagedropdown, SIGNAL(currentIndexChanged(int)), this, SLOT(slotLanguageChanged(int)));
   QVBoxLayout *permissionsLayout = new QVBoxLayout;
