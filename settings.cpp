@@ -28,7 +28,7 @@ Settings::~Settings()
 GeneralTab::GeneralTab(QWidget *parent)
   : QWidget(parent)
 {
-  QSettings *settings = new QSettings(QString("config.ini"), QSettings::IniFormat);
+
   QGroupBox *permissionsGroup = new QGroupBox(tr("Permissions"));
   QCheckBox *readable = new QCheckBox(tr("Readable"));
   QCheckBox *writable = new QCheckBox(tr("Writable"));
@@ -79,6 +79,7 @@ WindowTab::WindowTab(QWidget *parent)
 }
 
 void GeneralTab::switchTranslator(QTranslator& translator, const QString& filename) {
+  QSettings *settings = new QSettings(QString("config.ini"), QSettings::IniFormat);
   QCoreApplication::removeTranslator(&translator);
   QString path = QApplication::applicationDirPath();
   path.append("/i18n/");
@@ -88,9 +89,7 @@ qDebug() << filename;
       qDebug() << "Can't find it!";*/
 
   if(translator.load(filename,":/i18n")){
-      settings->beginGroup("/General");
     settings->setValue("language", filename);
-    settings->endGroup();
     }else{
       qDebug() << "failed";
     }

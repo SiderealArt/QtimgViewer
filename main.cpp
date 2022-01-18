@@ -7,11 +7,14 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QSettings settings("config.ini",QSettings::IniFormat);
     QFile stylesheet(":/main/resources/theme/style.qss");
     stylesheet.open(QFile::ReadOnly);
     QString style(stylesheet.readAll());
     QTranslator myappTranslator;
-    myappTranslator.load(QLocale(), QLatin1String("myapp"), QLatin1String("_"), QLatin1String(":/i18n"));
+    QString l = settings.value("language", "daruma_en.qm").toString();
+    myappTranslator.load(l, QLatin1String(":/i18n"));
+
     a.installTranslator(&myappTranslator);
    //a.setStyleSheet(style);
     MainWindow w;
