@@ -115,10 +115,15 @@ void MainWindow::createActions(){
   saveAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/save.png")));
   saveAction->setDisabled(true);
   connect(saveAction,SIGNAL(triggered()),this,SLOT(save()));
-  saveAsAction = new QAction(tr("Save as..."));
-  saveAsAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/saveas.png")));
+  saveAsAction = new QAction(tr("Save as PNG file"));
+  saveAsAction->setDisabled(true);
+  saveAsJPGAction = new QAction(tr("Save as JPG file"));
+  saveAsJPGAction->setDisabled(true);
+  saveAsBMPAction = new QAction(tr("Save as BMP file"));
   saveAsAction->setDisabled(true);
   connect(saveAsAction,SIGNAL(triggered()),this,SLOT(saveAs()));
+  connect(saveAsBMPAction,SIGNAL(triggered()),this,SLOT(saveAsBMP()));
+  connect(saveAsJPGAction,SIGNAL(triggered()),this,SLOT(saveAsJPG()));
   settingAction = new QAction(tr("Settings"));
   settingAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/setting.png")));
   connect(settingAction,SIGNAL(triggered()),this,SLOT(settingsMenu()));
@@ -173,8 +178,11 @@ void MainWindow::createMenus(){
   fileMenu->addAction(openFileAction);
   fileMenu->addAction(openFromUrlAction);
   fileMenu->addAction(newWindowAction);
+  saveMenu = fileMenu->addMenu(tr("Save As..."));
+  saveMenu->addAction(saveAsAction);
+  saveMenu->addAction(saveAsBMPAction);
+  saveMenu->addAction(saveAsJPGAction);
   fileMenu->addAction(saveAction);
-  fileMenu->addAction(saveAsAction);
   fileMenu->addAction(printAction);
   fileMenu->addAction(exitAction);
   editMenu = menuBar()->addMenu(tr("&Edit"));
@@ -276,6 +284,25 @@ void MainWindow::saveAs(){
   if (!filename.isEmpty())
     {
       imgWin->pixmap().save(filename);
+    }
+}
+
+void MainWindow::saveAsBMP(){
+  filename = QFileDialog::getSaveFileName(this, tr("Save Image File"),
+                                          QString(),
+                                          tr("Images (*.bmp)"));
+  if (!filename.isEmpty())
+    {
+      imgWin->pixmap().save(filename, "BMP");
+    }
+}
+void MainWindow::saveAsJPG(){
+  filename = QFileDialog::getSaveFileName(this, tr("Save Image File"),
+                                          QString(),
+                                          tr("Images (*.jpg)"));
+  if (!filename.isEmpty())
+    {
+      imgWin->pixmap().save(filename, "JPG");
     }
 }
 

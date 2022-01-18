@@ -73,37 +73,37 @@
 <context>
     <name>GeneralTab</name>
     <message>
-        <location filename="../settings.cpp" line="30"/>
+        <location filename="../settings.cpp" line="32"/>
         <source>Permissions</source>
         <translation>Toestemmings</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="31"/>
+        <location filename="../settings.cpp" line="33"/>
         <source>Readable</source>
         <translation>Leesbaar</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="32"/>
+        <location filename="../settings.cpp" line="34"/>
         <source>Writable</source>
         <translation>Skryfbaar</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="33"/>
+        <location filename="../settings.cpp" line="35"/>
         <source>Executable</source>
         <translation>Uitvoerbaar</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="34"/>
+        <location filename="../settings.cpp" line="36"/>
         <source>Ownership</source>
         <translation>Eienaarskap</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="37"/>
+        <location filename="../settings.cpp" line="39"/>
         <source>White</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="38"/>
+        <location filename="../settings.cpp" line="40"/>
         <source>Black</source>
         <translation type="unfinished"></translation>
     </message>
@@ -199,177 +199,208 @@
         <translation>Stoor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
         <source>Save as...</source>
-        <translation>Stoor as...</translation>
+        <translation type="vanished">Stoor as...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="118"/>
+        <source>Save as PNG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="120"/>
+        <source>Save as JPG file</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="122"/>
+        <source>Save as BMP file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Settings</source>
         <translation>Instellings</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="125"/>
+        <location filename="../mainwindow.cpp" line="130"/>
         <source>Rotate</source>
         <translation>Draai</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="129"/>
+        <location filename="../mainwindow.cpp" line="134"/>
         <source>Fullscreen</source>
         <translation>Volskerm</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="131"/>
+        <location filename="../mainwindow.cpp" line="136"/>
         <source>About</source>
         <translation>Oor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="133"/>
+        <location filename="../mainwindow.cpp" line="138"/>
         <source>Check for Updates</source>
         <translation>Kyk vir opdaterings</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="134"/>
+        <location filename="../mainwindow.cpp" line="139"/>
         <source>Pen</source>
         <translation>Pen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="137"/>
+        <location filename="../mainwindow.cpp" line="142"/>
         <source>Horizontal Flip</source>
         <translation>Horisontale flip</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="141"/>
+        <location filename="../mainwindow.cpp" line="146"/>
         <source>Vertical Flip</source>
         <translation>Vertikale flip</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="145"/>
+        <location filename="../mainwindow.cpp" line="150"/>
         <source>&amp;Open File</source>
         <translation>&amp;Oop leêr</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="151"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="152"/>
         <source>Open Image File</source>
         <translation>Maak prentlêer oop</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="149"/>
+        <location filename="../mainwindow.cpp" line="154"/>
         <source>Open From Url...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="150"/>
+        <location filename="../mainwindow.cpp" line="155"/>
         <source>Open Image File from Url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="154"/>
+        <location filename="../mainwindow.cpp" line="159"/>
         <source>&amp;Quit</source>
         <translation>&amp;Hou op</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="155"/>
+        <location filename="../mainwindow.cpp" line="160"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="156"/>
+        <location filename="../mainwindow.cpp" line="161"/>
         <source>Quit Application</source>
         <translation>Verlaat toepassing</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="158"/>
+        <location filename="../mainwindow.cpp" line="163"/>
         <source>Zoom &amp;In</source>
         <translation>Zoem en in</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="159"/>
+        <location filename="../mainwindow.cpp" line="164"/>
         <source>Ctrl++</source>
         <translation>Ctrl++</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="163"/>
+        <location filename="../mainwindow.cpp" line="168"/>
         <source>Zoom O&amp;ut</source>
         <translation>Zoem uit&amp;uit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="164"/>
+        <location filename="../mainwindow.cpp" line="169"/>
         <source>Ctrl+-</source>
         <translation>Ctrl+-</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="172"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>&amp;File</source>
         <translation>&amp;Lêer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="180"/>
+        <location filename="../mainwindow.cpp" line="181"/>
+        <source>Save As...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="188"/>
         <source>&amp;Edit</source>
         <translation>&amp;Redigeer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="184"/>
+        <location filename="../mainwindow.cpp" line="192"/>
         <source>&amp;View</source>
         <translation>&amp;Beskou</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="192"/>
+        <location filename="../mainwindow.cpp" line="200"/>
         <source>&amp;Tools</source>
         <translation>&amp;Gereedskap</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="193"/>
+        <location filename="../mainwindow.cpp" line="201"/>
         <source>Share</source>
         <translation>Deel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="198"/>
+        <location filename="../mainwindow.cpp" line="206"/>
         <source>&amp;Help</source>
         <translation>&amp;Hulp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="203"/>
+        <location filename="../mainwindow.cpp" line="211"/>
         <source>File</source>
         <translation>lêer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="207"/>
+        <location filename="../mainwindow.cpp" line="215"/>
         <source>Image</source>
         <translation>Beeld</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="245"/>
+        <location filename="../mainwindow.cpp" line="253"/>
         <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
         <translation>Prente (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="273"/>
+        <location filename="../mainwindow.cpp" line="281"/>
+        <location filename="../mainwindow.cpp" line="291"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>Save Image File</source>
         <translation>Stoor prentlêer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="275"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Images (*.png)</source>
         <translation>Prente (*.png)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="454"/>
+        <location filename="../mainwindow.cpp" line="293"/>
+        <source>Images (*.bmp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Images (*.jpg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="481"/>
         <source>Open URL...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="455"/>
+        <location filename="../mainwindow.cpp" line="482"/>
         <source>URL of a supported image file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>%1. Link copied to the clipboard.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -377,17 +408,17 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../settings.cpp" line="14"/>
+        <location filename="../settings.cpp" line="15"/>
         <source>General</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="15"/>
+        <location filename="../settings.cpp" line="16"/>
         <source>Appearence</source>
         <translation>Voorkoms</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="16"/>
+        <location filename="../settings.cpp" line="17"/>
         <source>Window</source>
         <translation>Venster</translation>
     </message>

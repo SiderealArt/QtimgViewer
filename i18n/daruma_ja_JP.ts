@@ -73,37 +73,37 @@
 <context>
     <name>GeneralTab</name>
     <message>
-        <location filename="../settings.cpp" line="30"/>
+        <location filename="../settings.cpp" line="32"/>
         <source>Permissions</source>
         <translation>権限</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="31"/>
+        <location filename="../settings.cpp" line="33"/>
         <source>Readable</source>
         <translation>読みやすい</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="32"/>
+        <location filename="../settings.cpp" line="34"/>
         <source>Writable</source>
         <translation>書き込み可能</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="33"/>
+        <location filename="../settings.cpp" line="35"/>
         <source>Executable</source>
         <translation>実行可能</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="34"/>
+        <location filename="../settings.cpp" line="36"/>
         <source>Ownership</source>
         <translation>所有</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="37"/>
+        <location filename="../settings.cpp" line="39"/>
         <source>White</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="38"/>
+        <location filename="../settings.cpp" line="40"/>
         <source>Black</source>
         <translation type="unfinished"></translation>
     </message>
@@ -199,177 +199,208 @@
         <translation>保存する</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
         <source>Save as...</source>
-        <translation>名前を付けて保存...</translation>
+        <translation type="vanished">名前を付けて保存...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="118"/>
+        <source>Save as PNG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="120"/>
+        <source>Save as JPG file</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="122"/>
+        <source>Save as BMP file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="125"/>
+        <location filename="../mainwindow.cpp" line="130"/>
         <source>Rotate</source>
         <translation>回転する</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="129"/>
+        <location filename="../mainwindow.cpp" line="134"/>
         <source>Fullscreen</source>
         <translation>全画面表示</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="131"/>
+        <location filename="../mainwindow.cpp" line="136"/>
         <source>About</source>
         <translation>約</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="133"/>
+        <location filename="../mainwindow.cpp" line="138"/>
         <source>Check for Updates</source>
         <translation>アップデートを確認する</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="134"/>
+        <location filename="../mainwindow.cpp" line="139"/>
         <source>Pen</source>
         <translation>ペン</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="137"/>
+        <location filename="../mainwindow.cpp" line="142"/>
         <source>Horizontal Flip</source>
         <translation>水平フリップ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="141"/>
+        <location filename="../mainwindow.cpp" line="146"/>
         <source>Vertical Flip</source>
         <translation>垂直フリップ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="145"/>
+        <location filename="../mainwindow.cpp" line="150"/>
         <source>&amp;Open File</source>
         <translation>＆ファイルを開く</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="151"/>
         <source>Ctrl+O</source>
         <translation>Ctrl + O</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="152"/>
         <source>Open Image File</source>
         <translation>画像ファイルを開く</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="149"/>
+        <location filename="../mainwindow.cpp" line="154"/>
         <source>Open From Url...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="150"/>
+        <location filename="../mainwindow.cpp" line="155"/>
         <source>Open Image File from Url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="154"/>
+        <location filename="../mainwindow.cpp" line="159"/>
         <source>&amp;Quit</source>
         <translation>＆終了する</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="155"/>
+        <location filename="../mainwindow.cpp" line="160"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl + Q</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="156"/>
+        <location filename="../mainwindow.cpp" line="161"/>
         <source>Quit Application</source>
         <translation>アプリケーションを終了する</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="158"/>
+        <location filename="../mainwindow.cpp" line="163"/>
         <source>Zoom &amp;In</source>
         <translation>ズームイン</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="159"/>
+        <location filename="../mainwindow.cpp" line="164"/>
         <source>Ctrl++</source>
         <translation>Ctrl ++</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="163"/>
+        <location filename="../mainwindow.cpp" line="168"/>
         <source>Zoom O&amp;ut</source>
         <translation>ズームアウトする</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="164"/>
+        <location filename="../mainwindow.cpp" line="169"/>
         <source>Ctrl+-</source>
         <translation>Ctrl +-</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="172"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>&amp;File</source>
         <translation>＆ファイル</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="180"/>
+        <location filename="../mainwindow.cpp" line="181"/>
+        <source>Save As...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="188"/>
         <source>&amp;Edit</source>
         <translation>＆編集</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="184"/>
+        <location filename="../mainwindow.cpp" line="192"/>
         <source>&amp;View</source>
         <translation>＆意見</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="192"/>
+        <location filename="../mainwindow.cpp" line="200"/>
         <source>&amp;Tools</source>
         <translation>＆Tools</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="193"/>
+        <location filename="../mainwindow.cpp" line="201"/>
         <source>Share</source>
         <translation>シェア</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="198"/>
+        <location filename="../mainwindow.cpp" line="206"/>
         <source>&amp;Help</source>
         <translation>＆ヘルプ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="203"/>
+        <location filename="../mainwindow.cpp" line="211"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="207"/>
+        <location filename="../mainwindow.cpp" line="215"/>
         <source>Image</source>
         <translation>画像</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="245"/>
+        <location filename="../mainwindow.cpp" line="253"/>
         <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
         <translation>画像（* .jpg * .jpeg * .png * .bmp * .gif）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="273"/>
+        <location filename="../mainwindow.cpp" line="281"/>
+        <location filename="../mainwindow.cpp" line="291"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>Save Image File</source>
         <translation>画像ファイルを保存</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="275"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Images (*.png)</source>
         <translation>画像（* .png）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="454"/>
+        <location filename="../mainwindow.cpp" line="293"/>
+        <source>Images (*.bmp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Images (*.jpg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="481"/>
         <source>Open URL...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="455"/>
+        <location filename="../mainwindow.cpp" line="482"/>
         <source>URL of a supported image file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>%1. Link copied to the clipboard.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -377,17 +408,17 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../settings.cpp" line="14"/>
+        <location filename="../settings.cpp" line="15"/>
         <source>General</source>
         <translation>全般的</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="15"/>
+        <location filename="../settings.cpp" line="16"/>
         <source>Appearence</source>
         <translation>出現</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="16"/>
+        <location filename="../settings.cpp" line="17"/>
         <source>Window</source>
         <translation>窓</translation>
     </message>
