@@ -6,17 +6,17 @@
     <message>
       <location filename="../about.cpp" line="15"/>
       <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
-      <translation type="unfinished">Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</translation>
+      <translation>مُصمم باستخدام Qt %1 (%2)&lt;br&gt;كود المصدر متاح ضمن GPLv3 على &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon المقدمة من Icon8&lt;br&gt;حقوق النشر © %3 SiderealArt</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="20"/>
       <source>Version 1.34.2</source>
-      <translation type="unfinished">Version 1.34.2</translation>
+      <translation>الإصدار 1.34.2</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="21"/>
       <source>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</source>
-      <translation type="unfinished">&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
+      <translation>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
     </message>
   </context>
   <context>
@@ -24,27 +24,27 @@
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
       <source>File Name:</source>
-      <translation type="unfinished">File Name:</translation>
+      <translation>اسم الملف:</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="7"/>
       <source>Path:</source>
-      <translation type="unfinished">Path:</translation>
+      <translation>طريق:</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="8"/>
       <source>Size:</source>
-      <translation type="unfinished">Size:</translation>
+      <translation>بحجم:</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="9"/>
       <source>Last Read:</source>
-      <translation type="unfinished">Last Read:</translation>
+      <translation>آخر قراءة:</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="10"/>
       <source>Last Modified:</source>
-      <translation type="unfinished">Last Modified:</translation>
+      <translation>آخر تعديل:</translation>
     </message>
   </context>
   <context>
@@ -52,37 +52,37 @@
     <message>
       <location filename="../settings.cpp" line="32"/>
       <source>Permissions</source>
-      <translation type="unfinished">Permissions</translation>
+      <translation>أذونات</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="33"/>
       <source>Readable</source>
-      <translation type="unfinished">Readable</translation>
+      <translation>مقروء</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="34"/>
       <source>Writable</source>
-      <translation type="unfinished">Writable</translation>
+      <translation>قابل للكتابة</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="35"/>
       <source>Executable</source>
-      <translation type="unfinished">Executable</translation>
+      <translation>تنفيذ</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="36"/>
       <source>Ownership</source>
-      <translation type="unfinished">Ownership</translation>
+      <translation>ملكية</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="39"/>
       <source>White</source>
-      <translation type="unfinished">White</translation>
+      <translation>أبيض</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="40"/>
       <source>Black</source>
-      <translation type="unfinished">Black</translation>
+      <translation>أسود</translation>
     </message>
   </context>
   <context>
@@ -90,284 +90,284 @@
     <message>
       <location filename="../mainwindow.cpp" line="64"/>
       <source>Tree View</source>
-      <translation type="unfinished">Tree View</translation>
+      <translation>عرض الشجرة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="80"/>
       <source>Color picker</source>
-      <translation type="unfinished">Color picker</translation>
+      <translation>أداة انتقاء اللون</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="83"/>
       <source>Up to parent directory</source>
-      <translation type="unfinished">Up to parent directory</translation>
+      <translation>حتى الدليل الأصل</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="86"/>
       <source>Back to home directory</source>
-      <translation type="unfinished">Back to home directory</translation>
+      <translation>العودة إلى الدليل الرئيسي</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="89"/>
       <source>Always on top</source>
-      <translation type="unfinished">Always on top</translation>
+      <translation>دائما في القمة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="92"/>
       <source>Show Histrogram</source>
-      <translation type="unfinished">Show Histrogram</translation>
+      <translation>إظهار الرسم البياني</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="94"/>
       <source>Threshold...</source>
-      <translation type="unfinished">Threshold...</translation>
+      <translation>عتبة...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="96"/>
       <source>Print</source>
-      <translation type="unfinished">Print</translation>
+      <translation>مطبعة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="99"/>
       <source>Open New Window</source>
-      <translation type="unfinished">Open New Window</translation>
+      <translation>افتح نافذة جديدة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="101"/>
       <source>Redo</source>
-      <translation type="unfinished">Redo</translation>
+      <translation>إعادة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="104"/>
       <source>Undo</source>
-      <translation type="unfinished">Undo</translation>
+      <translation>الغاء التحميل</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="107"/>
       <source>Upload to Imgur</source>
-      <translation type="unfinished">Upload to Imgur</translation>
+      <translation>تحميل إلى Imgur</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="109"/>
       <source>Upload to ImgBB</source>
-      <translation type="unfinished">Upload to ImgBB</translation>
+      <translation>تحميل إلى ImgBB</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="110"/>
       <source>Upload to ImageShack</source>
-      <translation type="unfinished">Upload to ImageShack</translation>
+      <translation>تحميل إلى ImageShack</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="111"/>
       <source>Copy to Clipboard</source>
-      <translation type="unfinished">Copy to Clipboard</translation>
+      <translation>نسخ إلى الحافظة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="114"/>
       <source>Save</source>
-      <translation type="unfinished">Save</translation>
+      <translation>يحفظ</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="118"/>
       <source>Save as PNG file</source>
-      <translation type="unfinished">Save as PNG file</translation>
+      <translation>احفظ كملف PNG</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="120"/>
       <source>Save as JPG file</source>
-      <translation type="unfinished">Save as JPG file</translation>
+      <translation>حفظ كملف JPG</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="122"/>
       <source>Save as BMP file</source>
-      <translation type="unfinished">Save as BMP file</translation>
+      <translation>حفظ كملف BMP</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="127"/>
       <source>Settings</source>
-      <translation type="unfinished">Settings</translation>
+      <translation>إعدادات</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="130"/>
       <source>Rotate</source>
-      <translation type="unfinished">Rotate</translation>
+      <translation>استدارة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="134"/>
       <source>Fullscreen</source>
-      <translation type="unfinished">Fullscreen</translation>
+      <translation>شاشة كاملة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="136"/>
       <source>About</source>
-      <translation type="unfinished">About</translation>
+      <translation>عن</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="138"/>
       <source>Check for Updates</source>
-      <translation type="unfinished">Check for Updates</translation>
+      <translation>تحقق من وجود تحديثات</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="139"/>
       <source>Pen</source>
-      <translation type="unfinished">Pen</translation>
+      <translation>قلم</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="142"/>
       <source>Horizontal Flip</source>
-      <translation type="unfinished">Horizontal Flip</translation>
+      <translation>انعكاس أفقي</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="146"/>
       <source>Vertical Flip</source>
-      <translation type="unfinished">Vertical Flip</translation>
+      <translation>انعكاس عمودي</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="150"/>
       <source>&amp;Open File</source>
-      <translation type="unfinished">&amp;Open File</translation>
+      <translation>&amp; فتح ملف</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="151"/>
       <source>Ctrl+O</source>
-      <translation type="unfinished">Ctrl+O</translation>
+      <translation>السيطرة + O</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="152"/>
       <source>Open Image File</source>
-      <translation type="unfinished">Open Image File</translation>
+      <translation>افتح ملف الصورة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="154"/>
       <source>Open From Url...</source>
-      <translation type="unfinished">Open From Url...</translation>
+      <translation>فتح من عنوان URL ...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="155"/>
       <source>Open Image File from Url</source>
-      <translation type="unfinished">Open Image File from Url</translation>
+      <translation>افتح ملف الصورة من Url</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="159"/>
       <source>&amp;Quit</source>
-      <translation type="unfinished">&amp;Quit</translation>
+      <translation>&amp;يترك</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="160"/>
       <source>Ctrl+Q</source>
-      <translation type="unfinished">Ctrl+Q</translation>
+      <translation>السيطرة + Q</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="161"/>
       <source>Quit Application</source>
-      <translation type="unfinished">Quit Application</translation>
+      <translation>قم بإنهاء التطبيق</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="163"/>
       <source>Zoom &amp;In</source>
-      <translation type="unfinished">Zoom &amp;In</translation>
+      <translation>تكبير وتصغير</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="164"/>
       <source>Ctrl++</source>
-      <translation type="unfinished">Ctrl++</translation>
+      <translation>Ctrl ++</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="168"/>
       <source>Zoom O&amp;ut</source>
-      <translation type="unfinished">Zoom O&amp;ut</translation>
+      <translation>تصغير</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="169"/>
       <source>Ctrl+-</source>
-      <translation type="unfinished">Ctrl+-</translation>
+      <translation>Ctrl + -</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="177"/>
       <source>&amp;File</source>
-      <translation type="unfinished">&amp;File</translation>
+      <translation>&amp;ملف</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="181"/>
       <source>Save As...</source>
-      <translation type="unfinished">Save As...</translation>
+      <translation>حفظ باسم ...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="188"/>
       <source>&amp;Edit</source>
-      <translation type="unfinished">&amp;Edit</translation>
+      <translation>&amp;تعديل</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="192"/>
       <source>&amp;View</source>
-      <translation type="unfinished">&amp;View</translation>
+      <translation>&amp;رأي</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="200"/>
       <source>&amp;Tools</source>
-      <translation type="unfinished">&amp;Tools</translation>
+      <translation>&amp;أدوات</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="201"/>
       <source>Share</source>
-      <translation type="unfinished">Share</translation>
+      <translation>شارك</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="206"/>
       <source>&amp;Help</source>
-      <translation type="unfinished">&amp;Help</translation>
+      <translation>&amp;يساعد</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="211"/>
       <source>File</source>
-      <translation type="unfinished">File</translation>
+      <translation>ملف</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="215"/>
       <source>Image</source>
-      <translation type="unfinished">Image</translation>
+      <translation>صورة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="253"/>
       <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
-      <translation type="unfinished">Images (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
+      <translation>الصور (* .jpg * .jpeg * .png * .bmp * .gif)</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="281"/>
       <location filename="../mainwindow.cpp" line="291"/>
       <location filename="../mainwindow.cpp" line="300"/>
       <source>Save Image File</source>
-      <translation type="unfinished">Save Image File</translation>
+      <translation>حفظ ملف الصورة</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="283"/>
       <source>Images (*.png)</source>
-      <translation type="unfinished">Images (*.png)</translation>
+      <translation>الصور (* .png)</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="293"/>
       <source>Images (*.bmp)</source>
-      <translation type="unfinished">Images (*.bmp)</translation>
+      <translation>الصور (* .bmp)</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="302"/>
       <source>Images (*.jpg)</source>
-      <translation type="unfinished">Images (*.jpg)</translation>
+      <translation>الصور (* .jpg)</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="481"/>
       <source>Open URL...</source>
-      <translation type="unfinished">Open URL...</translation>
+      <translation>رابط مفتوح...</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="482"/>
       <source>URL of a supported image file:</source>
-      <translation type="unfinished">URL of a supported image file:</translation>
+      <translation>عنوان URL لملف صورة مدعوم:</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="503"/>
       <source>%1. Link copied to the clipboard.</source>
-      <translation type="unfinished">%1. Link copied to the clipboard.</translation>
+      <translation>%1. تم نسخ الرابط إلى الحافظة.</translation>
     </message>
   </context>
   <context>
@@ -375,17 +375,17 @@
     <message>
       <location filename="../settings.cpp" line="15"/>
       <source>General</source>
-      <translation type="unfinished">General</translation>
+      <translation>عام</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="16"/>
       <source>Appearence</source>
-      <translation type="unfinished">Appearence</translation>
+      <translation>المظهر</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="17"/>
       <source>Window</source>
-      <translation type="unfinished">Window</translation>
+      <translation>نافذة او شباك</translation>
     </message>
   </context>
 </TS>
