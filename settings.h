@@ -16,12 +16,14 @@ public:
   QComboBox *languagedropdown;
   QComboBox *stylesheetdropdown;
   QString m_currLang;
+  QSettings *settings;
   QString m_langPath;
   QTranslator m_translator; // contains the translations for this application
   QTranslator m_translatorQt; // contains the translations for qt
 private:
   void languagemenu();
   void loadLanguage(const QString& rLanguage);
+  void switchTranslator(QTranslator& translator, const QString& filename);
 private slots:
   void slotLanguageChanged(int);
   void stylesheetChanged(int);
@@ -45,7 +47,7 @@ class Settings:public QWidget{
 public:
   Settings(QWidget *parent = nullptr);
   ~Settings();
-  QSettings *settings;
+
   QVBoxLayout *mainLayout;
   QTabWidget *tabWidget;
   QDialogButtonBox *buttonbox;

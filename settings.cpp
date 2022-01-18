@@ -2,6 +2,7 @@
 #include <QtWidgets>
 #include <QCoreApplication>
 #include <QDebug>
+#include <QFile>
 Settings::Settings(QWidget *parent)
   : QWidget(parent)
 {
@@ -9,7 +10,7 @@ Settings::Settings(QWidget *parent)
   this->setFixedSize(QSize(750, 400));
   QDialogButtonBox *buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Apply);
   QTabWidget *tabWidget = new QTabWidget();
-  QSettings settings(QString("config.ini"), QSettings::IniFormat);
+
   QVBoxLayout *mainLayout = new QVBoxLayout();
   tabWidget->addTab(new GeneralTab(), tr("General"));
   tabWidget->addTab(new AppearenceTab(), tr("Appearence"));
@@ -27,6 +28,7 @@ Settings::~Settings()
 GeneralTab::GeneralTab(QWidget *parent)
   : QWidget(parent)
 {
+  QSettings *settings = new QSettings(QString("config.ini"), QSettings::IniFormat);
   QGroupBox *permissionsGroup = new QGroupBox(tr("Permissions"));
   QCheckBox *readable = new QCheckBox(tr("Readable"));
   QCheckBox *writable = new QCheckBox(tr("Writable"));
@@ -76,14 +78,19 @@ WindowTab::WindowTab(QWidget *parent)
 
 }
 
-void switchTranslator(QTranslator& translator, const QString& filename) {
+void GeneralTab::switchTranslator(QTranslator& translator, const QString& filename) {
   QCoreApplication::removeTranslator(&translator);
   QString path = QApplication::applicationDirPath();
   path.append("/i18n/");
+qDebug() << filename;
+ /* QFile file(":/i18n/daruma_zh_CN.qm");
+  if (!file.open())
+      qDebug() << "Can't find it!";*/
 
-  if(translator.load(":/i18n/daruma_zh_CN.ts")){
-      qDebug() << path + filename;
-    QCoreApplication::installTranslator(&translator);
+  if(translator.load(filename,":/i18n")){
+      settings->beginGroup("/General");
+    settings->setValue("language", filename);
+    settings->endGroup();
     }else{
       qDebug() << "failed";
     }
@@ -95,7 +102,6 @@ void GeneralTab::loadLanguage(const QString& rLanguage) {
       QLocale locale = QLocale(m_currLang);
       QLocale::setDefault(locale);
       switchTranslator(m_translator, QString("daruma_%1.qm").arg(rLanguage));
-      switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
     }
 }
 
