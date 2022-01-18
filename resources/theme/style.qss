@@ -4,8 +4,14 @@
   color: #E0E1E3;
 }
 
+QPushButton{
+padding: 5px;
+border: 1px solid #455364;
+border-radius: 5px;
+}
+
 QGroupBox{
- border: 2px solid #455364;
+ border: 1px solid #455364;
 }
 
 QTabBar::tab {

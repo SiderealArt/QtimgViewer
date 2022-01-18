@@ -17,6 +17,7 @@ public:
   QComboBox *stylesheetdropdown;
   QString m_currLang;
   QSettings *settings;
+  QSettings *stylesettings;
   QString m_langPath;
   QTranslator m_translator; // contains the translations for this application
   QTranslator m_translatorQt; // contains the translations for qt
