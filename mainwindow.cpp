@@ -51,7 +51,6 @@ MainWindow::MainWindow(QWidget *parent)
   sWin = new Settings();
   fWin = new Fileinfo();
   adWin = new Adjustment();
-  cWin = new Camera();
   thresholdWin = new Threshold();
   imgWin->resize(500,300);
   imgWin->setScaledContents(true);
@@ -548,7 +547,17 @@ void MainWindow::handleReply(QNetworkReply *reply){
 }
 
 void MainWindow::saturation(int value){
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
+  float v =(255.0+value)/(255.0-value);
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          float b = (color.red() + color.green() + color.blue())/3;
+          result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b)+b))), qMin(255, qMax(0,qRound(v*(color.green()-b)+b))), qMin(255, qMax(0,qRound(v*(color.blue()-b)+b)))));
+        }
+    }
 
+  imgWin->setPixmap(QPixmap::fromImage(result));
 }
 
 void MainWindow::contrast(int value){
@@ -557,7 +566,7 @@ void MainWindow::contrast(int value){
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
           QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
-          result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b+b)))), qMin(255, qMax(0,qRound(v*(color.green()-b+b)))), qMin(255, qMax(0,qRound(v*(color.blue()-b+b))))));
+          result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b)+b))), qMin(255, qMax(0,qRound(v*(color.green()-b)+b))), qMin(255, qMax(0,qRound(v*(color.blue()-b)+b)))));
         }
     }
 
@@ -585,14 +594,20 @@ void MainWindow::brightness(int value){
 }
 
 void MainWindow::camera(){
+  cWin = new Camera();
   cWin->show();
-  connect(cWin->capture,SIGNAL(triggered()), this, SLOT(imagefromcamera());
+  connect(cWin->capture,SIGNAL(clicked()), this, SLOT(imagefromcamera()));
 }
 
 void MainWindow::imagefromcamera(){
+  connect(cWin->imgcapture,SIGNAL(imageCaptured(int, QImage)),this,SLOT(cameraimage(int, QImage)));
+  cWin->imgcapture->capture();
+}
+
+void MainWindow::cameraimage(int v, QImage i){
   cWin->close();
-  imgWin->setPixmap(QPixmap::fromImage(cWin->img));
-  imgWin->resize(QPixmap::fromImage(cWin->img).size());
+  imgWin->setPixmap(QPixmap::fromImage(i));
+  imgWin->resize((QPixmap::fromImage(i)).size());
   undoAction->setEnabled(true);
   redoAction->setEnabled(true);
   hFlipAction->setEnabled(true);

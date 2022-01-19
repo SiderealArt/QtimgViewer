@@ -53,6 +53,7 @@ friend class Label;
     void fileinfo();
     void brightness(int);
     void contrast(int);
+    void cameraimage(int, QImage);
     void saturation(int);
     void zoomOut();
     void hflip();

@@ -1,9 +1,12 @@
 ﻿#ifndef CAMERA_H
 #define CAMERA_H
+#include <QDialog>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QCamera>
 #include <QImageCapture>
+#include <QVideoWidget>
+#include <QMediaCaptureSession>
 class Camera:public QDialog{
   Q_OBJECT
 public:
@@ -11,8 +14,10 @@ public:
   ~Camera();
   QCamera *camera;
   QImage *img;
-  QImageCapture *session;
+  QImageCapture *imgcapture;
+  QMediaCaptureSession *session;
   QPushButton *capture;
+  QVideoWidget *preview;
   QVBoxLayout *mainLayout;
 };
 

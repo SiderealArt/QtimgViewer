@@ -15,8 +15,8 @@ Adjustment::Adjustment(QWidget *parent)
   contrast_slider->setRange(-100, 100);
   contrast_slider->setValue(0);
  saturation_slider = new QSlider(Qt::Horizontal);
-  saturation_slider->setRange(0, 100);
-  saturation_slider->setValue(50);
+  saturation_slider->setRange(-100, 100);
+  saturation_slider->setValue(0);
   mainLayout = new QVBoxLayout(this);
   mainLayout->addWidget(brightness);
   mainLayout->addWidget(brightness_slider);
