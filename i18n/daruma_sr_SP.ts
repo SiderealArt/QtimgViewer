@@ -4,6 +4,11 @@
   <context>
     <name>About</name>
     <message>
+      <location filename="../about.cpp" line="5"/>
+      <source>About</source>
+      <translation type="unfinished">About</translation>
+    </message>
+    <message>
       <location filename="../about.cpp" line="15"/>
       <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
       <translation>Направљен са Кт %1 (%2)&lt;br&gt;Изворни код доступан под ГПЛв3 на &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;ГитХуб&lt;/a&gt;&lt;br&gt;Икона коју обезбеђује Ицон8&lt;br&gt;Ауторско право © %3 СидереалАрт</translation>
@@ -21,6 +26,11 @@
   </context>
   <context>
     <name>Fileinfo</name>
+    <message>
+      <location filename="../fileinfo.cpp" line="4"/>
+      <source>File Info</source>
+      <translation type="unfinished">File Info</translation>
+    </message>
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
       <source>File Name:</source>
@@ -50,37 +60,12 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="32"/>
-      <source>Permissions</source>
-      <translation>Дозволе</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="33"/>
-      <source>Readable</source>
-      <translation>Читљиво</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Writable</source>
-      <translation>Вритабле</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Executable</source>
-      <translation>Извршни</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="36"/>
-      <source>Ownership</source>
-      <translation>Власништво</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="39"/>
+      <location filename="../settings.cpp" line="41"/>
       <source>White</source>
       <translation>бео</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="40"/>
+      <location filename="../settings.cpp" line="42"/>
       <source>Black</source>
       <translation>Црн</translation>
     </message>
@@ -373,19 +358,32 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="15"/>
-      <source>General</source>
-      <translation>Генерал</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="16"/>
-      <source>Appearence</source>
-      <translation>Изглед</translation>
+      <location filename="../settings.cpp" line="9"/>
+      <source>Settings</source>
+      <translation type="unfinished">Settings</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="17"/>
-      <source>Window</source>
-      <translation>Прозор</translation>
+      <source>General</source>
+      <translation>Генерал</translation>
+    </message>
+  </context>
+  <context>
+    <name>WindowTab</name>
+    <message>
+      <location filename="../settings.cpp" line="85"/>
+      <source>Description</source>
+      <translation type="unfinished">Description</translation>
+    </message>
+    <message>
+      <location filename="../settings.cpp" line="87"/>
+      <source>Shortcut</source>
+      <translation type="unfinished">Shortcut</translation>
+    </message>
+    <message>
+      <location filename="../settings.cpp" line="93"/>
+      <source>Edit Actions</source>
+      <translation type="unfinished">Edit Actions</translation>
     </message>
   </context>
 </TS>
