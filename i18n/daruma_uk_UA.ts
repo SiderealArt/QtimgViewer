@@ -4,6 +4,11 @@
   <context>
     <name>About</name>
     <message>
+      <location filename="../about.cpp" line="5"/>
+      <source>About</source>
+      <translation type="unfinished">About</translation>
+    </message>
+    <message>
       <location filename="../about.cpp" line="15"/>
       <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
       <translation>Створено з Qt %1 (%2)&lt;br&gt;Вихідний код доступний під GPLv3 на &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Піктограма надається Icon8&lt;br&gt;Авторське право © %3 SiderealArt</translation>
@@ -21,6 +26,11 @@
   </context>
   <context>
     <name>Fileinfo</name>
+    <message>
+      <location filename="../fileinfo.cpp" line="4"/>
+      <source>File Info</source>
+      <translation type="unfinished">File Info</translation>
+    </message>
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
       <source>File Name:</source>
@@ -50,37 +60,12 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="32"/>
-      <source>Permissions</source>
-      <translation>Дозволи</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="33"/>
-      <source>Readable</source>
-      <translation>Читається</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Writable</source>
-      <translation>Можливий запис</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Executable</source>
-      <translation>Виконуваний</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="36"/>
-      <source>Ownership</source>
-      <translation>Право власності</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="39"/>
+      <location filename="../settings.cpp" line="41"/>
       <source>White</source>
       <translation>Білий</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="40"/>
+      <location filename="../settings.cpp" line="42"/>
       <source>Black</source>
       <translation>Чорний</translation>
     </message>
@@ -373,19 +358,32 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="15"/>
-      <source>General</source>
-      <translation>Генеральний</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="16"/>
-      <source>Appearence</source>
-      <translation>Зовнішній вигляд</translation>
+      <location filename="../settings.cpp" line="9"/>
+      <source>Settings</source>
+      <translation type="unfinished">Settings</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="17"/>
-      <source>Window</source>
-      <translation>Вікно</translation>
+      <source>General</source>
+      <translation>Генеральний</translation>
+    </message>
+  </context>
+  <context>
+    <name>WindowTab</name>
+    <message>
+      <location filename="../settings.cpp" line="85"/>
+      <source>Description</source>
+      <translation type="unfinished">Description</translation>
+    </message>
+    <message>
+      <location filename="../settings.cpp" line="87"/>
+      <source>Shortcut</source>
+      <translation type="unfinished">Shortcut</translation>
+    </message>
+    <message>
+      <location filename="../settings.cpp" line="93"/>
+      <source>Edit Actions</source>
+      <translation type="unfinished">Edit Actions</translation>
     </message>
   </context>
 </TS>
