@@ -77,6 +77,8 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  grayscaleAction = new QAction(tr("Grayscale"));
+  connect(grayscaleAction,SIGNAL(triggered()),this,SLOT(grayscale()));
   colorpickerAction = new QAction(tr("Color picker"));
   colorpickerAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/up.png")));
   connect(colorpickerAction,SIGNAL(triggered()),this,SLOT(colorpicker()));
@@ -189,6 +191,7 @@ void MainWindow::createMenus(){
   editMenu->addAction(undoAction);
   editMenu->addAction(redoAction);
   editMenu->addAction(thresholdAction);
+  editMenu->addAction(grayscaleAction);
   viewMenu = menuBar()->addMenu(tr("&View"));
   viewMenu->addAction(histogramAction);
   viewMenu->addAction(hFlipAction);
@@ -285,6 +288,12 @@ void MainWindow::saveAs(){
     {
       imgWin->pixmap().save(filename);
     }
+}
+
+void MainWindow::grayscale(){
+  tempWin->setPixmap(imgWin->pixmap());
+  result = tempWin->pixmap().toImage().convertToFormat(QImage::Format_Grayscale16);
+  imgWin->setPixmap(QPixmap::fromImage(result));
 }
 
 void MainWindow::saveAsBMP(){
@@ -399,7 +408,6 @@ void MainWindow::histogram(){
 }
 void MainWindow::updateimg(int a){
   int tmp;
-  clipboard->setPixmap(tempWin->pixmap());
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_Mono);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){

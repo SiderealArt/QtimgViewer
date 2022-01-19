@@ -11,8 +11,6 @@ public:
   Threshold();
   ~Threshold();
   QSlider *slider;
-  QPushButton *okButton;
-  QPushButton *cancelButton;
   QVBoxLayout *mainLayout;
   QDialogButtonBox *buttonbox;
 };

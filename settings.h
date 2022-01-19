@@ -5,6 +5,7 @@
 #include <QLocale>
 #include <QTabWidget>
 #include <QFileInfo>
+#include <QList>
 #include <QSettings>
 #include <QTranslator>
 #include <QComboBox>
@@ -34,11 +35,13 @@ private slots:
 class WindowTab : public QWidget{
   Q_OBJECT
 public:
-   WindowTab(QWidget *parent = nullptr);
-   QTableWidget *table;
+  WindowTab(QWidget *parent = nullptr);
+  QString oldAccelText;
+  QTableWidget *actionsTable;
+  QList<QAction*> actionsList;
 private slots:
-        void recordAction(int row, int column);
-        void validateAction(int row, int column);
+  void recordAction(int row, int column);
+  void validateAction(int row, int column);
 };
 class AppearenceTab : public QWidget{
   Q_OBJECT

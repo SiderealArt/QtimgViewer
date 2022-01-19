@@ -10,6 +10,7 @@ CONFIG += c++14
 
 SOURCES += \
     about.cpp \
+    adjustment.cpp \
     fileinfo.cpp \
     label.cpp \
     main.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 
 HEADERS += \
     about.h \
+    adjustment.h \
     fileinfo.h \
     label.h \
     mainwindow.h \

@@ -80,29 +80,13 @@ AppearenceTab::AppearenceTab(QWidget *parent)
 WindowTab::WindowTab(QWidget *parent)
   : QWidget(parent)
 {
-  actionsTable = new QTable(actions->count(), 2, this);
-  actionsTable->horizontalHeader()->setLabel(0,
-                                             tr("Description"));
-  actionsTable->horizontalHeader()->setLabel(1,
-                                             tr("Shortcut"));
-  actionsTable->verticalHeader()->hide();
-  actionsTable->setLeftMargin(0);
-  actionsTable->setColumnReadOnly(0, true);
-  connect(actionsTable, SIGNAL(currentChanged(int, int)),this, SLOT(recordAction(int, int)));
-  connect(actionsTable, SIGNAL(valueChanged(int, int)),this, SLOT(validateAction(int, int)));
-  setCaption(tr("Edit Actions"));
+
 }
 void WindowTab::validateAction(int row, int column){
-  QTableItem *item = actionsTable->item(row, column);
-  QString accelText = QString(QKeySequence(item->text()));
-  if (accelText.isEmpty() && !item->text().isEmpty()) {
-      item->setText(oldAccelText);
-    } else {
-      item->setText(accelText);
-    }
+
 }
 void WindowTab::recordAction(int row, int column){
-  oldAccelText = actionsTable->item(row, col)->text();
+
 }
 void GeneralTab::switchTranslator(QTranslator& translator, const QString& filename) {
   QCoreApplication::removeTranslator(&translator);
