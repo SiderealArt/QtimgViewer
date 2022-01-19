@@ -26,6 +26,7 @@
         <file>resources/icon/previous.png</file>
         <file>resources/icon/up.png</file>
         <file>resources/icon/link.png</file>
+        <file>resources/icon/capture.png</file>
     </qresource>
     <qresource prefix="/">
         <file>i18n/daruma_en.ts</file>

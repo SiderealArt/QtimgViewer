@@ -1,4 +1,4 @@
-QT       += core gui network printsupport
+QT       += core gui network printsupport multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,6 +11,7 @@ CONFIG += c++14
 SOURCES += \
     about.cpp \
     adjustment.cpp \
+    camera.cpp \
     fileinfo.cpp \
     label.cpp \
     main.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     about.h \
     adjustment.h \
+    camera.h \
     fileinfo.h \
     label.h \
     mainwindow.h \

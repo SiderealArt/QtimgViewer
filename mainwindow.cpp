@@ -51,6 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
   sWin = new Settings();
   fWin = new Fileinfo();
   adWin = new Adjustment();
+  cWin = new Camera();
   thresholdWin = new Threshold();
   imgWin->resize(500,300);
   imgWin->setScaledContents(true);
@@ -76,6 +77,8 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  cameraAction = new QAction(tr("Capture Photo"));
+  connect(cameraAction,SIGNAL(triggered()),this,SLOT(camera()));
   fileinfoAction = new QAction(tr("File Info"));
   connect(fileinfoAction,SIGNAL(triggered()),this,SLOT(fileinfo()));
   adjustmentAction = new QAction(tr("Image Adjustment"));
@@ -184,6 +187,7 @@ void MainWindow::createMenus(){
   fileMenu = menuBar()->addMenu(tr("&File"));
   fileMenu->addAction(openFileAction);
   fileMenu->addAction(openFromUrlAction);
+  fileMenu->addAction(cameraAction);
   fileMenu->addAction(newWindowAction);
   saveMenu = fileMenu->addMenu(tr("Save As..."));
   saveMenu->addAction(saveAsAction);
@@ -394,6 +398,17 @@ void MainWindow::threshold(){
 
 void MainWindow::adjustment(){
   adWin->show();
+  tempWin->setPixmap(imgWin->pixmap());
+  /*https://stackoverflow.com/questions/4876315/determining-image-luminance-brightness*/
+  for(int i=0;i<imgWin->pixmap().toImage().height();i++){
+      for(int j=0;j<imgWin->pixmap().toImage().width();j++){
+          b += imgWin->pixmap().toImage().pixelColor(j,i).red() * 0.299 + imgWin->pixmap().toImage().pixelColor(j,i).green() * 0.587+imgWin->pixmap().toImage().pixelColor(j,i).blue() * 0.144;
+        }
+    }
+  b/=(imgWin->pixmap().toImage().height() * imgWin->pixmap().toImage().width());
+  connect(adWin->brightness_slider,SIGNAL(valueChanged(int)), this, SLOT(brightness(int)));
+  connect(adWin->contrast_slider,SIGNAL(valueChanged(int)), this, SLOT(contrast(int)));
+  connect(adWin->saturation_slider,SIGNAL(valueChanged(int)), this, SLOT(saturation(int)));
 }
 
 void MainWindow::fileinfo(){
@@ -515,12 +530,8 @@ void MainWindow::showOpenUrl(){
   inputDialog->resize(350, inputDialog->height());
   inputDialog->setWindowFlag(Qt::WindowContextHelpButtonHint, false);
   connect(inputDialog, &QInputDialog::finished, this, [inputDialog, this](int result) {
-      if (result)
-        {
-          auto url = QUrl(inputDialog->textValue());
-          openUrl(url);
-        }
-      inputDialog->deleteLater();
+      auto url = QUrl(inputDialog->textValue());
+      openUrl(url);
     });
   inputDialog->open();
 }
@@ -534,4 +545,62 @@ void MainWindow::handleReply(QNetworkReply *reply){
   QMessageBox msgBox;
   msgBox.setText(tr("%1. Link copied to the clipboard.").arg(data["link"].toString()));
   msgBox.exec();
+}
+
+void MainWindow::saturation(int value){
+
+}
+
+void MainWindow::contrast(int value){
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
+  float v =(255.0+value)/(255.0-value);
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b+b)))), qMin(255, qMax(0,qRound(v*(color.green()-b+b)))), qMin(255, qMax(0,qRound(v*(color.blue()-b+b))))));
+        }
+    }
+
+  imgWin->setPixmap(QPixmap::fromImage(result));
+}
+/*https://towardsdatascience.com/image-processing-and-pixel-manipulation-photo-filters-5d37a2f992fa*/
+void MainWindow::brightness(int value){
+  /*result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
+          color.setHsv(color.hue(),color.saturation(),value);
+          result.setPixelColor(i, j, color);
+        }
+    }
+  imgWin->setPixmap(QPixmap::fromImage(result));*/
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,color.red()+value)), qMin(255, qMax(0,color.green()+value)), qMin(255, qMax(0,color.blue()+value))));
+        }
+    }
+  imgWin->setPixmap(QPixmap::fromImage(result));
+}
+
+void MainWindow::camera(){
+  cWin->show();
+  connect(cWin->capture,SIGNAL(triggered()), this, SLOT(imagefromcamera());
+}
+
+void MainWindow::imagefromcamera(){
+  cWin->close();
+  imgWin->setPixmap(QPixmap::fromImage(cWin->img));
+  imgWin->resize(QPixmap::fromImage(cWin->img).size());
+  undoAction->setEnabled(true);
+  redoAction->setEnabled(true);
+  hFlipAction->setEnabled(true);
+  vFlipAction->setEnabled(true);
+  rotateAction->setEnabled(true);
+  printAction->setEnabled(true);
+  saveAction->setEnabled(true);
+  saveAsAction->setEnabled(true);
+  zoomInAction->setEnabled(true);
+  zoomOutAction->setEnabled(true);
 }

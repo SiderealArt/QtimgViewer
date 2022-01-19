@@ -6,6 +6,7 @@
 #include "threshold.h"
 #include "adjustment.h"
 #include "fileinfo.h"
+#include "camera.h"
 #include <QMainWindow>
 #include <QAction>
 #include <QMenu>
@@ -46,8 +47,13 @@ friend class Label;
     void zoomIn();
     void grayscale();
     void invert();
+    void camera();
+    void imagefromcamera();
     void adjustment();
     void fileinfo();
+    void brightness(int);
+    void contrast(int);
+    void saturation(int);
     void zoomOut();
     void hflip();
     void vflip();
@@ -90,6 +96,7 @@ friend class Label;
     Settings *sWin;
     Fileinfo *fWin;
     Adjustment *adWin;
+    Camera *cWin;
     QWidget *center;
     QMenu *fileMenu;
     QMenu *saveMenu;
@@ -112,6 +119,7 @@ friend class Label;
     QLabel *histogramWin;
     QAction *dirupAction;
     QAction *dirhomeAction;
+    QAction *cameraAction;
     QAction *alwaysontopAction;
     QAction *histogramAction;
     QAction *thresholdAction;
@@ -147,5 +155,6 @@ friend class Label;
     QAction *checkupdateAction;
     QAction *openFromUrlAction;
     unsigned int mtx[256];
+    int b =0;
 };
 #endif // MAINWINDOW_H
