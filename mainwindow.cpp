@@ -8,9 +8,6 @@ switch label to graphicview
 
 */
 #include "mainwindow.h"
-#include "about.h"
-#include "settings.h"
-#include "threshold.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QMenuBar>
@@ -52,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent)
   histogramWin = new QLabel();
   aWin = new About();
   sWin = new Settings();
+  fWin = new Fileinfo();
+  adWin = new Adjustment();
   thresholdWin = new Threshold();
   imgWin->resize(500,300);
   imgWin->setScaledContents(true);
@@ -77,6 +76,12 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  fileinfoAction = new QAction(tr("File Info"));
+  connect(fileinfoAction,SIGNAL(triggered()),this,SLOT(fileinfo()));
+  adjustmentAction = new QAction(tr("Image Adjustment"));
+  connect(adjustmentAction,SIGNAL(triggered()),this,SLOT(adjustment()));
+  invertAction = new QAction(tr("Invert"));
+  connect(invertAction,SIGNAL(triggered()),this,SLOT(invert()));
   grayscaleAction = new QAction(tr("Grayscale"));
   connect(grayscaleAction,SIGNAL(triggered()),this,SLOT(grayscale()));
   colorpickerAction = new QAction(tr("Color picker"));
@@ -185,13 +190,16 @@ void MainWindow::createMenus(){
   saveMenu->addAction(saveAsBMPAction);
   saveMenu->addAction(saveAsJPGAction);
   fileMenu->addAction(saveAction);
+  fileMenu->addAction(fileinfoAction);
   fileMenu->addAction(printAction);
   fileMenu->addAction(exitAction);
   editMenu = menuBar()->addMenu(tr("&Edit"));
   editMenu->addAction(undoAction);
   editMenu->addAction(redoAction);
+  editMenu->addAction(adjustmentAction);
   editMenu->addAction(thresholdAction);
   editMenu->addAction(grayscaleAction);
+  editMenu->addAction(invertAction);
   viewMenu = menuBar()->addMenu(tr("&View"));
   viewMenu->addAction(histogramAction);
   viewMenu->addAction(hFlipAction);
@@ -296,6 +304,13 @@ void MainWindow::grayscale(){
   imgWin->setPixmap(QPixmap::fromImage(result));
 }
 
+void MainWindow::invert(){
+  tempWin->setPixmap(imgWin->pixmap());
+  result = tempWin->pixmap().toImage();
+  result.invertPixels(QImage::InvertRgba);
+  imgWin->setPixmap(QPixmap::fromImage(result));
+}
+
 void MainWindow::saveAsBMP(){
   filename = QFileDialog::getSaveFileName(this, tr("Save Image File"),
                                           QString(),
@@ -331,8 +346,8 @@ void MainWindow::imgur(){
   qDebug() << "imgur";
   imgurupload = new QNetworkAccessManager(this);
   connect(imgurupload,
-          SIGNAL(finished(QNetworkReply *)),
-          this,SLOT(handleReply(QNetworkReply *)));
+          SIGNAL(finished(QNetworkReply*)),
+          this,SLOT(handleReply(QNetworkReply*)));
   QByteArray byteArray;
   QBuffer buffer(&byteArray);
   imgWin->pixmap().save(&buffer, "PNG");
@@ -370,13 +385,21 @@ void MainWindow::print(){
 
 void MainWindow::threshold(){
   tempWin->setPixmap(imgWin->pixmap());
-  Threshold *thresholdWin = new Threshold();
   connect(thresholdWin->slider,SIGNAL(valueChanged(int)), this, SLOT(updateimg(int)));
   thresholdWin->setFixedSize(250,100);
-  thresholdWin->setWindowTitle("Adjust Threshold");
+  thresholdWin->setWindowTitle(tr("Adjust Threshold"));
   thresholdWin->setAttribute(Qt::WA_DeleteOnClose);
   thresholdWin->show();
 }
+
+void MainWindow::adjustment(){
+  adWin->show();
+}
+
+void MainWindow::fileinfo(){
+  fWin->show();
+}
+
 void MainWindow::histogram(){
   int top,i;
   unsigned int m =0;
@@ -403,9 +426,10 @@ void MainWindow::histogram(){
   painter.end();
   histogramWin->setFixedSize(256,256);
   histogramWin->setPixmap(QPixmap::fromImage(histogramimg));
-  histogramWin->setWindowTitle("Histogram");
+  histogramWin->setWindowTitle(tr("Histogram"));
   histogramWin->show();
 }
+
 void MainWindow::updateimg(int a){
   int tmp;
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_Mono);

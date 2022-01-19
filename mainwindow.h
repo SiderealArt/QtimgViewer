@@ -4,6 +4,8 @@
 #include "label.h"
 #include "settings.h"
 #include "threshold.h"
+#include "adjustment.h"
+#include "fileinfo.h"
 #include <QMainWindow>
 #include <QAction>
 #include <QMenu>
@@ -43,6 +45,9 @@ friend class Label;
     void colorpicker();
     void zoomIn();
     void grayscale();
+    void invert();
+    void adjustment();
+    void fileinfo();
     void zoomOut();
     void hflip();
     void vflip();
@@ -83,6 +88,8 @@ friend class Label;
     QClipboard *clipboard;
     About *aWin;
     Settings *sWin;
+    Fileinfo *fWin;
+    Adjustment *adWin;
     QWidget *center;
     QMenu *fileMenu;
     QMenu *saveMenu;
@@ -115,6 +122,9 @@ friend class Label;
     QAction *imgbbAction;
     QAction *imageshackAction;
     QAction *grayscaleAction;
+    QAction *invertAction;
+    QAction *fileinfoAction;
+    QAction *adjustmentAction;
     QAction *newWindowAction;
     QAction *undoAction;
     QAction *redoAction;
