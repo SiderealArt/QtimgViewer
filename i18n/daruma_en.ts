@@ -4,6 +4,11 @@
 <context>
     <name>About</name>
     <message>
+        <location filename="../about.cpp" line="5"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../about.cpp" line="15"/>
         <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
         <translation type="unfinished"></translation>
@@ -21,6 +26,11 @@
 </context>
 <context>
     <name>Fileinfo</name>
+    <message>
+        <location filename="../fileinfo.cpp" line="4"/>
+        <source>File Info</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../fileinfo.cpp" line="6"/>
         <source>File Name:</source>
@@ -50,37 +60,12 @@
 <context>
     <name>GeneralTab</name>
     <message>
-        <location filename="../settings.cpp" line="32"/>
-        <source>Permissions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settings.cpp" line="33"/>
-        <source>Readable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settings.cpp" line="34"/>
-        <source>Writable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settings.cpp" line="35"/>
-        <source>Executable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settings.cpp" line="36"/>
-        <source>Ownership</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settings.cpp" line="39"/>
+        <location filename="../settings.cpp" line="41"/>
         <source>White</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="40"/>
+        <location filename="../settings.cpp" line="42"/>
         <source>Black</source>
         <translation type="unfinished"></translation>
     </message>
@@ -373,18 +358,31 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../settings.cpp" line="15"/>
-        <source>General</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settings.cpp" line="16"/>
-        <source>Appearence</source>
+        <location filename="../settings.cpp" line="9"/>
+        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settings.cpp" line="17"/>
-        <source>Window</source>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WindowTab</name>
+    <message>
+        <location filename="../settings.cpp" line="85"/>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="87"/>
+        <source>Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="93"/>
+        <source>Edit Actions</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

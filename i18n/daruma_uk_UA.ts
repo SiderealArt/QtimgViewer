@@ -1,391 +1,417 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="uk_UA" sourcelanguage="en">
-  <context>
+<context>
     <name>About</name>
     <message>
-      <location filename="../about.cpp" line="15"/>
-      <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
-      <translation>Створено з Qt %1 (%2)&lt;br&gt;Вихідний код доступний під GPLv3 на &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Піктограма надається Icon8&lt;br&gt;Авторське право © %3 SiderealArt</translation>
+        <location filename="../about.cpp" line="5"/>
+        <source>About</source>
+        <translation type="unfinished">Про</translation>
     </message>
     <message>
-      <location filename="../about.cpp" line="20"/>
-      <source>Version 1.34.2</source>
-      <translation>Версія 1.34.2</translation>
+        <location filename="../about.cpp" line="15"/>
+        <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
+        <translation>Створено з Qt %1 (%2)&lt;br&gt;Вихідний код доступний під GPLv3 на &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Піктограма надається Icon8&lt;br&gt;Авторське право © %3 SiderealArt</translation>
     </message>
     <message>
-      <location filename="../about.cpp" line="21"/>
-      <source>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</source>
-      <translation>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
+        <location filename="../about.cpp" line="20"/>
+        <source>Version 1.34.2</source>
+        <translation>Версія 1.34.2</translation>
     </message>
-  </context>
-  <context>
+    <message>
+        <location filename="../about.cpp" line="21"/>
+        <source>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</source>
+        <translation>&lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://daruma.siderealart.me/&quot;&gt;daruma.siderealart.me&lt;/a&gt;</translation>
+    </message>
+</context>
+<context>
     <name>Fileinfo</name>
     <message>
-      <location filename="../fileinfo.cpp" line="6"/>
-      <source>File Name:</source>
-      <translation>Ім'я файлу:</translation>
+        <location filename="../fileinfo.cpp" line="4"/>
+        <source>File Info</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-      <location filename="../fileinfo.cpp" line="7"/>
-      <source>Path:</source>
-      <translation>Шлях:</translation>
+        <location filename="../fileinfo.cpp" line="6"/>
+        <source>File Name:</source>
+        <translation>Ім&apos;я файлу:</translation>
     </message>
     <message>
-      <location filename="../fileinfo.cpp" line="8"/>
-      <source>Size:</source>
-      <translation>Розмір:</translation>
+        <location filename="../fileinfo.cpp" line="7"/>
+        <source>Path:</source>
+        <translation>Шлях:</translation>
     </message>
     <message>
-      <location filename="../fileinfo.cpp" line="9"/>
-      <source>Last Read:</source>
-      <translation>Останнє читання:</translation>
+        <location filename="../fileinfo.cpp" line="8"/>
+        <source>Size:</source>
+        <translation>Розмір:</translation>
     </message>
     <message>
-      <location filename="../fileinfo.cpp" line="10"/>
-      <source>Last Modified:</source>
-      <translation>Остання зміна:</translation>
+        <location filename="../fileinfo.cpp" line="9"/>
+        <source>Last Read:</source>
+        <translation>Останнє читання:</translation>
     </message>
-  </context>
-  <context>
+    <message>
+        <location filename="../fileinfo.cpp" line="10"/>
+        <source>Last Modified:</source>
+        <translation>Остання зміна:</translation>
+    </message>
+</context>
+<context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="32"/>
-      <source>Permissions</source>
-      <translation>Дозволи</translation>
+        <source>Permissions</source>
+        <translation type="vanished">Дозволи</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="33"/>
-      <source>Readable</source>
-      <translation>Читається</translation>
+        <source>Readable</source>
+        <translation type="vanished">Читається</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Writable</source>
-      <translation>Можливий запис</translation>
+        <source>Writable</source>
+        <translation type="vanished">Можливий запис</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Executable</source>
-      <translation>Виконуваний</translation>
+        <source>Executable</source>
+        <translation type="vanished">Виконуваний</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="36"/>
-      <source>Ownership</source>
-      <translation>Право власності</translation>
+        <source>Ownership</source>
+        <translation type="vanished">Право власності</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="39"/>
-      <source>White</source>
-      <translation>Білий</translation>
+        <location filename="../settings.cpp" line="41"/>
+        <source>White</source>
+        <translation>Білий</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="40"/>
-      <source>Black</source>
-      <translation>Чорний</translation>
+        <location filename="../settings.cpp" line="42"/>
+        <source>Black</source>
+        <translation>Чорний</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-      <location filename="../mainwindow.cpp" line="64"/>
-      <source>Tree View</source>
-      <translation>Перегляд дерева</translation>
+        <location filename="../mainwindow.cpp" line="64"/>
+        <source>Tree View</source>
+        <translation>Перегляд дерева</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="80"/>
-      <source>Color picker</source>
-      <translation>Вибір кольору</translation>
+        <location filename="../mainwindow.cpp" line="80"/>
+        <source>Color picker</source>
+        <translation>Вибір кольору</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="83"/>
-      <source>Up to parent directory</source>
-      <translation>До батьківського каталогу</translation>
+        <location filename="../mainwindow.cpp" line="83"/>
+        <source>Up to parent directory</source>
+        <translation>До батьківського каталогу</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="86"/>
-      <source>Back to home directory</source>
-      <translation>Назад до домашнього каталогу</translation>
+        <location filename="../mainwindow.cpp" line="86"/>
+        <source>Back to home directory</source>
+        <translation>Назад до домашнього каталогу</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="89"/>
-      <source>Always on top</source>
-      <translation>Завжди на висоті</translation>
+        <location filename="../mainwindow.cpp" line="89"/>
+        <source>Always on top</source>
+        <translation>Завжди на висоті</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="92"/>
-      <source>Show Histrogram</source>
-      <translation>Показати гістрограму</translation>
+        <location filename="../mainwindow.cpp" line="92"/>
+        <source>Show Histrogram</source>
+        <translation>Показати гістрограму</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="94"/>
-      <source>Threshold...</source>
-      <translation>Поріг...</translation>
+        <location filename="../mainwindow.cpp" line="94"/>
+        <source>Threshold...</source>
+        <translation>Поріг...</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="96"/>
-      <source>Print</source>
-      <translation>Друк</translation>
+        <location filename="../mainwindow.cpp" line="96"/>
+        <source>Print</source>
+        <translation>Друк</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="99"/>
-      <source>Open New Window</source>
-      <translation>Відкрийте нове вікно</translation>
+        <location filename="../mainwindow.cpp" line="99"/>
+        <source>Open New Window</source>
+        <translation>Відкрийте нове вікно</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="101"/>
-      <source>Redo</source>
-      <translation>Повторити</translation>
+        <location filename="../mainwindow.cpp" line="101"/>
+        <source>Redo</source>
+        <translation>Повторити</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="104"/>
-      <source>Undo</source>
-      <translation>Скасувати</translation>
+        <location filename="../mainwindow.cpp" line="104"/>
+        <source>Undo</source>
+        <translation>Скасувати</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="107"/>
-      <source>Upload to Imgur</source>
-      <translation>Завантажити в Imgur</translation>
+        <location filename="../mainwindow.cpp" line="107"/>
+        <source>Upload to Imgur</source>
+        <translation>Завантажити в Imgur</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="109"/>
-      <source>Upload to ImgBB</source>
-      <translation>Завантажте на ImgBB</translation>
+        <location filename="../mainwindow.cpp" line="109"/>
+        <source>Upload to ImgBB</source>
+        <translation>Завантажте на ImgBB</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="110"/>
-      <source>Upload to ImageShack</source>
-      <translation>Завантажте в ImageShack</translation>
+        <location filename="../mainwindow.cpp" line="110"/>
+        <source>Upload to ImageShack</source>
+        <translation>Завантажте в ImageShack</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="111"/>
-      <source>Copy to Clipboard</source>
-      <translation>Копіювати в буфер обміну</translation>
+        <location filename="../mainwindow.cpp" line="111"/>
+        <source>Copy to Clipboard</source>
+        <translation>Копіювати в буфер обміну</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="114"/>
-      <source>Save</source>
-      <translation>Зберегти</translation>
+        <location filename="../mainwindow.cpp" line="114"/>
+        <source>Save</source>
+        <translation>Зберегти</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="118"/>
-      <source>Save as PNG file</source>
-      <translation>Зберегти як файл PNG</translation>
+        <location filename="../mainwindow.cpp" line="118"/>
+        <source>Save as PNG file</source>
+        <translation>Зберегти як файл PNG</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="120"/>
-      <source>Save as JPG file</source>
-      <translation>Зберегти як файл JPG</translation>
+        <location filename="../mainwindow.cpp" line="120"/>
+        <source>Save as JPG file</source>
+        <translation>Зберегти як файл JPG</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="122"/>
-      <source>Save as BMP file</source>
-      <translation>Зберегти як файл BMP</translation>
+        <location filename="../mainwindow.cpp" line="122"/>
+        <source>Save as BMP file</source>
+        <translation>Зберегти як файл BMP</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="127"/>
-      <source>Settings</source>
-      <translation>Налаштування</translation>
+        <location filename="../mainwindow.cpp" line="127"/>
+        <source>Settings</source>
+        <translation>Налаштування</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="130"/>
-      <source>Rotate</source>
-      <translation>Поворот</translation>
+        <location filename="../mainwindow.cpp" line="130"/>
+        <source>Rotate</source>
+        <translation>Поворот</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="134"/>
-      <source>Fullscreen</source>
-      <translation>Повноекранний</translation>
+        <location filename="../mainwindow.cpp" line="134"/>
+        <source>Fullscreen</source>
+        <translation>Повноекранний</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="136"/>
-      <source>About</source>
-      <translation>Про</translation>
+        <location filename="../mainwindow.cpp" line="136"/>
+        <source>About</source>
+        <translation>Про</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="138"/>
-      <source>Check for Updates</source>
-      <translation>Перевірити наявність оновлень</translation>
+        <location filename="../mainwindow.cpp" line="138"/>
+        <source>Check for Updates</source>
+        <translation>Перевірити наявність оновлень</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="139"/>
-      <source>Pen</source>
-      <translation>ручка</translation>
+        <location filename="../mainwindow.cpp" line="139"/>
+        <source>Pen</source>
+        <translation>ручка</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="142"/>
-      <source>Horizontal Flip</source>
-      <translation>Горизонтальний переворот</translation>
+        <location filename="../mainwindow.cpp" line="142"/>
+        <source>Horizontal Flip</source>
+        <translation>Горизонтальний переворот</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="146"/>
-      <source>Vertical Flip</source>
-      <translation>Вертикальний переворот</translation>
+        <location filename="../mainwindow.cpp" line="146"/>
+        <source>Vertical Flip</source>
+        <translation>Вертикальний переворот</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="150"/>
-      <source>&amp;Open File</source>
-      <translation>&amp;Відкрити файл</translation>
+        <location filename="../mainwindow.cpp" line="150"/>
+        <source>&amp;Open File</source>
+        <translation>&amp;Відкрити файл</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="151"/>
-      <source>Ctrl+O</source>
-      <translation>Ctrl+O</translation>
+        <location filename="../mainwindow.cpp" line="151"/>
+        <source>Ctrl+O</source>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="152"/>
-      <source>Open Image File</source>
-      <translation>Відкрийте файл зображення</translation>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Open Image File</source>
+        <translation>Відкрийте файл зображення</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="154"/>
-      <source>Open From Url...</source>
-      <translation>Відкрити з URL-адреси...</translation>
+        <location filename="../mainwindow.cpp" line="154"/>
+        <source>Open From Url...</source>
+        <translation>Відкрити з URL-адреси...</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="155"/>
-      <source>Open Image File from Url</source>
-      <translation>Відкрийте файл зображення з URL-адреси</translation>
+        <location filename="../mainwindow.cpp" line="155"/>
+        <source>Open Image File from Url</source>
+        <translation>Відкрийте файл зображення з URL-адреси</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="159"/>
-      <source>&amp;Quit</source>
-      <translation>&amp;Вийти</translation>
+        <location filename="../mainwindow.cpp" line="159"/>
+        <source>&amp;Quit</source>
+        <translation>&amp;Вийти</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="160"/>
-      <source>Ctrl+Q</source>
-      <translation>Ctrl+Q</translation>
+        <location filename="../mainwindow.cpp" line="160"/>
+        <source>Ctrl+Q</source>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="161"/>
-      <source>Quit Application</source>
-      <translation>Вийти з програми</translation>
+        <location filename="../mainwindow.cpp" line="161"/>
+        <source>Quit Application</source>
+        <translation>Вийти з програми</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="163"/>
-      <source>Zoom &amp;In</source>
-      <translation>Приближувати</translation>
+        <location filename="../mainwindow.cpp" line="163"/>
+        <source>Zoom &amp;In</source>
+        <translation>Приближувати</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="164"/>
-      <source>Ctrl++</source>
-      <translation>Ctrl++</translation>
+        <location filename="../mainwindow.cpp" line="164"/>
+        <source>Ctrl++</source>
+        <translation>Ctrl++</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="168"/>
-      <source>Zoom O&amp;ut</source>
-      <translation>Зменшення</translation>
+        <location filename="../mainwindow.cpp" line="168"/>
+        <source>Zoom O&amp;ut</source>
+        <translation>Зменшення</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="169"/>
-      <source>Ctrl+-</source>
-      <translation>Ctrl+-</translation>
+        <location filename="../mainwindow.cpp" line="169"/>
+        <source>Ctrl+-</source>
+        <translation>Ctrl+-</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="177"/>
-      <source>&amp;File</source>
-      <translation>&amp;Файл</translation>
+        <location filename="../mainwindow.cpp" line="177"/>
+        <source>&amp;File</source>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="181"/>
-      <source>Save As...</source>
-      <translation>Зберегти як...</translation>
+        <location filename="../mainwindow.cpp" line="181"/>
+        <source>Save As...</source>
+        <translation>Зберегти як...</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="188"/>
-      <source>&amp;Edit</source>
-      <translation>&amp;Редагувати</translation>
+        <location filename="../mainwindow.cpp" line="188"/>
+        <source>&amp;Edit</source>
+        <translation>&amp;Редагувати</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="192"/>
-      <source>&amp;View</source>
-      <translation>&amp;Переглянути</translation>
+        <location filename="../mainwindow.cpp" line="192"/>
+        <source>&amp;View</source>
+        <translation>&amp;Переглянути</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="200"/>
-      <source>&amp;Tools</source>
-      <translation>&amp;Інструменти</translation>
+        <location filename="../mainwindow.cpp" line="200"/>
+        <source>&amp;Tools</source>
+        <translation>&amp;Інструменти</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="201"/>
-      <source>Share</source>
-      <translation>Поділіться</translation>
+        <location filename="../mainwindow.cpp" line="201"/>
+        <source>Share</source>
+        <translation>Поділіться</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="206"/>
-      <source>&amp;Help</source>
-      <translation>&amp;Довідка</translation>
+        <location filename="../mainwindow.cpp" line="206"/>
+        <source>&amp;Help</source>
+        <translation>&amp;Довідка</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="211"/>
-      <source>File</source>
-      <translation>Файл</translation>
+        <location filename="../mainwindow.cpp" line="211"/>
+        <source>File</source>
+        <translation>Файл</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="215"/>
-      <source>Image</source>
-      <translation>Зображення</translation>
+        <location filename="../mainwindow.cpp" line="215"/>
+        <source>Image</source>
+        <translation>Зображення</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="253"/>
-      <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
-      <translation>Зображення (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
+        <location filename="../mainwindow.cpp" line="253"/>
+        <source>Images (*.jpg *.jpeg *.png *.bmp *.gif)</source>
+        <translation>Зображення (*.jpg *.jpeg *.png *.bmp *.gif)</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="281"/>
-      <location filename="../mainwindow.cpp" line="291"/>
-      <location filename="../mainwindow.cpp" line="300"/>
-      <source>Save Image File</source>
-      <translation>Зберегти файл зображення</translation>
+        <location filename="../mainwindow.cpp" line="281"/>
+        <location filename="../mainwindow.cpp" line="291"/>
+        <location filename="../mainwindow.cpp" line="300"/>
+        <source>Save Image File</source>
+        <translation>Зберегти файл зображення</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="283"/>
-      <source>Images (*.png)</source>
-      <translation>Зображення (*.png)</translation>
+        <location filename="../mainwindow.cpp" line="283"/>
+        <source>Images (*.png)</source>
+        <translation>Зображення (*.png)</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="293"/>
-      <source>Images (*.bmp)</source>
-      <translation>Зображення (*.bmp)</translation>
+        <location filename="../mainwindow.cpp" line="293"/>
+        <source>Images (*.bmp)</source>
+        <translation>Зображення (*.bmp)</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="302"/>
-      <source>Images (*.jpg)</source>
-      <translation>Зображення (*.jpg)</translation>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Images (*.jpg)</source>
+        <translation>Зображення (*.jpg)</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="481"/>
-      <source>Open URL...</source>
-      <translation>Відкрити URL...</translation>
+        <location filename="../mainwindow.cpp" line="481"/>
+        <source>Open URL...</source>
+        <translation>Відкрити URL...</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="482"/>
-      <source>URL of a supported image file:</source>
-      <translation>URL-адреса підтримуваного файлу зображення:</translation>
+        <location filename="../mainwindow.cpp" line="482"/>
+        <source>URL of a supported image file:</source>
+        <translation>URL-адреса підтримуваного файлу зображення:</translation>
     </message>
     <message>
-      <location filename="../mainwindow.cpp" line="503"/>
-      <source>%1. Link copied to the clipboard.</source>
-      <translation>%1. Посилання скопійовано в буфер обміну.</translation>
+        <location filename="../mainwindow.cpp" line="503"/>
+        <source>%1. Link copied to the clipboard.</source>
+        <translation>%1. Посилання скопійовано в буфер обміну.</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="15"/>
-      <source>General</source>
-      <translation>Генеральний</translation>
+        <location filename="../settings.cpp" line="9"/>
+        <source>Settings</source>
+        <translation type="unfinished">Налаштування</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="16"/>
-      <source>Appearence</source>
-      <translation>Зовнішній вигляд</translation>
+        <location filename="../settings.cpp" line="17"/>
+        <source>General</source>
+        <translation>Генеральний</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="17"/>
-      <source>Window</source>
-      <translation>Вікно</translation>
+        <source>Appearence</source>
+        <translation type="vanished">Зовнішній вигляд</translation>
     </message>
-  </context>
+    <message>
+        <source>Window</source>
+        <translation type="vanished">Вікно</translation>
+    </message>
+</context>
+<context>
+    <name>WindowTab</name>
+    <message>
+        <location filename="../settings.cpp" line="85"/>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="87"/>
+        <source>Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="93"/>
+        <source>Edit Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

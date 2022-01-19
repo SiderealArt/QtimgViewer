@@ -1,11 +1,11 @@
 ﻿#ifndef FILEINFO_H
 #define FILEINFO_H
-#include <QWidget>
+#include <QDialog>
 #include <QLabel>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-class Fileinfo:public QWidget{
+class Fileinfo:public QDialog{
   Q_OBJECT
 public:
   Fileinfo();

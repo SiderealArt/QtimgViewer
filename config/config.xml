@@ -5,6 +5,7 @@
     <Title>Daruma Installer</Title>
     <Publisher>SiderealArt</Publisher>
     <StartMenuDir>Daruma</StartMenuDir>
-    <TargetDir>@HomeDir@/InstallationDirectory</TargetDir>
+    <TargetDir>@ApplicationsDir@/Daruma</TargetDir>
+    <InstallerIcon>../favicon.ico</InstallerIcon>
     <ProductUrl>https://siderealart.me</ProductUrl>
 </Installer>

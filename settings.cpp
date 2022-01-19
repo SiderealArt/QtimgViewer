@@ -4,12 +4,14 @@
 #include <QDebug>
 #include <QFile>
 Settings::Settings(QWidget *parent)
-  : QWidget(parent)
+  : QDialog(parent)
 {
-  this->setWindowTitle("Settings");
+  this->setWindowTitle(tr("Settings"));
   this->setFixedSize(QSize(450, 250));
   QDialogButtonBox *buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Apply);
   QTabWidget *tabWidget = new QTabWidget();
+  connect(buttonbox,SIGNAL(accepted()),this,SLOT(accept()));
+  connect(buttonbox,SIGNAL(rejected()),this,SLOT(reject()));
 
   QVBoxLayout *mainLayout = new QVBoxLayout();
   tabWidget->addTab(new GeneralTab(), tr("General"));
@@ -28,7 +30,7 @@ Settings::~Settings()
 GeneralTab::GeneralTab(QWidget *parent)
   : QWidget(parent)
 {
-
+  settings = new QSettings(QString("config.ini"), QSettings::IniFormat);
   /* QGroupBox *permissionsGroup = new QGroupBox(tr("Permissions"));
   QCheckBox *readable = new QCheckBox(tr("Readable"));
   QCheckBox *writable = new QCheckBox(tr("Writable"));
@@ -78,12 +80,31 @@ AppearenceTab::AppearenceTab(QWidget *parent)
 WindowTab::WindowTab(QWidget *parent)
   : QWidget(parent)
 {
-
+  actionsTable = new QTable(actions->count(), 2, this);
+  actionsTable->horizontalHeader()->setLabel(0,
+                                             tr("Description"));
+  actionsTable->horizontalHeader()->setLabel(1,
+                                             tr("Shortcut"));
+  actionsTable->verticalHeader()->hide();
+  actionsTable->setLeftMargin(0);
+  actionsTable->setColumnReadOnly(0, true);
+  connect(actionsTable, SIGNAL(currentChanged(int, int)),this, SLOT(recordAction(int, int)));
+  connect(actionsTable, SIGNAL(valueChanged(int, int)),this, SLOT(validateAction(int, int)));
+  setCaption(tr("Edit Actions"));
 }
-
+void WindowTab::validateAction(int row, int column){
+  QTableItem *item = actionsTable->item(row, column);
+  QString accelText = QString(QKeySequence(item->text()));
+  if (accelText.isEmpty() && !item->text().isEmpty()) {
+      item->setText(oldAccelText);
+    } else {
+      item->setText(accelText);
+    }
+}
+void WindowTab::recordAction(int row, int column){
+  oldAccelText = actionsTable->item(row, col)->text();
+}
 void GeneralTab::switchTranslator(QTranslator& translator, const QString& filename) {
-
-  QSettings *settings = new QSettings(QString("config.ini"), QSettings::IniFormat);
   QCoreApplication::removeTranslator(&translator);
   QString path = QApplication::applicationDirPath();
   path.append("/i18n/");
@@ -108,6 +129,5 @@ void GeneralTab::slotLanguageChanged(int index)
 }
 
 void GeneralTab::stylesheetChanged(int index){
-  QSettings *settings = new QSettings(QString("style.ini"), QSettings::IniFormat);
   settings->setValue("style", index);
 }

@@ -1,10 +1,9 @@
 ﻿#ifndef ABOUT_H
 #define ABOUT_H
-#include <QWidget>
+#include <QDialog>
 #include <QLabel>
-#include <QHBoxLayout>
 #include <QVBoxLayout>
-class About:public QWidget{
+class About:public QDialog{
   Q_OBJECT
 public:
   About(QWidget *parent = nullptr);
@@ -14,8 +13,6 @@ public:
   QLabel *website;
   QLabel *version;
   QVBoxLayout *mainLayout;
-private slots:
-
 };
 
 #endif // ABOUT_H

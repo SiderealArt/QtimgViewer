@@ -7,6 +7,8 @@ Threshold::Threshold()
   mainLayout = new QVBoxLayout(this);
   mainLayout->addWidget(slider);
   mainLayout->addWidget(buttonbox);
+   connect(buttonbox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonbox, SIGNAL(rejected()), this, SLOT(reject()));
 }
 
 Threshold::~Threshold()

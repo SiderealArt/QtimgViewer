@@ -1,11 +1,11 @@
 ﻿#ifndef THRESHOLD_H
 #define THRESHOLD_H
-#include <QWidget>
+#include <QDialog>
 #include <QSlider>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-class Threshold:public QWidget{
+class Threshold:public QDialog{
   Q_OBJECT
 public:
   Threshold();

@@ -1,8 +1,8 @@
 ﻿#include "about.h"
 About::About(QWidget *parent)
-    : QWidget(parent)
+    : QDialog(parent)
 {
-  this->setWindowTitle("About");
+  this->setWindowTitle(tr("About"));
   this->setFixedSize(310,300);
   appIcon = new QLabel();
   version = new QLabel();
