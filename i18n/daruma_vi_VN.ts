@@ -4,6 +4,11 @@
   <context>
     <name>About</name>
     <message>
+      <location filename="../about.cpp" line="5"/>
+      <source>About</source>
+      <translation type="unfinished">About</translation>
+    </message>
+    <message>
       <location filename="../about.cpp" line="15"/>
       <source>Built with Qt %1 (%2)&lt;br&gt;Source code available under GPLv3 on &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Icon provided by Icon8&lt;br&gt;Copyright © %3 SiderealArt</source>
       <translation>Được xây dựng với Qt %1 (%2)&lt;br&gt;Mã nguồn có sẵn theo GPLv3 trên &lt;a style=&quot;color: #03A9F4; text-decoration:none;&quot; href=&quot;https://github.com/SiderealArt/Daruma&quot;&gt;GitHub&lt;/a&gt;&lt;br&gt;Biểu tượng được cung cấp bởi Icon8&lt;br&gt;Bản quyền © %3 SiderealArt</translation>
@@ -21,6 +26,11 @@
   </context>
   <context>
     <name>Fileinfo</name>
+    <message>
+      <location filename="../fileinfo.cpp" line="4"/>
+      <source>File Info</source>
+      <translation type="unfinished">File Info</translation>
+    </message>
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
       <source>File Name:</source>
@@ -50,37 +60,12 @@
   <context>
     <name>GeneralTab</name>
     <message>
-      <location filename="../settings.cpp" line="32"/>
-      <source>Permissions</source>
-      <translation>Quyền</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="33"/>
-      <source>Readable</source>
-      <translation>Có thể đọc được</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="34"/>
-      <source>Writable</source>
-      <translation>Ghi</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="35"/>
-      <source>Executable</source>
-      <translation>Thực thi được</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="36"/>
-      <source>Ownership</source>
-      <translation>Quyền sở hữu</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="39"/>
+      <location filename="../settings.cpp" line="41"/>
       <source>White</source>
       <translation>trắng</translation>
     </message>
     <message>
-      <location filename="../settings.cpp" line="40"/>
+      <location filename="../settings.cpp" line="42"/>
       <source>Black</source>
       <translation>Màu đen</translation>
     </message>
@@ -373,19 +358,32 @@
   <context>
     <name>Settings</name>
     <message>
-      <location filename="../settings.cpp" line="15"/>
-      <source>General</source>
-      <translation>Tổng quan</translation>
-    </message>
-    <message>
-      <location filename="../settings.cpp" line="16"/>
-      <source>Appearence</source>
-      <translation>Ngoại hình</translation>
+      <location filename="../settings.cpp" line="9"/>
+      <source>Settings</source>
+      <translation type="unfinished">Settings</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="17"/>
-      <source>Window</source>
-      <translation>Cửa sổ</translation>
+      <source>General</source>
+      <translation>Tổng quan</translation>
+    </message>
+  </context>
+  <context>
+    <name>WindowTab</name>
+    <message>
+      <location filename="../settings.cpp" line="85"/>
+      <source>Description</source>
+      <translation type="unfinished">Description</translation>
+    </message>
+    <message>
+      <location filename="../settings.cpp" line="87"/>
+      <source>Shortcut</source>
+      <translation type="unfinished">Shortcut</translation>
+    </message>
+    <message>
+      <location filename="../settings.cpp" line="93"/>
+      <source>Edit Actions</source>
+      <translation type="unfinished">Edit Actions</translation>
     </message>
   </context>
 </TS>
