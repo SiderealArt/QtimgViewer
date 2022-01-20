@@ -13,6 +13,8 @@ public:
   QSlider *brightness_slider;
   QSlider *contrast_slider;
   QSlider *saturation_slider;
+  QSlider *warmth_slider;
+  QSlider *hue_slider;
   QVBoxLayout *mainLayout;
   QDialogButtonBox *buttonbox;
 };

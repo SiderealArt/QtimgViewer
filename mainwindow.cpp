@@ -16,6 +16,7 @@ switch label to graphicview
 #include <QPainter>
 #include <QMessageBox>
 #include <QtNetwork>
+#include <QFileInfo>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkAccessManager>
@@ -49,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent)
   histogramWin = new QLabel();
   aWin = new About();
   sWin = new Settings();
-  fWin = new Fileinfo();
   adWin = new Adjustment();
   thresholdWin = new Threshold();
   imgWin->resize(500,300);
@@ -118,6 +118,7 @@ void MainWindow::createActions(){
   imgurAction = new QAction(tr("Upload to Imgur"));
   connect(imgurAction,SIGNAL(triggered()),this,SLOT(imgur()));
   imgbbAction = new QAction(tr("Upload to ImgBB"));
+  connect(imgbbAction,SIGNAL(triggered()),this,SLOT(imgbb()));
   imageshackAction = new QAction(tr("Upload to ImageShack"));
   clipboardAction = new QAction(tr("Copy to Clipboard"));
   clipboardAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/clipboard.png")));
@@ -349,7 +350,6 @@ void MainWindow::copytoclipboard(){
 }
 
 void MainWindow::imgur(){
-  qDebug() << "imgur";
   imgurupload = new QNetworkAccessManager(this);
   connect(imgurupload,
           SIGNAL(finished(QNetworkReply*)),
@@ -411,9 +411,15 @@ void MainWindow::adjustment(){
   connect(adWin->brightness_slider,SIGNAL(valueChanged(int)), this, SLOT(brightness(int)));
   connect(adWin->contrast_slider,SIGNAL(valueChanged(int)), this, SLOT(contrast(int)));
   connect(adWin->saturation_slider,SIGNAL(valueChanged(int)), this, SLOT(saturation(int)));
+  connect(adWin->warmth_slider,SIGNAL(valueChanged(int)), this, SLOT(warmth(int)));
+  connect(adWin->hue_slider,SIGNAL(valueChanged(int)), this, SLOT(hue(int)));
 }
 
 void MainWindow::fileinfo(){
+
+  qDebug() << filename;
+  fWin = new Fileinfo();
+  fWin->img = QFileInfo(filename);
   fWin->show();
 }
 
@@ -634,4 +640,46 @@ void MainWindow::sepia(){
         }
     }
   imgWin->setPixmap(QPixmap::fromImage(result));
+}
+
+void MainWindow::imgbb(){
+  imgurupload = new QNetworkAccessManager(this);
+  connect(imgurupload,
+          SIGNAL(finished(QNetworkReply*)),
+          this,SLOT(handleReply(QNetworkReply*)));
+  QByteArray byteArray;
+  QBuffer buffer(&byteArray);
+  imgWin->pixmap().save(&buffer, "PNG");
+  QUrl url(("https://api.imgbb.com/1/upload?key="));
+  QNetworkRequest request(url);
+  request.setRawHeader(
+        "Authorization",
+        ("Client-ID bc7f6d29d2cf7d6"));
+
+  imgurupload->post(request, byteArray);
+}
+
+void MainWindow::warmth(int v){
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
+
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          result.setPixelColor(i, j, qRgb(color.red(), color.green(), qMin(255, qMax(0,color.blue()+v))));
+        }
+    }
+
+  imgWin->setPixmap(QPixmap::fromImage(result));
+}
+
+void MainWindow::hue(int v){
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
+    for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+        for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+            QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
+            color.setHsv(color.hue()+v,color.saturation(),color.value());
+            result.setPixelColor(i, j, color);
+          }
+      }
+    imgWin->setPixmap(QPixmap::fromImage(result));
 }
