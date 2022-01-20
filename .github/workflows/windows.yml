@@ -29,6 +29,7 @@ jobs:
           qmake ImageEditor.pro
           mingw32-make
           mkdir build
+          Get-ChildItem -Recurse "c:\Qt\Tools" | Where { $_.PSIsContainer } | Select Name,FullName
           Get-ChildItem -Recurse "." | Where { $_.PSIsContainer } | Select Name,FullName
           mv ./release/ImageEditor.exe ./build
           cd build
@@ -38,7 +39,7 @@ jobs:
           Copy-Item "c:\Qt\6.2.1\mingw81_64\bin\libwinpthread-1.dll" -Destination "."
           Copy-Item -Path ".\*" -Destination "..\packages\com.siderealart.daruma\data" -Recurse
           cd ..
-          c:\Qt\Tools\QtInstallerFramework\4.2\bin\binarycreator.exe -c config/config.xml -p packages installer.exe 
+          binarycreator -c config/config.xml -p packages installer.exe 
           7z a -tzip portable.zip ./build/*
       - name: Release
         uses: softprops/action-gh-release@v1
