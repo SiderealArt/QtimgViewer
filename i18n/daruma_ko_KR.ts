@@ -49,12 +49,12 @@
     <message>
       <location filename="../adjustment.cpp" line="10"/>
       <source>Warmth</source>
-      <translation type="unfinished">Warmth</translation>
+      <translation>따뜻함</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="11"/>
       <source>Hue</source>
-      <translation type="unfinished">Hue</translation>
+      <translation>색조</translation>
     </message>
   </context>
   <context>
@@ -62,7 +62,7 @@
     <message>
       <location filename="../camera.cpp" line="6"/>
       <source>Capture Photo</source>
-      <translation type="unfinished">Capture Photo</translation>
+      <translation>사진 캡처</translation>
     </message>
   </context>
   <context>
@@ -75,39 +75,39 @@
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
       <source>File Name: %1</source>
-      <translation type="unfinished">File Name: %1</translation>
+      <translation>파일 이름: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="7"/>
       <source>Path: %1</source>
-      <translation type="unfinished">Path: %1</translation>
+      <translation>경로: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="8"/>
       <source>File Size: %1</source>
-      <translation type="unfinished">File Size: %1</translation>
+      <translation>파일 크기: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="9"/>
       <source>Last Read: %1</source>
-      <translation type="unfinished">Last Read: %1</translation>
+      <translation>마지막 읽기: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="10"/>
       <source>Last Modified: %1</source>
-      <translation type="unfinished">Last Modified: %1</translation>
+      <translation>마지막 수정: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="11"/>
       <location filename="../fileinfo.cpp" line="12"/>
       <location filename="../fileinfo.cpp" line="13"/>
       <source>Size: %1</source>
-      <translation type="unfinished">Size: %1</translation>
+      <translation>크기: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="14"/>
       <source>Ratio: %1</source>
-      <translation type="unfinished">Ratio: %1</translation>
+      <translation>비율: %1</translation>
     </message>
   </context>
   <context>
@@ -126,7 +126,7 @@
       <location filename="../settings.cpp" line="113"/>
       <location filename="../settings.cpp" line="120"/>
       <source>You must restart the application for these changes to take effect.</source>
-      <translation type="unfinished">You must restart the application for these changes to take effect.</translation>
+      <translation>이러한 변경 사항을 적용하려면 응용 프로그램을 다시 시작해야 합니다.</translation>
     </message>
   </context>
   <context>
@@ -139,32 +139,32 @@
     <message>
       <location filename="../mainwindow.cpp" line="81"/>
       <source>Warmth</source>
-      <translation type="unfinished">Warmth</translation>
+      <translation>따뜻함</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="84"/>
       <source>Brightness</source>
-      <translation type="unfinished">Brightness</translation>
+      <translation>명도</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="87"/>
       <source>Contrast</source>
-      <translation type="unfinished">Contrast</translation>
+      <translation>차이</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="90"/>
       <source>Hue</source>
-      <translation type="unfinished">Hue</translation>
+      <translation>색조</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="93"/>
       <source>Saturation</source>
-      <translation type="unfinished">Saturation</translation>
+      <translation>포화</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="96"/>
       <source>Capture Photo</source>
-      <translation type="unfinished">Capture Photo</translation>
+      <translation>사진 캡처</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="99"/>
@@ -190,7 +190,7 @@
     <message>
       <location filename="../mainwindow.cpp" line="111"/>
       <source>Sepia</source>
-      <translation type="unfinished">Sepia</translation>
+      <translation>세피아</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="114"/>
@@ -462,72 +462,72 @@
     <message>
       <location filename="../mainwindow.cpp" line="439"/>
       <source>Adjust Warmth</source>
-      <translation type="unfinished">Adjust Warmth</translation>
+      <translation>따뜻함 조정</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="448"/>
       <source>Adjust Saturation</source>
-      <translation type="unfinished">Adjust Saturation</translation>
+      <translation>채도 조정</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="457"/>
       <source>Adjust Brightness</source>
-      <translation type="unfinished">Adjust Brightness</translation>
+      <translation>밝기 조정</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="466"/>
       <source>Adjust Hue</source>
-      <translation type="unfinished">Adjust Hue</translation>
+      <translation>색조 조정</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="481"/>
       <source>Adjust Contrast</source>
-      <translation type="unfinished">Adjust Contrast</translation>
+      <translation>대비 조정</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="508"/>
       <source>File Name: %1</source>
-      <translation type="unfinished">File Name: %1</translation>
+      <translation>파일 이름: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="509"/>
       <source>Path: %1</source>
-      <translation type="unfinished">Path: %1</translation>
+      <translation>경로: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="510"/>
       <source>File Size: %1 Bytes</source>
-      <translation type="unfinished">File Size: %1 Bytes</translation>
+      <translation>파일 크기: %1 바이트</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="511"/>
       <source>Last Read: %1</source>
-      <translation type="unfinished">Last Read: %1</translation>
+      <translation>마지막 읽기: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="512"/>
       <source>Last Modified: %1</source>
-      <translation type="unfinished">Last Modified: %1</translation>
+      <translation>마지막 수정: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="513"/>
       <source>Width: %1</source>
-      <translation type="unfinished">Width: %1</translation>
+      <translation>너비: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="514"/>
       <source>Height: %1</source>
-      <translation type="unfinished">Height: %1</translation>
+      <translation>높이: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="515"/>
       <source>Megapixels: %1 MP</source>
-      <translation type="unfinished">Megapixels: %1 MP</translation>
+      <translation>메가 픽셀 : %1 MP</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="517"/>
       <source>Ratio: %1:%2</source>
-      <translation type="unfinished">Ratio: %1:%2</translation>
+      <translation>비율: %1:%2</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="549"/>
