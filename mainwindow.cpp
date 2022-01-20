@@ -74,16 +74,22 @@ MainWindow::~MainWindow()
 }
 void MainWindow::createActions(){
   cameraAction = new QAction(tr("Capture Photo"));
+  cameraAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/webcam.png")));
   connect(cameraAction,SIGNAL(triggered()),this,SLOT(camera()));
   fileinfoAction = new QAction(tr("File Info"));
+  fileinfoAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/about.png")));
   connect(fileinfoAction,SIGNAL(triggered()),this,SLOT(fileinfo()));
   adjustmentAction = new QAction(tr("Image Adjustment"));
+  adjustmentAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/adjustment.png")));
   connect(adjustmentAction,SIGNAL(triggered()),this,SLOT(adjustment()));
   invertAction = new QAction(tr("Invert"));
+  invertAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/invert.png")));
   connect(invertAction,SIGNAL(triggered()),this,SLOT(invert()));
   grayscaleAction = new QAction(tr("Grayscale"));
+  grayscaleAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/grayscale.png")));
   connect(grayscaleAction,SIGNAL(triggered()),this,SLOT(grayscale()));
   sepiaAction = new QAction(tr("Sepia"));
+  sepiaAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/sepia.png")));
   connect(sepiaAction,SIGNAL(triggered()),this,SLOT(sepia()));
   colorpickerAction = new QAction(tr("Color picker"));
   colorpickerAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/up.png")));
@@ -95,6 +101,7 @@ void MainWindow::createActions(){
   dirhomeAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/home.png")));
   connect(dirhomeAction,SIGNAL(triggered()),this,SLOT(dirhome()));
   alwaysontopAction = new QAction(tr("Always on top"));
+  alwaysontopAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/pin.png")));
   alwaysontopAction->setCheckable(true);
   connect(alwaysontopAction,SIGNAL(triggered()),this,SLOT(alwaysontop()));
   histogramAction = new QAction(tr("Show Histrogram"));
@@ -102,6 +109,7 @@ void MainWindow::createActions(){
   thresholdAction = new QAction(tr("Threshold..."));
   connect(thresholdAction,SIGNAL(triggered()),this,SLOT(threshold()));
   printAction = new QAction(tr("Print"));
+  printAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/print.png")));
   printAction->setDisabled(true);
   connect(printAction,SIGNAL(triggered()),this,SLOT(print()));
   newWindowAction = new QAction(tr("Open New Window"));
@@ -134,13 +142,14 @@ void MainWindow::createActions(){
   connect(saveAsBMPAction,SIGNAL(triggered()),this,SLOT(saveAsBMP()));
   connect(saveAsJPGAction,SIGNAL(triggered()),this,SLOT(saveAsJPG()));
   settingAction = new QAction(tr("Settings"));
-  settingAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/setting.png")));
+  settingAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/settings.png")));
   connect(settingAction,SIGNAL(triggered()),this,SLOT(settingsMenu()));
   rotateAction = new QAction(tr("Rotate"));
   rotateAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/rotate.png")));
   rotateAction->setDisabled(true);
   connect(rotateAction,SIGNAL(triggered()),this,SLOT(rotate()));
   fullscreenAction=new QAction(tr("Fullscreen"));
+  fullscreenAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/fullscreen.png")));
   connect(fullscreenAction,SIGNAL(triggered()),this,SLOT(fullscreen()));
   aboutAction = new QAction(tr("About"));
   connect(aboutAction,SIGNAL(triggered()),this,SLOT(aboutMenu()));
@@ -197,8 +206,6 @@ void MainWindow::createMenus(){
   fileMenu->addAction(printAction);
   fileMenu->addAction(exitAction);
   editMenu = menuBar()->addMenu(tr("&Edit"));
-  editMenu->addAction(undoAction);
-  editMenu->addAction(redoAction);
   editMenu->addAction(adjustmentAction);
   editMenu->addAction(thresholdAction);
   editMenu->addAction(grayscaleAction);
@@ -208,6 +215,7 @@ void MainWindow::createMenus(){
   viewMenu->addAction(histogramAction);
   viewMenu->addAction(hFlipAction);
   viewMenu->addAction(vFlipAction);
+  viewMenu->addAction(rotateAction);
   viewMenu->addAction(zoomInAction);
   viewMenu->addAction(zoomOutAction);
   viewMenu->addAction(fullscreenAction);
@@ -215,6 +223,7 @@ void MainWindow::createMenus(){
   toolsMenu =menuBar()->addMenu(tr("&Tools"));
   shareMenu = toolsMenu->addMenu(tr("Share"));
   toolsMenu->addAction(settingAction);
+  toolsMenu->addAction(clipboardAction);
   shareMenu->addAction(imgurAction);
   helpMenu = menuBar()->addMenu(tr("&Help"));
   helpMenu->addAction(aboutAction);
@@ -226,14 +235,9 @@ void MainWindow::createToolbars(){
   fileTool->addAction(zoomOutAction);
   fileTool->addAction(clipboardAction);
   ImageTool = addToolBar(tr("Image"));
-  ImageTool->addAction(undoAction);
-  ImageTool->addAction(redoAction);
-  ImageTool->addAction(penAction);
-  ImageTool->addAction(colorpickerAction);
   ImageTool->addAction(vFlipAction);
   ImageTool->addAction(hFlipAction);
   ImageTool->addAction(rotateAction);
-
   treeviewTool->addAction(openFileAction);
   treeviewTool->addAction(dirupAction);
   treeviewTool->addAction(dirhomeAction);

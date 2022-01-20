@@ -27,6 +27,13 @@
         <file>resources/icon/up.png</file>
         <file>resources/icon/link.png</file>
         <file>resources/icon/capture.png</file>
+        <file>resources/icon/adjustment.png</file>
+        <file>resources/icon/grayscale.png</file>
+        <file>resources/icon/invert.png</file>
+        <file>resources/icon/sepia.png</file>
+        <file>resources/icon/pin.png</file>
+        <file>resources/icon/print.png</file>
+        <file>resources/icon/webcam.png</file>
     </qresource>
     <qresource prefix="/">
         <file>i18n/daruma_en.ts</file>
