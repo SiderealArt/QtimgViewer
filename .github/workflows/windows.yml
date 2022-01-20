@@ -15,7 +15,7 @@ jobs:
         run: |
           pip install aqtinstall
           python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.1 win64_mingw81 -m qtmultimedia
-          python -m aqt install-tool windows desktop tools_ifw qt.tools.ifw.42
+          python -m aqt install-tool --outputdir c:\Qt windows desktop tools_ifw qt.tools.ifw.42
           echo "QTDIR=c:\Qt\6.2.1\mingw81_64" | Out-File -FilePath $env:GITHUB_ENV -Append
           echo "c:\Qt\Tools\QtInstallerFramework\4.2\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
           echo "c:\Qt\6.2.1\mingw81_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
