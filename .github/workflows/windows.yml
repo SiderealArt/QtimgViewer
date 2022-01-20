@@ -16,6 +16,7 @@ jobs:
           pip install aqtinstall
           python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.1 win64_mingw81 -m qtmultimedia
           echo "QTDIR=c:\Qt\6.2.1\mingw81_64" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "c:\Qt\Tools\QtInstallerFramework\4.2\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
           echo "c:\Qt\6.2.1\mingw81_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
       - uses: actions/checkout@v2
         with:
@@ -37,7 +38,7 @@ jobs:
           Copy-Item "c:\Qt\6.2.1\mingw81_64\bin\libwinpthread-1.dll" -Destination "."
           Copy-Item -Path ".\*" -Destination "..\packages\com.siderealart.daruma\data" -Recurse
           cd ..
-          c:\Qt\Tools\QtInstallerFramework\4.2\binbinarycreator.exe -c config/config.xml -p packages installer.exe 
+          c:\Qt\Tools\QtInstallerFramework\4.2\bin\binarycreator.exe -c config/config.xml -p packages installer.exe 
           7z a -tzip portable.zip ./build/*
       - name: Release
         uses: softprops/action-gh-release@v1
