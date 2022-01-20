@@ -14,8 +14,7 @@ jobs:
         shell: pwsh
         run: |
           pip install aqtinstall
-          python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.1 win64_mingw81
-          python -m aqt list-qt windows desktop --modules 6.2.1 win64_mingw81
+          python -m aqt install-qt --outputdir c:\Qt windows desktop 6.2.1 win64_mingw81 -m qtmultimedia
           echo "QTDIR=c:\Qt\6.2.1\mingw81_64" | Out-File -FilePath $env:GITHUB_ENV -Append
           echo "c:\Qt\6.2.1\mingw81_64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
       - uses: actions/checkout@v2
