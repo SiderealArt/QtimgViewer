@@ -117,4 +117,7 @@ void GeneralTab::slotLanguageChanged(int index)
 
 void GeneralTab::stylesheetChanged(int index){
   settings->setValue("style", index);
+  QMessageBox msgBox;
+  msgBox.setText(tr("You must restart the application for these changes to take effect."));
+  msgBox.exec();
 }

@@ -553,7 +553,7 @@ void MainWindow::handleReply(QNetworkReply *reply){
 
 void MainWindow::handleimgbbReply(QNetworkReply *reply){
   QString answer = reply->readAll();
-qDebug() << answer;
+  qDebug() << answer;
   QJsonDocument jsonResponse = QJsonDocument::fromJson(answer.toUtf8());
   QJsonObject jsonObject = jsonResponse.object();
   QJsonObject data = jsonObject["data"].toObject();
@@ -677,12 +677,12 @@ void MainWindow::warmth(int v){
 
 void MainWindow::hue(int v){
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
-    for(int j=0;j<tempWin->pixmap().toImage().height();j++){
-        for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-            QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
-            color.setHsv(color.hue()+v,color.saturation(),color.value());
-            result.setPixelColor(i, j, color);
-          }
-      }
-    imgWin->setPixmap(QPixmap::fromImage(result));
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
+          color.setHsv(color.hue()+v,color.saturation(),color.value());
+          result.setPixelColor(i, j, color);
+        }
+    }
+  imgWin->setPixmap(QPixmap::fromImage(result));
 }
