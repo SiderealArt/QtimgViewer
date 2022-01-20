@@ -11,6 +11,7 @@
 #include <QComboBox>
 #include <QVBoxLayout>
 #include <QTableWidget>
+#include <QMessageBox>
 #include <QDialogButtonBox>
 class GeneralTab : public QWidget{
   Q_OBJECT

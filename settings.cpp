@@ -110,6 +110,9 @@ void GeneralTab::slotLanguageChanged(int index)
 {
   Q_UNUSED(index)
   loadLanguage(languagedropdown->currentData().toString());
+  QMessageBox msgBox;
+  msgBox.setText(tr("You must restart the application for these changes to take effect."));
+  msgBox.exec();
 }
 
 void GeneralTab::stylesheetChanged(int index){
