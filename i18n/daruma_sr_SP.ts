@@ -49,12 +49,12 @@
     <message>
       <location filename="../adjustment.cpp" line="10"/>
       <source>Warmth</source>
-      <translation type="unfinished">Warmth</translation>
+      <translation>Топлина</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="11"/>
       <source>Hue</source>
-      <translation type="unfinished">Hue</translation>
+      <translation>Нијанса</translation>
     </message>
   </context>
   <context>
@@ -62,7 +62,7 @@
     <message>
       <location filename="../camera.cpp" line="6"/>
       <source>Capture Photo</source>
-      <translation type="unfinished">Capture Photo</translation>
+      <translation>Снимите фотографију</translation>
     </message>
   </context>
   <context>
@@ -75,39 +75,39 @@
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
       <source>File Name: %1</source>
-      <translation type="unfinished">File Name: %1</translation>
+      <translation>Име датотеке: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="7"/>
       <source>Path: %1</source>
-      <translation type="unfinished">Path: %1</translation>
+      <translation>Путања: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="8"/>
       <source>File Size: %1</source>
-      <translation type="unfinished">File Size: %1</translation>
+      <translation>Величина датотеке: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="9"/>
       <source>Last Read: %1</source>
-      <translation type="unfinished">Last Read: %1</translation>
+      <translation>Последње читање: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="10"/>
       <source>Last Modified: %1</source>
-      <translation type="unfinished">Last Modified: %1</translation>
+      <translation>Последња измена: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="11"/>
       <location filename="../fileinfo.cpp" line="12"/>
       <location filename="../fileinfo.cpp" line="13"/>
       <source>Size: %1</source>
-      <translation type="unfinished">Size: %1</translation>
+      <translation>Величина: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="14"/>
       <source>Ratio: %1</source>
-      <translation type="unfinished">Ratio: %1</translation>
+      <translation>Однос: %1</translation>
     </message>
   </context>
   <context>
@@ -126,7 +126,7 @@
       <location filename="../settings.cpp" line="113"/>
       <location filename="../settings.cpp" line="120"/>
       <source>You must restart the application for these changes to take effect.</source>
-      <translation type="unfinished">You must restart the application for these changes to take effect.</translation>
+      <translation>Морате поново покренути апликацију да би ове промене ступиле на снагу.</translation>
     </message>
   </context>
   <context>
@@ -139,32 +139,32 @@
     <message>
       <location filename="../mainwindow.cpp" line="81"/>
       <source>Warmth</source>
-      <translation type="unfinished">Warmth</translation>
+      <translation>Топлина</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="84"/>
       <source>Brightness</source>
-      <translation type="unfinished">Brightness</translation>
+      <translation>Осветљеност</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="87"/>
       <source>Contrast</source>
-      <translation type="unfinished">Contrast</translation>
+      <translation>Контраст</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="90"/>
       <source>Hue</source>
-      <translation type="unfinished">Hue</translation>
+      <translation>Нијанса</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="93"/>
       <source>Saturation</source>
-      <translation type="unfinished">Saturation</translation>
+      <translation>Засићење</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="96"/>
       <source>Capture Photo</source>
-      <translation type="unfinished">Capture Photo</translation>
+      <translation>Снимите фотографију</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="99"/>
@@ -190,7 +190,7 @@
     <message>
       <location filename="../mainwindow.cpp" line="111"/>
       <source>Sepia</source>
-      <translation type="unfinished">Sepia</translation>
+      <translation>Сепиа</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="114"/>
@@ -462,72 +462,72 @@
     <message>
       <location filename="../mainwindow.cpp" line="439"/>
       <source>Adjust Warmth</source>
-      <translation type="unfinished">Adjust Warmth</translation>
+      <translation>Подесите топлину</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="448"/>
       <source>Adjust Saturation</source>
-      <translation type="unfinished">Adjust Saturation</translation>
+      <translation>Подесите засићеност</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="457"/>
       <source>Adjust Brightness</source>
-      <translation type="unfinished">Adjust Brightness</translation>
+      <translation>Подесите осветљеност</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="466"/>
       <source>Adjust Hue</source>
-      <translation type="unfinished">Adjust Hue</translation>
+      <translation>Подесите нијансу</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="481"/>
       <source>Adjust Contrast</source>
-      <translation type="unfinished">Adjust Contrast</translation>
+      <translation>Подесите контраст</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="508"/>
       <source>File Name: %1</source>
-      <translation type="unfinished">File Name: %1</translation>
+      <translation>Име датотеке: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="509"/>
       <source>Path: %1</source>
-      <translation type="unfinished">Path: %1</translation>
+      <translation>Путања: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="510"/>
       <source>File Size: %1 Bytes</source>
-      <translation type="unfinished">File Size: %1 Bytes</translation>
+      <translation>Величина датотеке: %1 бајтова</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="511"/>
       <source>Last Read: %1</source>
-      <translation type="unfinished">Last Read: %1</translation>
+      <translation>Последње читање: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="512"/>
       <source>Last Modified: %1</source>
-      <translation type="unfinished">Last Modified: %1</translation>
+      <translation>Последња измена: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="513"/>
       <source>Width: %1</source>
-      <translation type="unfinished">Width: %1</translation>
+      <translation>Ширина: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="514"/>
       <source>Height: %1</source>
-      <translation type="unfinished">Height: %1</translation>
+      <translation>Висина: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="515"/>
       <source>Megapixels: %1 MP</source>
-      <translation type="unfinished">Megapixels: %1 MP</translation>
+      <translation>Мегапиксела: %1 МП</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="517"/>
       <source>Ratio: %1:%2</source>
-      <translation type="unfinished">Ratio: %1:%2</translation>
+      <translation>Однос: %1:%2</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="549"/>
