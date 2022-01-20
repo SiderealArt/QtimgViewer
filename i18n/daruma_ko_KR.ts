@@ -6,7 +6,7 @@
     <message>
       <location filename="../about.cpp" line="5"/>
       <source>About</source>
-      <translation type="unfinished">About</translation>
+      <translation>에 대한</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="15"/>
@@ -29,22 +29,22 @@
     <message>
       <location filename="../adjustment.cpp" line="5"/>
       <source>Adjustment...</source>
-      <translation type="unfinished">Adjustment...</translation>
+      <translation>조정...</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="7"/>
       <source>Brightness</source>
-      <translation type="unfinished">Brightness</translation>
+      <translation>명도</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="8"/>
       <source>Contrast</source>
-      <translation type="unfinished">Contrast</translation>
+      <translation>차이</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="9"/>
       <source>Saturation</source>
-      <translation type="unfinished">Saturation</translation>
+      <translation>포화</translation>
     </message>
   </context>
   <context>
@@ -52,7 +52,7 @@
     <message>
       <location filename="../fileinfo.cpp" line="4"/>
       <source>File Info</source>
-      <translation type="unfinished">File Info</translation>
+      <translation>파일 정보</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
@@ -103,22 +103,22 @@
     <message>
       <location filename="../mainwindow.cpp" line="79"/>
       <source>File Info</source>
-      <translation type="unfinished">File Info</translation>
+      <translation>파일 정보</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="81"/>
       <source>Image Adjustment</source>
-      <translation type="unfinished">Image Adjustment</translation>
+      <translation>이미지 조정</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="83"/>
       <source>Invert</source>
-      <translation type="unfinished">Invert</translation>
+      <translation>거꾸로 하다</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="85"/>
       <source>Grayscale</source>
-      <translation type="unfinished">Grayscale</translation>
+      <translation>그레이스케일</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="87"/>
@@ -385,12 +385,12 @@
     <message>
       <location filename="../mainwindow.cpp" line="390"/>
       <source>Adjust Threshold</source>
-      <translation type="unfinished">Adjust Threshold</translation>
+      <translation>임계값 조정</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="429"/>
       <source>Histogram</source>
-      <translation type="unfinished">Histogram</translation>
+      <translation>히스토그램</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="513"/>
@@ -413,7 +413,7 @@
     <message>
       <location filename="../settings.cpp" line="9"/>
       <source>Settings</source>
-      <translation type="unfinished">Settings</translation>
+      <translation>설정</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="17"/>
