@@ -470,6 +470,12 @@ void MainWindow::hueWin(){
 
 void MainWindow::contrastWin(){
   tempWin->setPixmap(imgWin->pixmap());
+  for(int i=0;i<imgWin->pixmap().toImage().height();i++){
+      for(int j=0;j<imgWin->pixmap().toImage().width();j++){
+          b += imgWin->pixmap().toImage().pixelColor(j,i).red() * 0.299 + imgWin->pixmap().toImage().pixelColor(j,i).green() * 0.587+imgWin->pixmap().toImage().pixelColor(j,i).blue() * 0.144;
+        }
+    }
+  b/=(imgWin->pixmap().toImage().height() * imgWin->pixmap().toImage().width());
   connect(coWin->slider,SIGNAL(valueChanged(int)), this, SLOT(contrast(int)));
   coWin->setFixedSize(250,100);
   coWin->setWindowTitle(tr("Adjust Contrast"));

@@ -8,13 +8,13 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QSettings settings("config.ini",QSettings::IniFormat);
-     QSettings stylesettings("style.ini",QSettings::IniFormat);
     QFile stylesheet(":/main/resources/theme/style.qss");
     stylesheet.open(QFile::ReadOnly);
     QString style(stylesheet.readAll());
     QTranslator myappTranslator;
     QString l = settings.value("language", "daruma_en.qm").toString();
-    int t = stylesettings.value("style", 1).toInt();
+    int t = settings.value("style", 1).toInt();
+
     if(t==1){
         a.setStyleSheet(style);
      }
