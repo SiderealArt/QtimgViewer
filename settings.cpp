@@ -11,7 +11,6 @@ Settings::Settings(QWidget *parent)
   QTabWidget *tabWidget = new QTabWidget();
   connect(buttonbox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(buttonbox,SIGNAL(rejected()),this,SLOT(reject()));
-
   QVBoxLayout *mainLayout = new QVBoxLayout();
   tabWidget->addTab(new GeneralTab(), tr("General"));
   /* tabWidget->addTab(new AppearenceTab(), tr("Appearence"));
@@ -57,7 +56,6 @@ GeneralTab::GeneralTab(QWidget *parent)
   permissionsLayout->addWidget(writable);
   permissionsLayout->addWidget(executable);
   permissionsGroup->setLayout(permissionsLayout);*/
-
   QVBoxLayout *ownerLayout = new QVBoxLayout;
   ownerLayout->addWidget(languagedropdown);
   ownerLayout->addWidget(stylesheetdropdown);

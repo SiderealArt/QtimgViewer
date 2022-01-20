@@ -1,6 +1,6 @@
 ﻿#include "adjustment.h"
 Adjustment::Adjustment(QWidget *parent)
-    : QDialog(parent)
+  : QDialog(parent)
 {
   this->setWindowTitle(tr("Adjustment..."));
   this->setFixedSize(310,250);
@@ -16,7 +16,7 @@ Adjustment::Adjustment(QWidget *parent)
   contrast_slider = new QSlider(Qt::Horizontal);
   contrast_slider->setRange(-100, 100);
   contrast_slider->setValue(0);
- saturation_slider = new QSlider(Qt::Horizontal);
+  saturation_slider = new QSlider(Qt::Horizontal);
   saturation_slider->setRange(-100, 100);
   saturation_slider->setValue(0);
   warmth_slider = new QSlider(Qt::Horizontal);
