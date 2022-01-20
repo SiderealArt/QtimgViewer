@@ -1,11 +1,8 @@
 ﻿/*TODO: update all the Signal Slot syntax to new ones
 https://wiki.qt.io/New_Signal_Slot_Syntax
-
 Next Previous Image
-
 Hide treeview
 switch label to graphicview
-
 */
 #include "mainwindow.h"
 #include <QHBoxLayout>
@@ -219,8 +216,6 @@ void MainWindow::createMenus(){
   shareMenu = toolsMenu->addMenu(tr("Share"));
   toolsMenu->addAction(settingAction);
   shareMenu->addAction(imgurAction);
-  shareMenu->addAction(imgbbAction);
-  shareMenu->addAction(imageshackAction);
   helpMenu = menuBar()->addMenu(tr("&Help"));
   helpMenu->addAction(aboutAction);
   helpMenu->addAction(checkupdateAction);
@@ -556,6 +551,18 @@ void MainWindow::handleReply(QNetworkReply *reply){
   msgBox.exec();
 }
 
+void MainWindow::handleimgbbReply(QNetworkReply *reply){
+  QString answer = reply->readAll();
+qDebug() << answer;
+  QJsonDocument jsonResponse = QJsonDocument::fromJson(answer.toUtf8());
+  QJsonObject jsonObject = jsonResponse.object();
+  QJsonObject data = jsonObject["data"].toObject();
+  QMessageBox msgBox;
+  msgBox.setText(tr("%1. Link copied to the clipboard.").arg(data["url"].toString()));
+  clipboard->setText(data["url"].toString());
+  msgBox.exec();
+}
+
 void MainWindow::saturation(int value){
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
   float v =(255.0+value)/(255.0-value);
@@ -641,21 +648,17 @@ void MainWindow::sepia(){
     }
   imgWin->setPixmap(QPixmap::fromImage(result));
 }
-
+/*https://stackoverflow.com/questions/40292484/how-to-pass-several-parameters-when-uploading-image-to-imgur*/
 void MainWindow::imgbb(){
   imgurupload = new QNetworkAccessManager(this);
   connect(imgurupload,
           SIGNAL(finished(QNetworkReply*)),
-          this,SLOT(handleReply(QNetworkReply*)));
+          this,SLOT(handleimgbbReply(QNetworkReply*)));
   QByteArray byteArray;
   QBuffer buffer(&byteArray);
   imgWin->pixmap().save(&buffer, "PNG");
-  QUrl url(("https://api.imgbb.com/1/upload?key="));
+  QUrl url("https://api.imgbb.com/1/upload?key=8f8f3f2e90faa757dfa41c398a98b59c");
   QNetworkRequest request(url);
-  request.setRawHeader(
-        "Authorization",
-        ("Client-ID bc7f6d29d2cf7d6"));
-
   imgurupload->post(request, byteArray);
 }
 

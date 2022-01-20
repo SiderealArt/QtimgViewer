@@ -41,6 +41,7 @@ friend class Label;
   void showOpenUrl();
   void openUrl(QUrl &url);
   void handleReply(QNetworkReply *reply);
+  void handleimgbbReply(QNetworkReply *reply);
   void downloadFinished(QNetworkReply *reply);
     void showOpenFile();
     void colorpicker();
