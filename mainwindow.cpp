@@ -246,7 +246,7 @@ void MainWindow::loadFile(QString filename){
       imgWin->setMovie(gif);
       gif->start();
     }else{
-      qDebug()<< img.load(filename);
+      img.load(filename);
       imgWin->setPixmap(QPixmap::fromImage(img));
     };
   imgWin->resize(QPixmap::fromImage(img).size());
@@ -411,13 +411,24 @@ void MainWindow::adjustment(){
 }
 
 void MainWindow::fileinfo(){
-
-  qDebug() << filename;
   fWin = new Fileinfo();
   fWin->img = QFileInfo(filename);
   fWin->show();
+    fWin->fileNameLabel->setText(tr("File Name: %1").arg(fWin->img.fileName()));
+    fWin->pathLabel->setText(tr("Path: %1").arg(fWin->img.path()));
+    fWin->sizeLabel->setText(tr("File Size: %1 Bytes").arg(fWin->img.size()));
+    fWin->lastReadLabel->setText(tr("Last Read: %1").arg(fWin->img.lastRead().toString("yyyy/MM/dd hh:mm:ss")));
+    fWin->lastModLabel->setText(tr("Last Modified: %1").arg(fWin->img.lastModified().toString("yyyy/MM/dd hh:mm:ss")));
+    fWin->widthLabel->setText(tr("Width: %1").arg(imgWin->pixmap().toImage().width()));
+    fWin->heightLabel->setText(tr("Height: %1").arg(imgWin->pixmap().toImage().height()));
+    fWin->megapixelLabel->setText(tr("Megapixels: %1 MP").arg(imgWin->pixmap().toImage().width()*imgWin->pixmap().toImage().height()/1000000.0));
+    int gcd = this->gcd(imgWin->pixmap().toImage().width(), imgWin->pixmap().toImage().height());
+    fWin->ratioLabel->setText(tr("Ratio: %1:%2").arg(QString::number(imgWin->pixmap().toImage().width()/gcd),QString::number(imgWin->pixmap().toImage().height()/gcd)));
 }
 
+int MainWindow::gcd(int a, int b){
+  return (b == 0) ? a :gcd(b, a%b);
+}
 void MainWindow::histogram(){
   int top,i;
   unsigned int m =0;

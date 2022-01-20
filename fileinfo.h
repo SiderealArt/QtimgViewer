@@ -13,6 +13,15 @@ public:
   ~Fileinfo();
   QVBoxLayout *mainLayout;
   QFileInfo img;
+  QLabel *fileNameLabel;
+  QLabel *pathLabel;
+  QLabel *sizeLabel;
+  QLabel *lastReadLabel;
+  QLabel *lastModLabel;
+  QLabel *widthLabel;
+  QLabel *heightLabel;
+  QLabel *megapixelLabel;
+  QLabel *ratioLabel;
   QDialogButtonBox *buttonbox;
 };
 #endif // FILEINFO_H

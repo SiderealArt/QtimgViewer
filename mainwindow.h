@@ -35,7 +35,7 @@ public:
     void createMenus();
     void createToolbars();
     void loadFile(QString filename);
-
+  int gcd(int,int);
 friend class Label;
  private slots:
   void showOpenUrl();
