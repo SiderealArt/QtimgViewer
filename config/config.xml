@@ -6,6 +6,6 @@
     <Publisher>SiderealArt</Publisher>
     <StartMenuDir>Daruma</StartMenuDir>
     <TargetDir>@ApplicationsDir@/Daruma</TargetDir>
-    <InstallerIcon>../favicon.ico</InstallerIcon>
+    <InstallerApplicationIcon>../favicon.ico</InstallerApplicationIcon>
     <ProductUrl>https://siderealart.me</ProductUrl>
 </Installer>
