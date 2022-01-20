@@ -6,7 +6,7 @@
     <message>
       <location filename="../about.cpp" line="5"/>
       <source>About</source>
-      <translation type="unfinished">About</translation>
+      <translation>Sobre</translation>
     </message>
     <message>
       <location filename="../about.cpp" line="15"/>
@@ -29,22 +29,22 @@
     <message>
       <location filename="../adjustment.cpp" line="5"/>
       <source>Adjustment...</source>
-      <translation type="unfinished">Adjustment...</translation>
+      <translation>Ajust...</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="7"/>
       <source>Brightness</source>
-      <translation type="unfinished">Brightness</translation>
+      <translation>Brillantor</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="8"/>
       <source>Contrast</source>
-      <translation type="unfinished">Contrast</translation>
+      <translation>Contrast</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="9"/>
       <source>Saturation</source>
-      <translation type="unfinished">Saturation</translation>
+      <translation>Saturació</translation>
     </message>
   </context>
   <context>
@@ -52,7 +52,7 @@
     <message>
       <location filename="../fileinfo.cpp" line="4"/>
       <source>File Info</source>
-      <translation type="unfinished">File Info</translation>
+      <translation>Informació del fitxer</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
@@ -103,22 +103,22 @@
     <message>
       <location filename="../mainwindow.cpp" line="79"/>
       <source>File Info</source>
-      <translation type="unfinished">File Info</translation>
+      <translation>Informació del fitxer</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="81"/>
       <source>Image Adjustment</source>
-      <translation type="unfinished">Image Adjustment</translation>
+      <translation>Ajust de la imatge</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="83"/>
       <source>Invert</source>
-      <translation type="unfinished">Invert</translation>
+      <translation>Invertir</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="85"/>
       <source>Grayscale</source>
-      <translation type="unfinished">Grayscale</translation>
+      <translation>Escala de grisos</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="87"/>
@@ -385,12 +385,12 @@
     <message>
       <location filename="../mainwindow.cpp" line="390"/>
       <source>Adjust Threshold</source>
-      <translation type="unfinished">Adjust Threshold</translation>
+      <translation>Ajustar el llindar</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="429"/>
       <source>Histogram</source>
-      <translation type="unfinished">Histogram</translation>
+      <translation>Histograma</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="513"/>
@@ -413,7 +413,7 @@
     <message>
       <location filename="../settings.cpp" line="9"/>
       <source>Settings</source>
-      <translation type="unfinished">Settings</translation>
+      <translation>Configuració</translation>
     </message>
     <message>
       <location filename="../settings.cpp" line="17"/>
