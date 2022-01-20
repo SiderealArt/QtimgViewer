@@ -11,23 +11,33 @@ CONFIG += c++14
 SOURCES += \
     about.cpp \
     adjustment.cpp \
+    brightness.cpp \
     camera.cpp \
+    contrast.cpp \
     fileinfo.cpp \
+    hue.cpp \
     label.cpp \
     main.cpp \
     mainwindow.cpp \
+    saturation.cpp \
     settings.cpp \
-    threshold.cpp
+    threshold.cpp \
+    warmth.cpp
 
 HEADERS += \
     about.h \
     adjustment.h \
+    brightness.h \
     camera.h \
+    contrast.h \
     fileinfo.h \
+    hue.h \
     label.h \
     mainwindow.h \
+    saturation.h \
     settings.h \
-    threshold.h
+    threshold.h \
+    warmth.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

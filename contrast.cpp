@@ -1,8 +1,9 @@
-﻿#include "threshold.h"
-Threshold::Threshold()
+﻿#include "contrast.h"
+Contrast::Contrast()
 {
   slider = new QSlider(Qt::Horizontal);
-  slider->setRange(0, 255);
+  slider->setRange(100, -100);
+  slider->setValue(0);
   QDialogButtonBox *buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
   mainLayout = new QVBoxLayout(this);
   mainLayout->addWidget(slider);
@@ -11,7 +12,7 @@ Threshold::Threshold()
   connect(buttonbox, SIGNAL(rejected()), this, SLOT(reject()));
 }
 
-Threshold::~Threshold()
+Contrast::~Contrast()
 {
 }
 

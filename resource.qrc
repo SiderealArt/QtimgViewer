@@ -34,6 +34,11 @@
         <file>resources/icon/pin.png</file>
         <file>resources/icon/print.png</file>
         <file>resources/icon/webcam.png</file>
+        <file>resources/icon/brightness.png</file>
+        <file>resources/icon/contrast.png</file>
+        <file>resources/icon/hue.png</file>
+        <file>resources/icon/saturation.png</file>
+        <file>resources/icon/warmth.png</file>
     </qresource>
     <qresource prefix="/">
         <file>i18n/daruma_en.ts</file>

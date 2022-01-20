@@ -48,6 +48,11 @@ MainWindow::MainWindow(QWidget *parent)
   aWin = new About();
   sWin = new Settings();
   adWin = new Adjustment();
+  bWin = new Brightness();
+  coWin = new Contrast();
+  hWin = new Hue();
+  wWin = new Warmth();
+  saWin = new Saturation();
   thresholdWin = new Threshold();
   imgWin->resize(500,300);
   imgWin->setScaledContents(true);
@@ -73,6 +78,21 @@ MainWindow::~MainWindow()
 {
 }
 void MainWindow::createActions(){
+  warmthAction = new QAction(tr("Warmth"));
+  warmthAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/warmth.png")));
+  connect(warmthAction,SIGNAL(triggered()),this,SLOT(camera()));
+  brightnessAction = new QAction(tr("Brightness"));
+  brightnessAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/brightness.png")));
+  connect(brightnessAction,SIGNAL(triggered()),this,SLOT(camera()));
+  contrastAction = new QAction(tr("Contrast"));
+  contrastAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/contrast.png")));
+  connect(contrastAction,SIGNAL(triggered()),this,SLOT(camera()));
+  hueAction = new QAction(tr("Hue"));
+  hueAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/hue.png")));
+  connect(hueAction,SIGNAL(triggered()),this,SLOT(camera()));
+  saturationAction = new QAction(tr("Saturation"));
+  saturationAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/saturation.png")));
+  connect(saturationAction,SIGNAL(triggered()),this,SLOT(camera()));
   cameraAction = new QAction(tr("Capture Photo"));
   cameraAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/webcam.png")));
   connect(cameraAction,SIGNAL(triggered()),this,SLOT(camera()));
@@ -206,7 +226,12 @@ void MainWindow::createMenus(){
   fileMenu->addAction(printAction);
   fileMenu->addAction(exitAction);
   editMenu = menuBar()->addMenu(tr("&Edit"));
-  editMenu->addAction(adjustmentAction);
+  adjustmentMenu = editMenu->addMenu(tr("Image Adjustment"));
+  adjustmentMenu->addAction(brightnessAction);
+  adjustmentMenu->addAction(contrastAction);
+  adjustmentMenu->addAction(saturationAction);
+  adjustmentMenu->addAction(hueAction);
+  adjustmentMenu->addAction(warmthAction);
   editMenu->addAction(thresholdAction);
   editMenu->addAction(grayscaleAction);
   editMenu->addAction(invertAction);
@@ -237,7 +262,11 @@ void MainWindow::createToolbars(){
   fileTool->addAction(zoomOutAction);
   fileTool->addAction(clipboardAction);
   ImageTool = addToolBar(tr("Image"));
-  ImageTool->addAction(adjustmentAction);
+  ImageTool->addAction(brightnessAction);
+  ImageTool->addAction(contrastAction);
+  ImageTool->addAction(saturationAction);
+  ImageTool->addAction(hueAction);
+  ImageTool->addAction(warmthAction);
   ImageTool->addAction(grayscaleAction);
   ImageTool->addAction(invertAction);
   ImageTool->addAction(sepiaAction);
@@ -401,6 +430,51 @@ void MainWindow::threshold(){
   thresholdWin->setWindowTitle(tr("Adjust Threshold"));
   thresholdWin->setAttribute(Qt::WA_DeleteOnClose);
   thresholdWin->show();
+}
+
+void MainWindow::warmthWin(){
+  tempWin->setPixmap(imgWin->pixmap());
+  connect(wWin->slider,SIGNAL(valueChanged(int)), this, SLOT(warmth(int)));
+  wWin->setFixedSize(250,100);
+  wWin->setWindowTitle(tr("Adjust Warmth"));
+  wWin->setAttribute(Qt::WA_DeleteOnClose);
+  wWin->show();
+}
+
+void MainWindow::saturationWin(){
+  tempWin->setPixmap(imgWin->pixmap());
+  connect(saWin->slider,SIGNAL(valueChanged(int)), this, SLOT(saturation(int)));
+  saWin->setFixedSize(250,100);
+  saWin->setWindowTitle(tr("Adjust Saturation"));
+  saWin->setAttribute(Qt::WA_DeleteOnClose);
+  saWin->show();
+}
+
+void MainWindow::brightnessWin(){
+  tempWin->setPixmap(imgWin->pixmap());
+  connect(bWin->slider,SIGNAL(valueChanged(int)), this, SLOT(brightness(int)));
+  bWin->setFixedSize(250,100);
+  bWin->setWindowTitle(tr("Adjust Brightness"));
+  bWin->setAttribute(Qt::WA_DeleteOnClose);
+  bWin->show();
+}
+
+void MainWindow::hueWin(){
+  tempWin->setPixmap(imgWin->pixmap());
+  connect(hWin->slider,SIGNAL(valueChanged(int)), this, SLOT(hue(int)));
+  hWin->setFixedSize(250,100);
+  hWin->setWindowTitle(tr("Adjust Hue"));
+  hWin->setAttribute(Qt::WA_DeleteOnClose);
+  hWin->show();
+}
+
+void MainWindow::contrastWin(){
+  tempWin->setPixmap(imgWin->pixmap());
+  connect(coWin->slider,SIGNAL(valueChanged(int)), this, SLOT(contrast(int)));
+  coWin->setFixedSize(250,100);
+  coWin->setWindowTitle(tr("Adjust Contrast"));
+  coWin->setAttribute(Qt::WA_DeleteOnClose);
+  coWin->show();
 }
 
 void MainWindow::adjustment(){
@@ -590,7 +664,7 @@ void MainWindow::saturation(int value){
   float v =(255.0+value)/(255.0-value);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
           float b = (color.red() + color.green() + color.blue())/3;
           result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b)+b))), qMin(255, qMax(0,qRound(v*(color.green()-b)+b))), qMin(255, qMax(0,qRound(v*(color.blue()-b)+b)))));
         }
@@ -604,7 +678,7 @@ void MainWindow::contrast(int value){
   float v =(255.0+value)/(255.0-value);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
           result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b)+b))), qMin(255, qMax(0,qRound(v*(color.green()-b)+b))), qMin(255, qMax(0,qRound(v*(color.blue()-b)+b)))));
         }
     }
@@ -616,7 +690,7 @@ void MainWindow::brightness(int value){
 
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
           result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,color.red()+value)), qMin(255, qMax(0,color.green()+value)), qMin(255, qMax(0,color.blue()+value))));
         }
     }
@@ -679,7 +753,7 @@ void MainWindow::warmth(int v){
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
           result.setPixelColor(i, j, qRgb(color.red(), color.green(), qMin(255, qMax(0,color.blue()+v))));
         }
     }
@@ -689,7 +763,7 @@ void MainWindow::warmth(int v){
 void MainWindow::hue(int v){
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=imgWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
           color.setHsv(color.hue()+v,color.saturation(),color.value());
           result.setPixelColor(i, j, color);
         }

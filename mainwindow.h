@@ -5,6 +5,11 @@
 #include "settings.h"
 #include "threshold.h"
 #include "adjustment.h"
+#include "warmth.h"
+#include "saturation.h"
+#include "brightness.h"
+#include "contrast.h"
+#include "hue.h"
 #include "fileinfo.h"
 #include "camera.h"
 #include <QMainWindow>
@@ -43,6 +48,11 @@ friend class Label;
   void handleReply(QNetworkReply *reply);
   void handleimgbbReply(QNetworkReply *reply);
   void downloadFinished(QNetworkReply *reply);
+  void saturationWin();
+  void brightnessWin();
+  void hueWin();
+  void contrastWin();
+  void warmthWin();
     void showOpenFile();
     void colorpicker();
     void zoomIn();
@@ -103,12 +113,18 @@ friend class Label;
     Fileinfo *fWin;
     Adjustment *adWin;
     Camera *cWin;
+    Saturation *saWin;
+    Warmth *wWin;
+    Contrast *coWin;
+    Brightness *bWin;
+    Hue *hWin;
     QWidget *center;
     QMenu *fileMenu;
     QMenu *saveMenu;
     QMenu *helpMenu;
     QMenu *viewMenu;
     QMenu *editMenu;
+    QMenu *adjustmentMenu;
     QMenu *shareMenu;
     QMenu *toolsMenu;
     QScrollArea *imageScrollArea;
@@ -140,6 +156,11 @@ friend class Label;
     QAction *invertAction;
     QAction *fileinfoAction;
     QAction *adjustmentAction;
+    QAction *hueAction;
+    QAction *brightnessAction;
+    QAction *contrastAction;
+    QAction *saturationAction;
+    QAction *warmthAction;
     QAction *newWindowAction;
     QAction *undoAction;
     QAction *redoAction;
