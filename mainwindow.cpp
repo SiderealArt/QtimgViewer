@@ -231,10 +231,16 @@ void MainWindow::createMenus(){
 }
 void MainWindow::createToolbars(){
   fileTool = addToolBar(tr("File"));
+  fileTool->addAction(fullscreenAction);
+  fileTool->addAction(alwaysontopAction);
   fileTool->addAction(zoomInAction);
   fileTool->addAction(zoomOutAction);
   fileTool->addAction(clipboardAction);
   ImageTool = addToolBar(tr("Image"));
+  ImageTool->addAction(adjustmentAction);
+  ImageTool->addAction(grayscaleAction);
+  ImageTool->addAction(invertAction);
+  ImageTool->addAction(sepiaAction);
   ImageTool->addAction(vFlipAction);
   ImageTool->addAction(hFlipAction);
   ImageTool->addAction(rotateAction);
@@ -407,6 +413,7 @@ void MainWindow::adjustment(){
         }
     }
   b/=(imgWin->pixmap().toImage().height() * imgWin->pixmap().toImage().width());
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
   connect(adWin->brightness_slider,SIGNAL(valueChanged(int)), this, SLOT(brightness(int)));
   connect(adWin->contrast_slider,SIGNAL(valueChanged(int)), this, SLOT(contrast(int)));
   connect(adWin->saturation_slider,SIGNAL(valueChanged(int)), this, SLOT(saturation(int)));
@@ -583,7 +590,7 @@ void MainWindow::saturation(int value){
   float v =(255.0+value)/(255.0-value);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
           float b = (color.red() + color.green() + color.blue())/3;
           result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b)+b))), qMin(255, qMax(0,qRound(v*(color.green()-b)+b))), qMin(255, qMax(0,qRound(v*(color.blue()-b)+b)))));
         }
@@ -597,7 +604,7 @@ void MainWindow::contrast(int value){
   float v =(255.0+value)/(255.0-value);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
           result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(v*(color.red()-b)+b))), qMin(255, qMax(0,qRound(v*(color.green()-b)+b))), qMin(255, qMax(0,qRound(v*(color.blue()-b)+b)))));
         }
     }
@@ -606,19 +613,10 @@ void MainWindow::contrast(int value){
 }
 /*https://towardsdatascience.com/image-processing-and-pixel-manipulation-photo-filters-5d37a2f992fa*/
 void MainWindow::brightness(int value){
-  /*result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
+
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
-          color.setHsv(color.hue(),color.saturation(),value);
-          result.setPixelColor(i, j, color);
-        }
-    }
-  imgWin->setPixmap(QPixmap::fromImage(result));*/
-  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
-  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
-      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
           result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,color.red()+value)), qMin(255, qMax(0,color.green()+value)), qMin(255, qMax(0,color.blue()+value))));
         }
     }
@@ -679,22 +677,19 @@ void MainWindow::imgbb(){
 
 void MainWindow::warmth(int v){
   result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
-
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          QColor color=imgWin->pixmap().toImage().pixelColor(i,j);
           result.setPixelColor(i, j, qRgb(color.red(), color.green(), qMin(255, qMax(0,color.blue()+v))));
         }
     }
-
   imgWin->setPixmap(QPixmap::fromImage(result));
 }
 
 void MainWindow::hue(int v){
-  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
-          QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
+          QColor color=imgWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
           color.setHsv(color.hue()+v,color.saturation(),color.value());
           result.setPixelColor(i, j, color);
         }
