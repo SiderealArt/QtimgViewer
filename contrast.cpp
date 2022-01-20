@@ -2,7 +2,7 @@
 Contrast::Contrast()
 {
   slider = new QSlider(Qt::Horizontal);
-  slider->setRange(100, -100);
+  slider->setRange(-100, 100);
   slider->setValue(0);
   QDialogButtonBox *buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
   mainLayout = new QVBoxLayout(this);
