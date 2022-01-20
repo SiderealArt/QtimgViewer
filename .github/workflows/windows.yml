@@ -37,7 +37,7 @@ jobs:
           Copy-Item "c:\Qt\6.2.1\mingw81_64\bin\libwinpthread-1.dll" -Destination "."
           Copy-Item -Path ".\*" -Destination "..\packages\com.siderealart.daruma\data" -Recurse
           cd ..
-          binarycreator -c config/config.xml -p packages installer.exe 
+          c:\Qt\Tools\QtInstallerFramework\4.2\binbinarycreator.exe -c config/config.xml -p packages installer.exe 
           7z a -tzip portable.zip ./build/*
       - name: Release
         uses: softprops/action-gh-release@v1
