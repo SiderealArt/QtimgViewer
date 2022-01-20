@@ -15,8 +15,13 @@ switch label to graphicview
 #include <QVBoxLayout>
 #include <QMenuBar>
 #include <QFileDialog>
+#include <QInputDialog>
 #include <QPainter>
+#include <QMessageBox>
 #include <QtNetwork>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkAccessManager>
 MainWindow::MainWindow(QWidget *parent)
   : QMainWindow(parent)
 {
@@ -100,6 +105,7 @@ void MainWindow::createActions(){
   undoAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/undo.png")));
   undoAction->setDisabled(true);
   imgurAction = new QAction(tr("Upload to Imgur"));
+  connect(imgurAction,SIGNAL(triggered()),this,SLOT(imgur()));
   imgbbAction = new QAction(tr("Upload to ImgBB"));
   imageshackAction = new QAction(tr("Upload to ImageShack"));
   clipboardAction = new QAction(tr("Copy to Clipboard"));
@@ -109,10 +115,15 @@ void MainWindow::createActions(){
   saveAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/save.png")));
   saveAction->setDisabled(true);
   connect(saveAction,SIGNAL(triggered()),this,SLOT(save()));
-  saveAsAction = new QAction(tr("Save as..."));
-  saveAsAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/saveas.png")));
+  saveAsAction = new QAction(tr("Save as PNG file"));
+  saveAsAction->setDisabled(true);
+  saveAsJPGAction = new QAction(tr("Save as JPG file"));
+  saveAsJPGAction->setDisabled(true);
+  saveAsBMPAction = new QAction(tr("Save as BMP file"));
   saveAsAction->setDisabled(true);
   connect(saveAsAction,SIGNAL(triggered()),this,SLOT(saveAs()));
+  connect(saveAsBMPAction,SIGNAL(triggered()),this,SLOT(saveAsBMP()));
+  connect(saveAsJPGAction,SIGNAL(triggered()),this,SLOT(saveAsJPG()));
   settingAction = new QAction(tr("Settings"));
   settingAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/setting.png")));
   connect(settingAction,SIGNAL(triggered()),this,SLOT(settingsMenu()));
@@ -140,7 +151,11 @@ void MainWindow::createActions(){
   openFileAction->setShortcut(tr("Ctrl+O"));
   openFileAction->setStatusTip(tr("Open Image File"));
   openFileAction->setIcon(QIcon(":/main/resources/icon/openfile.png"));
+  openFromUrlAction= new QAction(tr("Open From Url..."),this);
+  openFromUrlAction->setStatusTip(tr("Open Image File from Url"));
+  openFromUrlAction->setIcon(QIcon(":/main/resources/icon/link.png"));
   connect(openFileAction,SIGNAL(triggered()),this,SLOT(showOpenFile()));
+  connect(openFromUrlAction,SIGNAL(triggered()),this,SLOT(showOpenUrl()));
   exitAction = new QAction(tr("&Quit"),this);
   exitAction->setShortcut(tr("Ctrl+Q"));
   exitAction->setStatusTip(tr("Quit Application"));
@@ -161,9 +176,13 @@ void MainWindow::createActions(){
 void MainWindow::createMenus(){
   fileMenu = menuBar()->addMenu(tr("&File"));
   fileMenu->addAction(openFileAction);
+  fileMenu->addAction(openFromUrlAction);
   fileMenu->addAction(newWindowAction);
+  saveMenu = fileMenu->addMenu(tr("Save As..."));
+  saveMenu->addAction(saveAsAction);
+  saveMenu->addAction(saveAsBMPAction);
+  saveMenu->addAction(saveAsJPGAction);
   fileMenu->addAction(saveAction);
-  fileMenu->addAction(saveAsAction);
   fileMenu->addAction(printAction);
   fileMenu->addAction(exitAction);
   editMenu = menuBar()->addMenu(tr("&Edit"));
@@ -268,6 +287,25 @@ void MainWindow::saveAs(){
     }
 }
 
+void MainWindow::saveAsBMP(){
+  filename = QFileDialog::getSaveFileName(this, tr("Save Image File"),
+                                          QString(),
+                                          tr("Images (*.bmp)"));
+  if (!filename.isEmpty())
+    {
+      imgWin->pixmap().save(filename, "BMP");
+    }
+}
+void MainWindow::saveAsJPG(){
+  filename = QFileDialog::getSaveFileName(this, tr("Save Image File"),
+                                          QString(),
+                                          tr("Images (*.jpg)"));
+  if (!filename.isEmpty())
+    {
+      imgWin->pixmap().save(filename, "JPG");
+    }
+}
+
 void MainWindow::rotate(){
   QPixmap pixmap(imgWin->pixmap());
   QTransform tr;
@@ -281,10 +319,21 @@ void MainWindow::copytoclipboard(){
 }
 
 void MainWindow::imgur(){
-  connect(manager, &QNetworkAccessManager::finished,
-          this, &MainWindow::replyFinished);
+  qDebug() << "imgur";
+  imgurupload = new QNetworkAccessManager(this);
+  connect(imgurupload,
+          SIGNAL(finished(QNetworkReply *)),
+          this,SLOT(handleReply(QNetworkReply *)));
+  QByteArray byteArray;
+  QBuffer buffer(&byteArray);
+  imgWin->pixmap().save(&buffer, "PNG");
+  QUrl url(("https://api.imgur.com/3/image"));
+  QNetworkRequest request(url);
+  request.setRawHeader(
+        "Authorization",
+        ("Client-ID bc7f6d29d2cf7d6"));
 
-  /* QNetworkReply *reply =*/ manager->get(QNetworkRequest(QUrl("http://qt-project.org")));
+  imgurupload->post(request, byteArray);
 }
 
 void MainWindow::replyFinished(){
@@ -400,4 +449,57 @@ void MainWindow::dirhome(){
 
 void MainWindow::colorpicker(){
   clipboard->setText("#-0000");
+}
+
+void MainWindow::openUrl(QUrl &url){
+  QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+  connect(nam, &QNetworkAccessManager::finished, this, &MainWindow::downloadFinished);
+  QNetworkRequest request(url);
+  nam->get(request);
+}
+
+void MainWindow::downloadFinished(QNetworkReply *reply)
+{
+  QPixmap pm;
+  pm.loadFromData(reply->readAll());
+  imgWin->setPixmap(pm);
+  imgWin->resize(pm.size());
+  undoAction->setEnabled(true);
+  redoAction->setEnabled(true);
+  hFlipAction->setEnabled(true);
+  vFlipAction->setEnabled(true);
+  rotateAction->setEnabled(true);
+  printAction->setEnabled(true);
+  saveAction->setEnabled(true);
+  saveAsAction->setEnabled(true);
+  zoomInAction->setEnabled(true);
+  zoomOutAction->setEnabled(true);
+}
+
+void MainWindow::showOpenUrl(){
+  auto inputDialog = new QInputDialog(this);
+  inputDialog->setWindowTitle(tr("Open URL..."));
+  inputDialog->setLabelText(tr("URL of a supported image file:"));
+  inputDialog->resize(350, inputDialog->height());
+  inputDialog->setWindowFlag(Qt::WindowContextHelpButtonHint, false);
+  connect(inputDialog, &QInputDialog::finished, this, [inputDialog, this](int result) {
+      if (result)
+        {
+          auto url = QUrl(inputDialog->textValue());
+          openUrl(url);
+        }
+      inputDialog->deleteLater();
+    });
+  inputDialog->open();
+}
+
+void MainWindow::handleReply(QNetworkReply *reply){
+  QString answer = reply->readAll();
+
+  QJsonDocument jsonResponse = QJsonDocument::fromJson(answer.toUtf8());
+  QJsonObject jsonObject = jsonResponse.object();
+  QJsonObject data = jsonObject["data"].toObject();
+  QMessageBox msgBox;
+  msgBox.setText(tr("%1. Link copied to the clipboard.").arg(data["link"].toString()));
+  msgBox.exec();
 }

@@ -33,7 +33,12 @@ public:
     void createToolbars();
     void loadFile(QString filename);
 
+friend class Label;
  private slots:
+  void showOpenUrl();
+  void openUrl(QUrl &url);
+  void handleReply(QNetworkReply *reply);
+  void downloadFinished(QNetworkReply *reply);
     void showOpenFile();
     void colorpicker();
     void zoomIn();
@@ -45,6 +50,8 @@ public:
     void settingsMenu();
     void fullscreen();
     void saveAs();
+    void saveAsBMP();
+    void saveAsJPG();
     void save();
     void copytoclipboard();
     void newWindow();
@@ -60,6 +67,7 @@ public:
     void alwaysontop();
     void dirup();
     void dirhome();
+
  private:
     QSplitter *spliter;
     QFileSystemModel *model;
@@ -69,12 +77,14 @@ public:
     QPrinter printer;
     QPrintDialog pdialog;
     QNetworkAccessManager *manager;
+    QNetworkAccessManager *imgurupload;
     QUndoStack *undoStack = nullptr;
     QClipboard *clipboard;
     About *aWin;
     Settings *sWin;
     QWidget *center;
     QMenu *fileMenu;
+    QMenu *saveMenu;
     QMenu *helpMenu;
     QMenu *viewMenu;
     QMenu *editMenu;
@@ -107,6 +117,8 @@ public:
     QAction *undoAction;
     QAction *redoAction;
     QAction *saveAsAction;
+    QAction *saveAsBMPAction;
+    QAction *saveAsJPGAction;
     QAction *zoomInAction;
     QAction *zoomOutAction;
     QAction *fullscreenAction;
@@ -121,6 +133,7 @@ public:
     QAction *aboutAction;
     QAction *settingAction;
     QAction *checkupdateAction;
+    QAction *openFromUrlAction;
     unsigned int mtx[256];
 };
 #endif // MAINWINDOW_H

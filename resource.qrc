@@ -25,6 +25,7 @@
         <file>resources/icon/next.png</file>
         <file>resources/icon/previous.png</file>
         <file>resources/icon/up.png</file>
+        <file>resources/icon/link.png</file>
     </qresource>
     <qresource prefix="/">
         <file>i18n/daruma_en.ts</file>
@@ -37,7 +38,6 @@
         <file>i18n/daruma_da_DK.ts</file>
         <file>i18n/daruma_de_DE.ts</file>
         <file>i18n/daruma_el_GR.ts</file>
-        <file>i18n/daruma_en_US.ts</file>
         <file>i18n/daruma_es_ES.ts</file>
         <file>i18n/daruma_fi_FI.ts</file>
         <file>i18n/daruma_fr_FR.ts</file>
@@ -58,5 +58,35 @@
         <file>i18n/daruma_tr_TR.ts</file>
         <file>i18n/daruma_uk_UA.ts</file>
         <file>i18n/daruma_vi_VN.ts</file>
+        <file>i18n/daruma_af_ZA.qm</file>
+        <file>i18n/daruma_ar_SA.qm</file>
+        <file>i18n/daruma_ca_ES.qm</file>
+        <file>i18n/daruma_cs_CZ.qm</file>
+        <file>i18n/daruma_da_DK.qm</file>
+        <file>i18n/daruma_de_DE.qm</file>
+        <file>i18n/daruma_el_GR.qm</file>
+        <file>i18n/daruma_en.qm</file>
+        <file>i18n/daruma_es_ES.qm</file>
+        <file>i18n/daruma_fi_FI.qm</file>
+        <file>i18n/daruma_fr_FR.qm</file>
+        <file>i18n/daruma_he_IL.qm</file>
+        <file>i18n/daruma_hu_HU.qm</file>
+        <file>i18n/daruma_it_IT.qm</file>
+        <file>i18n/daruma_ja_JP.qm</file>
+        <file>i18n/daruma_ko_KR.qm</file>
+        <file>i18n/daruma_nl_NL.qm</file>
+        <file>i18n/daruma_no_NO.qm</file>
+        <file>i18n/daruma_pl_PL.qm</file>
+        <file>i18n/daruma_pt_BR.qm</file>
+        <file>i18n/daruma_pt_PT.qm</file>
+        <file>i18n/daruma_ro_RO.qm</file>
+        <file>i18n/daruma_ru_RU.qm</file>
+        <file>i18n/daruma_sr_SP.qm</file>
+        <file>i18n/daruma_sv_SE.qm</file>
+        <file>i18n/daruma_tr_TR.qm</file>
+        <file>i18n/daruma_uk_UA.qm</file>
+        <file>i18n/daruma_vi_VN.qm</file>
+        <file>i18n/daruma_zh_CN.qm</file>
+        <file>i18n/daruma_zh_TW.qm</file>
     </qresource>
 </RCC>

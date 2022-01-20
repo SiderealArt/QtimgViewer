@@ -2,36 +2,22 @@
 #define LABEL_H
 #include <QWidget>
 #include <QLabel>
+#include <QPoint>
 #include <QMouseEvent>
+#include <QImage>
 #include <QDebug>
 class Label: public QLabel{
 public:
   Label(){
     setMouseTracking(true);
-    }
-
-  void mousePressEvent(QMouseEvent *e) {
-    // vvv That's where the magic happens
-if (e->button() == Qt::LeftButton) {
-            QPoint pos = e->pos();
-            // ^^^
-            qDebug()<<pos.x() << " " <<pos.y();
   }
-  }
-  void mouseMoveEvent(QMouseEvent *e){
-    if (e->button() == Qt::LeftButton) {
-                QPoint pos = e->pos();
-                // ^^^
-                qDebug()<<pos.x() << " " <<pos.y();
-      }
-  }
-  void mouseReleaseEvent(QMouseEvent *e){
-    if (e->button() == Qt::LeftButton) {
-                QPoint pos = e->pos();
-                // ^^^
-                qDebug()<<pos.x() << " " <<pos.y();
-      }
-  }
+  QImage a;
+  void mousePressEvent(QMouseEvent *e);
+  void mouseMoveEvent(QMouseEvent *e);
+  void mouseReleaseEvent(QMouseEvent *e);
+  void drawLineTo(const QPoint &endPoint);
+  bool drawing;
+  QPoint lastPoint;
 };
 
 #endif // LABEL_H
