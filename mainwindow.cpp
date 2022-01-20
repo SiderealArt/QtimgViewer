@@ -86,6 +86,8 @@ void MainWindow::createActions(){
   connect(invertAction,SIGNAL(triggered()),this,SLOT(invert()));
   grayscaleAction = new QAction(tr("Grayscale"));
   connect(grayscaleAction,SIGNAL(triggered()),this,SLOT(grayscale()));
+  sepiaAction = new QAction(tr("Sepia"));
+  connect(sepiaAction,SIGNAL(triggered()),this,SLOT(sepia()));
   colorpickerAction = new QAction(tr("Color picker"));
   colorpickerAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/up.png")));
   connect(colorpickerAction,SIGNAL(triggered()),this,SLOT(colorpicker()));
@@ -203,6 +205,7 @@ void MainWindow::createMenus(){
   editMenu->addAction(thresholdAction);
   editMenu->addAction(grayscaleAction);
   editMenu->addAction(invertAction);
+  editMenu->addAction(sepiaAction);
   viewMenu = menuBar()->addMenu(tr("&View"));
   viewMenu->addAction(histogramAction);
   viewMenu->addAction(hFlipAction);
@@ -543,6 +546,7 @@ void MainWindow::handleReply(QNetworkReply *reply){
   QJsonObject data = jsonObject["data"].toObject();
   QMessageBox msgBox;
   msgBox.setText(tr("%1. Link copied to the clipboard.").arg(data["link"].toString()));
+  clipboard->setText(data["link"].toString());
   msgBox.exec();
 }
 
@@ -618,4 +622,16 @@ void MainWindow::cameraimage(int v, QImage i){
   saveAsAction->setEnabled(true);
   zoomInAction->setEnabled(true);
   zoomOutAction->setEnabled(true);
+}
+
+void MainWindow::sepia(){
+  tempWin->setPixmap(imgWin->pixmap());
+  result = tempWin->pixmap().toImage();
+  for(int j=0;j<tempWin->pixmap().toImage().height();j++){
+      for(int i=0;i<tempWin->pixmap().toImage().width();i++){
+          QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
+          result.setPixelColor(i, j, qRgb(qMin(255, qMax(0,qRound(color.red()*0.393+color.green()*0.769+color.blue()*0.189))),qMin(255, qMax(0,qRound(color.red()*0.349+color.green()*0.686+color.blue()*0.168))), qMin(255, qMax(0,qRound(color.red()*0.272+color.green()*0.534+color.blue()*0.131)))));
+        }
+    }
+  imgWin->setPixmap(QPixmap::fromImage(result));
 }
