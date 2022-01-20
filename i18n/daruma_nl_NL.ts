@@ -49,12 +49,12 @@
     <message>
       <location filename="../adjustment.cpp" line="10"/>
       <source>Warmth</source>
-      <translation type="unfinished">Warmth</translation>
+      <translation>Warmte</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="11"/>
       <source>Hue</source>
-      <translation type="unfinished">Hue</translation>
+      <translation>Tint</translation>
     </message>
   </context>
   <context>
@@ -62,7 +62,7 @@
     <message>
       <location filename="../camera.cpp" line="6"/>
       <source>Capture Photo</source>
-      <translation type="unfinished">Capture Photo</translation>
+      <translation>Foto vastleggen</translation>
     </message>
   </context>
   <context>
@@ -75,39 +75,39 @@
     <message>
       <location filename="../fileinfo.cpp" line="6"/>
       <source>File Name: %1</source>
-      <translation type="unfinished">File Name: %1</translation>
+      <translation>Bestandsnaam: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="7"/>
       <source>Path: %1</source>
-      <translation type="unfinished">Path: %1</translation>
+      <translation>Pad: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="8"/>
       <source>File Size: %1</source>
-      <translation type="unfinished">File Size: %1</translation>
+      <translation>Bestandsgrootte: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="9"/>
       <source>Last Read: %1</source>
-      <translation type="unfinished">Last Read: %1</translation>
+      <translation>Laatst gelezen: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="10"/>
       <source>Last Modified: %1</source>
-      <translation type="unfinished">Last Modified: %1</translation>
+      <translation>Laatst gewijzigd: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="11"/>
       <location filename="../fileinfo.cpp" line="12"/>
       <location filename="../fileinfo.cpp" line="13"/>
       <source>Size: %1</source>
-      <translation type="unfinished">Size: %1</translation>
+      <translation>Maat: %1</translation>
     </message>
     <message>
       <location filename="../fileinfo.cpp" line="14"/>
       <source>Ratio: %1</source>
-      <translation type="unfinished">Ratio: %1</translation>
+      <translation>Verhouding: %1</translation>
     </message>
   </context>
   <context>
@@ -126,7 +126,7 @@
       <location filename="../settings.cpp" line="113"/>
       <location filename="../settings.cpp" line="120"/>
       <source>You must restart the application for these changes to take effect.</source>
-      <translation type="unfinished">You must restart the application for these changes to take effect.</translation>
+      <translation>U moet de toepassing opnieuw starten om deze wijzigingen door te voeren.</translation>
     </message>
   </context>
   <context>
@@ -139,32 +139,32 @@
     <message>
       <location filename="../mainwindow.cpp" line="81"/>
       <source>Warmth</source>
-      <translation type="unfinished">Warmth</translation>
+      <translation>Warmte</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="84"/>
       <source>Brightness</source>
-      <translation type="unfinished">Brightness</translation>
+      <translation>Helderheid</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="87"/>
       <source>Contrast</source>
-      <translation type="unfinished">Contrast</translation>
+      <translation>Contrast</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="90"/>
       <source>Hue</source>
-      <translation type="unfinished">Hue</translation>
+      <translation>Tint</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="93"/>
       <source>Saturation</source>
-      <translation type="unfinished">Saturation</translation>
+      <translation>Verzadiging</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="96"/>
       <source>Capture Photo</source>
-      <translation type="unfinished">Capture Photo</translation>
+      <translation>Foto vastleggen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="99"/>
@@ -190,7 +190,7 @@
     <message>
       <location filename="../mainwindow.cpp" line="111"/>
       <source>Sepia</source>
-      <translation type="unfinished">Sepia</translation>
+      <translation>Sepia</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="114"/>
@@ -462,72 +462,72 @@
     <message>
       <location filename="../mainwindow.cpp" line="439"/>
       <source>Adjust Warmth</source>
-      <translation type="unfinished">Adjust Warmth</translation>
+      <translation>Warmte aanpassen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="448"/>
       <source>Adjust Saturation</source>
-      <translation type="unfinished">Adjust Saturation</translation>
+      <translation>Verzadiging aanpassen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="457"/>
       <source>Adjust Brightness</source>
-      <translation type="unfinished">Adjust Brightness</translation>
+      <translation>Helderheid aanpassen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="466"/>
       <source>Adjust Hue</source>
-      <translation type="unfinished">Adjust Hue</translation>
+      <translation>Tint aanpassen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="481"/>
       <source>Adjust Contrast</source>
-      <translation type="unfinished">Adjust Contrast</translation>
+      <translation>Contrast aanpassen</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="508"/>
       <source>File Name: %1</source>
-      <translation type="unfinished">File Name: %1</translation>
+      <translation>Bestandsnaam: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="509"/>
       <source>Path: %1</source>
-      <translation type="unfinished">Path: %1</translation>
+      <translation>Pad: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="510"/>
       <source>File Size: %1 Bytes</source>
-      <translation type="unfinished">File Size: %1 Bytes</translation>
+      <translation>Bestandsgrootte: %1 bytes</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="511"/>
       <source>Last Read: %1</source>
-      <translation type="unfinished">Last Read: %1</translation>
+      <translation>Laatst gelezen: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="512"/>
       <source>Last Modified: %1</source>
-      <translation type="unfinished">Last Modified: %1</translation>
+      <translation>Laatst gewijzigd: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="513"/>
       <source>Width: %1</source>
-      <translation type="unfinished">Width: %1</translation>
+      <translation>Breedte: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="514"/>
       <source>Height: %1</source>
-      <translation type="unfinished">Height: %1</translation>
+      <translation>Hoogte: %1</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="515"/>
       <source>Megapixels: %1 MP</source>
-      <translation type="unfinished">Megapixels: %1 MP</translation>
+      <translation>Megapixels: %1 MP</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="517"/>
       <source>Ratio: %1:%2</source>
-      <translation type="unfinished">Ratio: %1:%2</translation>
+      <translation>Verhouding: %1:%2</translation>
     </message>
     <message>
       <location filename="../mainwindow.cpp" line="549"/>
