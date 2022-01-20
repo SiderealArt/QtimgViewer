@@ -80,19 +80,19 @@ MainWindow::~MainWindow()
 void MainWindow::createActions(){
   warmthAction = new QAction(tr("Warmth"));
   warmthAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/warmth.png")));
-  connect(warmthAction,SIGNAL(triggered()),this,SLOT(camera()));
+  connect(warmthAction,SIGNAL(triggered()),this,SLOT(warmthWin()));
   brightnessAction = new QAction(tr("Brightness"));
   brightnessAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/brightness.png")));
-  connect(brightnessAction,SIGNAL(triggered()),this,SLOT(camera()));
+  connect(brightnessAction,SIGNAL(triggered()),this,SLOT(brightnessWin()));
   contrastAction = new QAction(tr("Contrast"));
   contrastAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/contrast.png")));
-  connect(contrastAction,SIGNAL(triggered()),this,SLOT(camera()));
+  connect(contrastAction,SIGNAL(triggered()),this,SLOT(contrastWin()));
   hueAction = new QAction(tr("Hue"));
   hueAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/hue.png")));
-  connect(hueAction,SIGNAL(triggered()),this,SLOT(camera()));
+  connect(hueAction,SIGNAL(triggered()),this,SLOT(hueWin()));
   saturationAction = new QAction(tr("Saturation"));
   saturationAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/saturation.png")));
-  connect(saturationAction,SIGNAL(triggered()),this,SLOT(camera()));
+  connect(saturationAction,SIGNAL(triggered()),this,SLOT(saturationWin()));
   cameraAction = new QAction(tr("Capture Photo"));
   cameraAction->setIcon(QIcon(QDir().absoluteFilePath(":/main/resources/icon/webcam.png")));
   connect(cameraAction,SIGNAL(triggered()),this,SLOT(camera()));
@@ -499,16 +499,16 @@ void MainWindow::fileinfo(){
   fWin = new Fileinfo();
   fWin->img = QFileInfo(filename);
   fWin->show();
-    fWin->fileNameLabel->setText(tr("File Name: %1").arg(fWin->img.fileName()));
-    fWin->pathLabel->setText(tr("Path: %1").arg(fWin->img.path()));
-    fWin->sizeLabel->setText(tr("File Size: %1 Bytes").arg(fWin->img.size()));
-    fWin->lastReadLabel->setText(tr("Last Read: %1").arg(fWin->img.lastRead().toString("yyyy/MM/dd hh:mm:ss")));
-    fWin->lastModLabel->setText(tr("Last Modified: %1").arg(fWin->img.lastModified().toString("yyyy/MM/dd hh:mm:ss")));
-    fWin->widthLabel->setText(tr("Width: %1").arg(imgWin->pixmap().toImage().width()));
-    fWin->heightLabel->setText(tr("Height: %1").arg(imgWin->pixmap().toImage().height()));
-    fWin->megapixelLabel->setText(tr("Megapixels: %1 MP").arg(imgWin->pixmap().toImage().width()*imgWin->pixmap().toImage().height()/1000000.0));
-    int gcd = this->gcd(imgWin->pixmap().toImage().width(), imgWin->pixmap().toImage().height());
-    fWin->ratioLabel->setText(tr("Ratio: %1:%2").arg(QString::number(imgWin->pixmap().toImage().width()/gcd),QString::number(imgWin->pixmap().toImage().height()/gcd)));
+  fWin->fileNameLabel->setText(tr("File Name: %1").arg(fWin->img.fileName()));
+  fWin->pathLabel->setText(tr("Path: %1").arg(fWin->img.path()));
+  fWin->sizeLabel->setText(tr("File Size: %1 Bytes").arg(fWin->img.size()));
+  fWin->lastReadLabel->setText(tr("Last Read: %1").arg(fWin->img.lastRead().toString("yyyy/MM/dd hh:mm:ss")));
+  fWin->lastModLabel->setText(tr("Last Modified: %1").arg(fWin->img.lastModified().toString("yyyy/MM/dd hh:mm:ss")));
+  fWin->widthLabel->setText(tr("Width: %1").arg(imgWin->pixmap().toImage().width()));
+  fWin->heightLabel->setText(tr("Height: %1").arg(imgWin->pixmap().toImage().height()));
+  fWin->megapixelLabel->setText(tr("Megapixels: %1 MP").arg(imgWin->pixmap().toImage().width()*imgWin->pixmap().toImage().height()/1000000.0));
+  int gcd = this->gcd(imgWin->pixmap().toImage().width(), imgWin->pixmap().toImage().height());
+  fWin->ratioLabel->setText(tr("Ratio: %1:%2").arg(QString::number(imgWin->pixmap().toImage().width()/gcd),QString::number(imgWin->pixmap().toImage().height()/gcd)));
 }
 
 int MainWindow::gcd(int a, int b){
@@ -687,7 +687,7 @@ void MainWindow::contrast(int value){
 }
 /*https://towardsdatascience.com/image-processing-and-pixel-manipulation-photo-filters-5d37a2f992fa*/
 void MainWindow::brightness(int value){
-
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
           QColor color=tempWin->pixmap().toImage().pixelColor(i,j);
@@ -761,6 +761,7 @@ void MainWindow::warmth(int v){
 }
 
 void MainWindow::hue(int v){
+  result = QImage(QSize(tempWin->pixmap().toImage().width(),tempWin->pixmap().toImage().height()),QImage::Format_RGB16);
   for(int j=0;j<tempWin->pixmap().toImage().height();j++){
       for(int i=0;i<tempWin->pixmap().toImage().width();i++){
           QColor color=tempWin->pixmap().toImage().pixelColor(i,j).convertTo(QColor::Hsv);
