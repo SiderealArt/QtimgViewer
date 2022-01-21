@@ -29,7 +29,7 @@
     <message>
       <location filename="../adjustment.cpp" line="5"/>
       <source>Adjustment...</source>
-      <translation>調整...</translation>
+      <translation>調整</translation>
     </message>
     <message>
       <location filename="../adjustment.cpp" line="7"/>
